@@ -17,6 +17,10 @@
         "network": "Medium",
         "username": "Blog",
         "url": "https://medium.com/@pureooze"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/ushamim/"
       }
     ]
   },
