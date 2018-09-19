@@ -79,7 +79,7 @@
       "startDate": "2016-09-01",
       "courses": [
         "In a team of 3, built a podcast feed in Qt that could fetch and play episodes from a podcast on iTunes",
-        "Wrote a program that uses stenography to embed messages inside of images",
+        "Wrote a program in Qt that uses stenography to embed messages inside of images",
         "Performed analysis of algorithms to determine best, worst and average case complexity"
       ]
     },
