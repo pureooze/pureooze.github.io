@@ -1,0 +1,100 @@
+{
+  "basics": {
+    "name": "Uzair Shamim",
+    "summary": "I am a hardworking individual capable of figuring out problems on my own when it is required of me. I also enjoy working in teams as it allows me to have my ideas critisized and improved on by others, and gives me the opportunity to do the same.",
+    "email": "uzashamim@gmail.com",
+    "phone": "(416)-316-3188",
+    "location": {
+      "address": "35 Woodbury Cres",
+      "postalCode": "L3X2V4",
+      "city": "Toronto",
+      "region": "Ontario"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "Github",
+        "url": "https://github.com/pureooze"
+      },
+      {
+        "network": "Medium",
+        "username": "Blog",
+        "url": "https://medium.com/@pureooze"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Ontario Teachers Pension Plan",
+      "position": "Software Developer Intern (16 months)",
+      "website": "https://www.otpp.com/",
+      "startDate": "2017-05-01",
+      "endDate": "2018-08-31",
+      "highlights": [
+        "Developed React application and tested with Jest, Enzyme, Cypress and React Storybook",
+        "Developed website with AngularJS, Karma, Protractor/Selenium and Jasmine",
+        "Built a chat application using React, Java, NodeJS, WebSockets and Apache Kafka",
+        "Created RESTful Java 8 services and APIs using Spring",
+        "Built services with tiered architecture (web service, service and domain layers)",
+        "Used Dynatrace to troubleshoot performance issues in web applications",
+        "Built, deployed and released applications using Atlassian Bamboo"
+      ]
+    },
+    {
+      "company": "Department of Economics",
+      "position": "Data Analyst",
+      "website": "https://www.economics.mcmaster.ca/",
+      "startDate": "2016-09-01",
+      "endDate": "2017-05-31",
+      "highlights": [
+        "Developed database for tracking graduate students and faculty/curriculum resources."
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "lusakasa",
+      "position": "Project Maintainer",
+      "website": "https://github.com/lusakasa",
+      "startDate": "2018-03-30",
+      "highlights": [
+        "Maintainer of Saka, a chrome extension for improving the browsing experience",
+        "Written using Preact, tested with Jest and the dom-testing-library",
+        "Collaborate with contributors and users to fix bugs and add features"
+      ]
+    },
+    {
+      "organization": "Medium",
+      "position": "Blogger",
+      "website": "https://medium.com/@pureooze",
+      "startDate": "2015-01-30",
+      "highlights": [
+        "Discuss topics like software development and testing",
+        "Document how to use libraries/programs I find interesting (eg. dom-testing-library)"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "McMaster University",
+      "area": "Software Eng. Tech.",
+      "studyType": "Bachelor",
+      "startDate": "2016-09-01",
+      "courses": [
+        "In a team of 3, built a podcast feed in Qt that could fetch and play episodes from a podcast on iTunes",
+        "Wrote a program that uses stenography to embed messages inside of images",
+        "Performed analysis of algorithms to determine best, worst and average case complexity"
+      ]
+    },
+    {
+      "institution": "Seneca College",
+      "area": "Computer Systems Technology",
+      "studyType": "Diploma",
+      "startDate": "2013-09-01",
+      "endDate": "2016-05-31",
+      "courses": [
+        "Created a website using JQuery and Perl that allows booking and cancellation of seats on a train with arbitrary amount of seats"
+      ]
+    }
+  ]
+}
