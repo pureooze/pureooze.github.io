@@ -10,16 +10,17 @@
     "profiles": [
       {
         "network": "Github",
-        "username": "Github",
+        "username": "@pureooze",
         "url": "https://github.com/pureooze"
       },
       {
         "network": "Medium",
-        "username": "Blog",
+        "username": "@pureooze",
         "url": "https://medium.com/@pureooze"
       },
       {
         "network": "LinkedIn",
+        "username": "ushamim",
         "url": "https://www.linkedin.com/in/ushamim/"
       }
     ]
