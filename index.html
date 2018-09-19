@@ -1,583 +1,772 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resume of Uzair Shamim</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <style type="text/css">
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
-@charset "utf-8";
-@-webkit-viewport   { width: device-width; }
-@-moz-viewport      { width: device-width; }
-@-ms-viewport       { width: device-width; }
-@-o-viewport        { width: device-width; }
-@viewport           { width: device-width; }
+<!doctype html>
+<html>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<title>Uzair Shamim</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic' rel='stylesheet' type='text/css'>
+	<style>
+		/********************************************
+* 	reset from
+* 	http://meyerweb.com/eric/tools/css/reset/
+*******************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Custom reset */
+.main-summary p, 
+#publications .item,
+#skills .item,
+#languages .item,
+#references .item,
+#interests .item{
+	margin: 0;
+}
 
-body{
-  font-family: 'Open Sans', Arial, Tahoma;
-  font-weight: 400;
-  color: #363636;
-  background: #334960;
+
+/****************
+*		SMARTPHONES		
+****************/
+em {
+	color: #757575;
+}
+p {
+	margin: 1em 0;
 }
 blockquote {
-  font-size: 1em;
+	margin: 0;
+	margin-bottom: 1em;
+}
+strong {
+	font-weight: 700;
+	font-size: 1.1em;
+}
+ul {
+	margin-top: 1em; 
+}
+div.item {
+	margin: 1em 0 2em;
+	padding-bottom: 2em;
+}
+div.item:last-of-type {
+	margin: 0;
+	border-bottom: none;
+	padding-bottom: 0;
+}
+p {
+	text-align: justify;
 }
 
-.container{
-  margin-top: 80px;
-  margin-bottom: 15px;
-  background: #fff;
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+}
+h1 {
+	font-size: 2.5rem;
+}
+h2,
+h3 {
+	font-size: 1rem;
+}
+a {
+	color: #EB5F51;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
 }
 
-#photo-header{
-  margin-top: -75px;
-}
-#photo{
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  overflow: hidden;
-  padding: 5px;
-  background: #334960;
-  display: inline-block;
-}
-#photo img{
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-#text-header h1{
-  margin: 0;
-  padding: 0;
-  font-size: 1.5em;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-}
-#text-header h1::first-line{
-  font-size: 1.5em;
-  font-weight: 800;
-  line-height: 1.5em;
-}
-#text-header h1 span{
-  color: #334960;
-  opacity: 0.7;
-}
-#text-header h1 sup{
-  opacity: 0.5;
-}
-#text-header:after{
-  width: 100%;
-  height: 3px;
-  border-bottom: 1px solid #ddd;
-  margin-top: 15px;
-  content: '';
-  display: block;
+/* Layout */
+body {
+	background: #f2f2f2;
+	line-height: 1.6;
+	font-size: 13px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.box{
-  padding-bottom: 10px;
-  margin-bottom: 25px;
-}
-.box h2{
-  color: #227c74;
-  font-size: 1.5em;
-  font-weight: 700;
-  text-transform: uppercase;
+#resume {
+	padding: 1rem 0;
+	margin: 1rem auto;
 }
 
-#awards,
-#education{
-  margin-top: 20px;
-  margin-bottom: 0;
-  position: relative;
-  padding: 1em 0;
-  list-style: none;
-}
-#awards:before,
-#education:before {
-  width: 5px;
-  height: 100%;
-  position: absolute;
-  left: 35px;
-  top: 0;
-  content: ' ';
-  display: block;
-  background: #32475c;
-  background: -moz-linear-gradient(top,  #ffffff 0%, #32475c 7%, #32475c 89%, #ffffff 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#32475c), color-stop(89%,#32475c), color-stop(100%,#ffffff));
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-  background: -o-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-  background: -ms-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-  background: linear-gradient(to bottom,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
-}
-#awards li,
-#education li{
-  width: 100%;
-  z-index: 2;
-  position: relative;
-  float: left;
-}
-#awards .year,
-#education .year{
-  width: 14%;
-  background: #fff;
-  padding: 10px;
-  font-weight: 700;
-  display: inline-block;
-}
-#awards .description,
-#education .description{
-  width: 83%;
-  display: inline-block;
-  background: #eee;
-  margin-bottom: 10px;
-  position: relative;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-}
-#awards .description:after,
-#education .description:after {
-  content: '';
-  position: absolute;
-  top: 15px;
-  right: 0;
-  left: -16px;
-  height: 0;
-  width: 0;
-  border: solid transparent;
-  border-right-color: #eee;
-  border-width: 8px;
-  pointer-events: none;
-}
-#awards .description h3,
-#education .description h3{
-  font-size: 1.2em;
-  margin: 0;
-  padding: 0;
-  font-weight: 700;
-}
-#awards .description p,
-#education .description p{
-  margin-top: 5px;
-  padding: 0;
+#header {
+	padding: 0 1em;
+	margin-bottom: 1em;
 }
 
-.job{
-  margin-bottom: 15px;
-}
-.job .details {
-  margin-left: 3%;
-  width: 95%;
-  padding: 10px;
-  margin-bottom: 10px;
-  background: #eee;
-  border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-}
-.job .where{
-  font-size: 1.2em;
-  font-weight: bold;
-}
-.job .year{
-  opacity: 0.7;
-}
-.job .profession{
-  font-size: 1.2em;
-  font-weight: bold;
-}
-.job .description{
-  line-height: 1.5em;
-}
-.job .highlights{
-  padding: 5px 0;
-  font-weight: bold;
-}
-.job .job-details {
-  padding-left: 5%;
-  width: 100%;
-}
-.publication {
-  margin-bottom: 0;
-}
-.publication .name{
-  font-size: 1em;
-  font-weight: bold;
-}
-.publication .year{
-    opacity: 0.7;
-}
-.publication p{
-  margin: 0;
-  padding-top: 10px;
+#resume > header div {
+	display: table;
+	padding-left: 0.5em;
 }
 
-.contact-item{
-  width: 100%;
-  float: left;
-}
-.contact-item .icon{
-  padding: 10px;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  color: #32475c;
-  background: #eee;
-}
-.contact-item:last-child .icon{
-  border-bottom: none;
-}
-.contact-item .title{
-  width: 80%;
-  width: calc(100% - 55px);
-  font-weight: 700;
-  opacity: 0.9;
-}
-.contact-item .title.only{
-  margin-top: 10px;
-}
-.contact-item .description{
-  width: 80%;
-  width: calc(100% - 55px);
-  color: #334960;
+#resume > header div.middle {
+	padding-top: 1.5em;
 }
 
-.item-interests,
-.item-skills{
-  height: 30px;
-  color: #334960;
-  padding: 5px 10px;
-  margin-bottom: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 1.1em;
-  font-weight: 600;
-}
-.interest,
-.skill{
-  color: #fff;
-  display: inline-block;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  padding: 5px 10px;
-  background: #32475c;
-  position: relative;
-  font-size: .85em;
-}
-.skill-level {
-  background-color: #227c74;
-  border-radius: 4px;
-  color: #fff;
-  padding: 1px 8px;
-  font-size: .75em;
-  position: absolute;
-  margin: 1px 10px;
+header img {
+	display: block;
+	width: 10em;
+	border-radius: 0.275em;
+	float: right;
+	vertical-align: middle;
 }
 
-#language-skills .skill{
-  margin: 10px 0;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+header .name {
+	line-height: 1;
 }
 
-    </style>
-    <style type="text/css" media="print">
-    body {
-  font-size: .95em;
-  -webkit-print-color-adjust: exact;
+header .label {
+	font-size: 1.5rem;
+	font-weight: 400;
+	color: #757575;
 }
 
-a[href]:after {
-  content: none !important;
+section:not(.section) {
+	padding: .5em 1rem;
 }
 
-#photo{
-  display: none;
+section#references {
+	border-bottom:none;
 }
 
-.box {
-  margin-bottom: -10px;
+section#basics {
+	background: inherit;
+	margin-bottom: 0;
 }
 
-blockquote,
-#education,
-#awards,
-.contact-item,
-.publication,
-.skills,
-.interests {
-  page-break-inside: avoid;
+section#skills {
+	padding-bottom: 0;
 }
 
-.col-sm-5{
-  width: 40%;
-  padding: 0 15px;
+section#education, 
+section#work, 
+.main-summary section {
+	padding-bottom: 1em;
 }
 
-.col-sm-7{
-  width: 60%;
-  padding: 0 15px;
+header::after {
+	display: table;
+	content: " ";
+	clear: both;
 }
 
-.skills .col-sm-offset-1,
-.interests .col-sm-offset-1{
-  margin-top: -10px;
-  margin-bottom: 5px;
+h2.section-title {
+	text-align: left;
+	font-size: 1rem;
+	font-weight: 400;
+	color: #757575;
+	padding: 1em 1rem 0;
+	margin-bottom: 0.1275em;
 }
 
-#education {
-  margin: 0;
-  margin-bottom: -20px;
-}
-#awards:before,
-#education:before {
-  background: none;
+.date {
+	font-weight: 700;
+	color: #757575;
 }
 
-#awards .description,
-#education .description,
-.job .details {
-  border: 1px solid #eee;
-}
-.publication,
-.publication .panel-heading,
-.publication .name{
-  margin: 0;
-  padding: 0 5px;
-  border: none;
-}
-.publication .panel-body {
-  padding: 0 10px;
-  margin: 0;
+.position, .area, .institution {
+	font-weight: 700;
 }
 
-.badge {
-  margin: 0;
+#interests .item, #languages .item {
+	padding: 0 1em 1em 0;
+	border-bottom: none;
 }
 
-.list-group-item{
-  border: none;
-  margin: 0;
-  padding: 5px 15px;
+.website::before {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: none;
+	min-width: 1.25em;
+	margin-right: 0.25em;
+	text-align: center;
+	content: '\f14c';
 }
-.list-group-item:after{
-  content: '';
-  position: absolute;
-  top: 8px;
-  right: 0;
-  left: -1px;
-  height: 0;
-  width: 0;
-  border: solid transparent;
-  border-right-color: #999;
-  border-width: 4px;
-  pointer-events: none;
- }
 
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div id="photo-header" class="text-center">
-            <!-- PHOTO (AVATAR) -->
-            <div id="photo">
-              <img src="&#x2F;&#x2F;www.gravatar.com&#x2F;avatar&#x2F;0f01bb470699c62f52cdba4d8f3bbf3d?s&#x3D;200&amp;r&#x3D;pg&amp;d&#x3D;mm" alt="avatar">
-            </div>
-            <div id="text-header" >
-              <h1>Uzair Shamim<br></h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-7">
-          <!-- ABOUT ME -->
-          <div class="box">
-            <h2><i class="fa fa-user ico"></i> About</h2>
-            <p>I am a hardworking individual capable of figuring out problems on my own when it is required of me. I also enjoy working in teams as it allows me to have my ideas critisized and improved on by others, and gives me the opportunity to do the same.</p>
-          </div>
-          <!-- WORK EXPERIENCE -->
-          <div class="box">
-            <h2><i class= "fa fa-suitcase ico"></i> Work Experience</h2>
-              <div class="job clearfix">
-                <div class="row">
-                  <div class="details">
-                    <div class="where">Ontario Teachers Pension Plan</div>
-                    <div class="address">
-                      <a href="https:&#x2F;&#x2F;www.otpp.com&#x2F;" target= "_blank"><i class="fa fa-globe ico"></i> https:&#x2F;&#x2F;www.otpp.com&#x2F;</a>
-                    </div>
-                    <div class="year">May 2017 – August 2018</div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="job-details col-xs-11">
-                    <div class="profession">Software Developer Intern (16 months)</div>
-                    <div class="description">
-                      
-                      <div class="highlights">Highlights</div>
-                      <ul class="list-group">
-                        <li class="list-group-item">Developed React application and tested with Jest, Enzyme, Cypress and React Storybook</li>
-                        <li class="list-group-item">Developed website with AngularJS, Karma, Protractor/Selenium and Jasmine</li>
-                        <li class="list-group-item">Built a chat application using React, Java, NodeJS, WebSockets and Apache Kafka</li>
-                        <li class="list-group-item">Created RESTful Java 8 services and APIs using Spring</li>
-                        <li class="list-group-item">Built services with tiered architecture (web service, service and domain layers)</li>
-                        <li class="list-group-item">Used Dynatrace to troubleshoot performance issues in web applications</li>
-                        <li class="list-group-item">Built, deployed and released applications using Atlassian Bamboo</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="job clearfix">
-                <div class="row">
-                  <div class="details">
-                    <div class="where">Department of Economics</div>
-                    <div class="address">
-                      <a href="https:&#x2F;&#x2F;www.economics.mcmaster.ca&#x2F;" target= "_blank"><i class="fa fa-globe ico"></i> https:&#x2F;&#x2F;www.economics.mcmaster.ca&#x2F;</a>
-                    </div>
-                    <div class="year">September 2016 – May 2017</div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="job-details col-xs-11">
-                    <div class="profession">Data Analyst</div>
-                    <div class="description">
-                      
-                      <div class="highlights">Highlights</div>
-                      <ul class="list-group">
-                        <li class="list-group-item">Developed database for tracking graduate students and faculty/curriculum resources.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <!-- VOLUNTEER -->
-          <div class="box">
-            <h2><i class= "fa fa-group ico"></i> Volunteer</h2>
-              <div class="job clearfix">
-                <div class="row">
-                  <div class="details">
-                    <div class="where">lusakasa</div>
-                    <div class="address">
-                      <a href="https:&#x2F;&#x2F;github.com&#x2F;lusakasa" target= "_blank"><i class="fa fa-globe ico"></i> https:&#x2F;&#x2F;github.com&#x2F;lusakasa</a>
-                    </div>
-                    <div class="year">March 2018 – Present</div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-11 pull-right">
-                    <div class="profession">Project Maintainer</div>
-                    <div class="description">
-                      
-                      <div class="highlights">Highlights</div>
-                      <ul class="list-group">
-                        <li class="list-group-item">Maintainer of Saka, a chrome extension for improving the browsing experience</li>
-                        <li class="list-group-item">Written using Preact, tested with Jest and the dom-testing-library</li>
-                        <li class="list-group-item">Collaborate with contributors and users to fix bugs and add features</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="job clearfix">
-                <div class="row">
-                  <div class="details">
-                    <div class="where">Medium</div>
-                    <div class="address">
-                      <a href="https:&#x2F;&#x2F;medium.com&#x2F;@pureooze" target= "_blank"><i class="fa fa-globe ico"></i> https:&#x2F;&#x2F;medium.com&#x2F;@pureooze</a>
-                    </div>
-                    <div class="year">January 2015 – Present</div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-11 pull-right">
-                    <div class="profession">Blogger</div>
-                    <div class="description">
-                      
-                      <div class="highlights">Highlights</div>
-                      <ul class="list-group">
-                        <li class="list-group-item">Discuss topics like software development and testing</li>
-                        <li class="list-group-item">Document how to use libraries/programs I find interesting (eg. dom-testing-library)</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-5">
-          <!-- CONTACT -->
-          <div class="box clearfix">
-            <h2><i class="fa fa-bullseye ico"></i> Contact</h2>
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-map-marker fa-fw"></span></div>
-              
-              <div class="title only  pull-right">Toronto, Ontario</div>
-            </div>
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-envelope fa-fw"></span></div>
-              <div class="title only pull-right"><a href="mailto:uzashamim@gmail.com" target="_blank">uzashamim@gmail.com</a></div>
-            </div>
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-github fa-fw"></span></div>
-              <div class="title pull-right">Github</div>
-              <div class="description pull-right"><a href="https:&#x2F;&#x2F;github.com&#x2F;pureooze" target="_blank">@pureooze</a></div>
-            </div>
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-medium fa-fw"></span></div>
-              <div class="title pull-right">Medium</div>
-              <div class="description pull-right"><a href="https:&#x2F;&#x2F;medium.com&#x2F;@pureooze" target="_blank">@pureooze</a></div>
-            </div>
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fa fa-linkedin fa-fw"></span></div>
-              <div class="title pull-right">LinkedIn</div>
-              <div class="description pull-right"><a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;ushamim&#x2F;" target="_blank">ushamim</a></div>
-            </div>
-          </div>
-          <!-- EDUCATION -->
-          <div class="box">
-            <h2><i class="fa fa-university ico"></i> Education</h2>
-            <ul id="education" class="clearfix">
-              <li>
-                <div class="year pull-left">2016 Present</div>
-                <div class="description pull-right">
-                  <h3>McMaster University</h3>
-                  <p><i class= "fa fa-graduation-cap ico"></i> Bachelor</p>
-                  <p>Software Eng. Tech.</p>
-                    <div>Courses</div>
-                    <ul class="list-group">
-                      <li class="list-group-item">In a team of 3, built a podcast feed in Qt that could fetch and play episodes from a podcast on iTunes</li>
-                      <li class="list-group-item">Wrote a program in Qt that uses stenography to embed messages inside of images</li>
-                      <li class="list-group-item">Performed analysis of algorithms to determine best, worst and average case complexity</li>
-                    </ul>
-                </div>
-              </li>
-              <li>
-                <div class="year pull-left">2013 2016</div>
-                <div class="description pull-right">
-                  <h3>Seneca College</h3>
-                  <p><i class= "fa fa-graduation-cap ico"></i> Diploma</p>
-                  <p>Computer Systems Technology</p>
-                    <div>Courses</div>
-                    <ul class="list-group">
-                      <li class="list-group-item">Created a website using JQuery and Perl that allows booking and cancellation of seats on a train with arbitrary amount of seats</li>
-                    </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+#profiles, #skills, #interests, #languages {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+  padding-bottom: 1em;
+}
 
-  </body>
+#profiles, #location {
+	box-shadow: none;
+	padding: 0;
+}
+
+#profiles .item {
+	margin: 0;
+	padding: 0;
+	padding-right: 1em;
+	border-bottom: none;
+}
+
+#interests ul {
+	margin-top: 0.5em;
+}
+
+#publications .name {
+	font-style: italic;
+}
+
+.courses li, .keywords li{
+	display: inline-block;
+	background: #f0f0f0;
+	font-size: 0.9em;
+	line-height: 1;
+	color: #333;
+	padding: 0.4em 0.8em;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-radius: 3px;
+}
+
+#publications .date {
+	font-weight: normal;
+	color: #000;	
+}
+
+#skills .item {
+	min-width: 15em;
+	padding: 0 .5em .8em 0;
+	border-bottom: none;
+}
+
+
+/* Skills chart */
+#skills .level .bar {
+	border: 1px solid #ddd;
+	display: block;
+	width: 10em;
+	height: 5px;
+	margin: 0em 0 1em 0;
+	position: relative;
+}
+
+#skills .level .bar::after {
+	position: absolute;
+	content: " ";
+	top: 0;
+	left: 0;
+	background: black;
+	height: 5px;
+}
+
+#skills .level.beginner .bar::after {
+	background: #EB5F51;
+	width: 2.5em;
+} 
+
+#skills .level.intermediate .bar::after {
+	background: #ffdf1f;
+	width: 5em;
+} 
+
+#skills .level.advanced .bar::after {
+	background: #59C596;
+	width: 7.5em;
+} 
+
+#skills .level.master .bar::after {
+	background: #5CB85C;
+	width: 10em;
+}
+
+#references .item {
+	padding-left: 1em;
+	border-left: 5px solid #EB5F51;
+}
+
+.fa.social {
+	margin-right: 0.25em;
+	font-size: 1.1em;
+}
+
+/* Social Media Brand Colors */
+.google-plus {
+	color: #dd4b39;	
+}
+
+.tumblr {
+	color:#32506d;
+}
+
+.foursquare {
+	color:  #0072b1;
+}
+
+.facebook {
+	color: #3b5998;
+}
+
+.linkedin {
+	color: #007bb6;
+}
+
+.pinterest {
+	color: #cb2027;
+}
+
+.dribbble {
+	color: #ea4c89;
+}
+
+.instagram {
+	color: #517fa4;
+}
+
+.twitter {
+	color: #00aced;
+}
+
+.soundcloud { 
+	color: #ff3a00;
+}
+
+.wordpress {
+	color: #21759b;
+}
+
+.youtube {
+	color: #bb0000;
+}
+
+.github {
+	color: #171515;
+}
+
+.stack-overflow {
+	color: #828386;
+	position: relative;
+}
+
+.flickr {
+	color: #ff0084;
+}      
+
+.stack-overflow::after {
+	position: absolute;
+	left: 0;
+	content: '\f16c';
+	color: #f68a1f;
+	overflow: hidden;
+	height: 40%;
+}
+
+/******************
+*		HELPER CLASSES	
+******************/
+.fa {
+	min-width: 1.25em;
+	margin-right: 0.25em;
+	text-align: center;
+}
+
+.clear {
+	display: table;
+	clear: both;
+}
+
+
+/****************
+*		TABLET
+****************/
+@media screen and (min-width: 602px) { 
+	
+	#resume {
+		width: 550px;
+		margin: 0 auto;
+	}
+	section > header > h3 {
+		float:left;
+	}
+	section > header > .date {
+		float: right;
+		line-height: 1.3;
+	}
+
+}
+
+
+/****************
+*		LAPTOP	
+****************/
+@media screen and (min-width: 1025px) { 
+	
+	#resume {
+		width: 650px;		
+		padding: 3em;
+		margin: 3em auto;
+		background: #fff;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+	}
+
+	.section {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+		margin-bottom: 1em;
+		margin-top: 1em;
+		border-bottom: 1px solid #eee;
+	}
+
+	.section:last-of-type {
+		border-bottom: none;
+		margin-bottom: 0;
+	}
+
+	section > header {
+		line-height: 1;
+		padding-bottom: 1em; 
+	}
+
+	h2.section-title {
+		line-height: 1.1;
+		padding-top: 0;
+	}
+
+	section:not(.section) {
+		width: 34.5em;
+		padding: 0 1em 1em 0;
+		margin-top:0;
+		border: none;
+	}
+
+	section p {
+		margin: 0;
+	}
+
+	section#basics {
+		width: auto;
+		padding-top: 1em;
+		padding-left: 1em;
+		padding-bottom: 0;
+		border-top: 1px solid #eee;
+		border-bottom: 1px solid #eee;
+	}
+
+	#profiles .item{
+		padding-bottom: 1em;
+	}
+
+	div {
+		padding: 0;
+	}
+
+	#skills .item {
+		padding-left:0;
+		margin-top: 0;
+	}
+
+	div.item {
+		margin-top: 0;
+		border-bottom: 1px solid #eee;
+	}
+
+}
+	</style>
+	
+
+	<body>
+		<div id="resume">
+				<header id="header">
+						<div>
+							<h1 class="name">Uzair Shamim</h1>
+							<h2 class="label"></h2>
+						</div>
+
+				</header>
+				
+				<section id="basics">
+					
+						<div id="location">
+							<span class="city">
+								Toronto
+							</span>
+							<span class="region">
+								Ontario
+							</span>
+						</div>
+
+					<div id="contact">
+						<div class="email">
+							<span class="fa fa-envelope"></span>
+							<a href="mailto:uzashamim@gmail.com">uzashamim@gmail.com</a>
+						</div>
+					</div>
+				
+
+					<div id="profiles">
+						<div class="item">
+							<span class="network fa fa-github github"></span>
+							<span class="username">
+								<span class="url">
+									<a href="https://github.com/pureooze">@pureooze</a>
+								</span>
+							</span>
+						</div>
+						<div class="item">
+							<span class="network fa fa-medium medium"></span>
+							<span class="username">
+								<span class="url">
+									<a href="https://medium.com/@pureooze">@pureooze</a>
+								</span>
+							</span>
+						</div>
+						<div class="item">
+							<span class="network fa fa-linkedin linkedin"></span>
+							<span class="username">
+								<span class="url">
+									<a href="https://www.linkedin.com/in/ushamim/">ushamim</a>
+								</span>
+							</span>
+						</div>
+					</div>
+				</section>
+
+				<section class="section main-summary">
+					<h2 class='section-title'>About</h2>
+					<section>
+						<p>I am a hardworking individual capable of figuring out problems on my own when it is required of me. I also enjoy working in teams as it allows me to have my ideas critisized and improved on by others, and gives me the opportunity to do the same.</p>
+					</section>
+				</section>
+
+				</section>
+
+				<section class="section">
+					<h2 class='section-title'>Experience</h2>
+					<section id="work">
+						<header>
+							<h3 class="name">
+								Ontario Teachers Pension Plan
+							</h3>
+							<div class="date">
+								<span class="startDate">
+									May 2017
+								</span>
+								<span class="endDate">
+									- August 2018
+								</span>
+							</div>
+						</header>
+						<div class="item">
+						<div class="position">
+							Software Developer Intern (16 months)
+						</div>
+						<div class="website">
+							<a href="https://www.otpp.com/">https://www.otpp.com/</a>
+						</div>
+						<ul class="highlights">
+							<li>Developed React application and tested with Jest, Enzyme, Cypress and React Storybook</li>
+							<li>Developed website with AngularJS, Karma, Protractor/Selenium and Jasmine</li>
+							<li>Built a chat application using React, Java, NodeJS, WebSockets and Apache Kafka</li>
+							<li>Created RESTful Java 8 services and APIs using Spring</li>
+							<li>Built services with tiered architecture (web service, service and domain layers)</li>
+							<li>Used Dynatrace to troubleshoot performance issues in web applications</li>
+							<li>Built, deployed and released applications using Atlassian Bamboo</li>
+						</ul>
+					</div>
+						<header>
+							<h3 class="name">
+								Department of Economics
+							</h3>
+							<div class="date">
+								<span class="startDate">
+									September 2016
+								</span>
+								<span class="endDate">
+									- May 2017
+								</span>
+							</div>
+						</header>
+						<div class="item">
+						<div class="position">
+							Data Analyst
+						</div>
+						<div class="website">
+							<a href="https://www.economics.mcmaster.ca/">https://www.economics.mcmaster.ca/</a>
+						</div>
+						<ul class="highlights">
+							<li>Developed database for tracking graduate students and faculty/curriculum resources.</li>
+						</ul>
+					</div>
+					</section>
+				</section>
+		
+				<section class="section">
+					<h2 class='section-title'>Education</h2>
+					<section id="education">
+							<header>
+									<h3 class="institution">
+										McMaster University
+									</h3>
+								<div class="date">
+									<span class="startDate">
+										2016
+									</span>
+									<span class="endDate">
+										- Present
+									</span>
+								</div>
+							</header>
+							<div class="item">
+									<div class="studyType">
+										Bachelor
+									</div>
+									<div class="area">
+										Software Eng. Tech.
+									</div>
+									<ul class="courses">
+										<li>In a team of 3, built a podcast feed in Qt that could fetch and play episodes from a podcast on iTunes</li>
+										<li>Wrote a program in Qt that uses stenography to embed messages inside of images</li>
+										<li>Performed analysis of algorithms to determine best, worst and average case complexity</li>
+									</ul>
+							</div>
+							<header>
+									<h3 class="institution">
+										Seneca College
+									</h3>
+								<div class="date">
+									<span class="startDate">
+										2013
+									</span>
+									<span class="endDate">
+										- 2016
+									</span>
+								</div>
+							</header>
+							<div class="item">
+									<div class="studyType">
+										Diploma
+									</div>
+									<div class="area">
+										Computer Systems Technology
+									</div>
+									<ul class="courses">
+										<li>Created a website using JQuery and Perl that allows booking and cancellation of seats on a train with arbitrary amount of seats</li>
+									</ul>
+							</div>
+					</section>
+				</section>
+		
+			
+				<section class="section">
+					<h2 class='section-title'>Volunteer</h2>
+					<section id="volunteer">
+								<header>
+									<h3 class="company">
+										lusakasa
+									</h3>
+									<div class="date">
+										<span class="startDate">
+											March 2018
+										</span>
+										<span class="endDate">
+											- Present
+										</span>
+								</header>
+							<div class="item">
+							<div class="position">
+								Project Maintainer
+							</div>
+							<div class="website">
+								<a href="https://github.com/lusakasa">https://github.com/lusakasa</a>
+							</div>
+							<ul class="highlights">
+								<li>Maintainer of Saka, a chrome extension for improving the browsing experience</li>
+								<li>Written using Preact, tested with Jest and the dom-testing-library</li>
+								<li>Collaborate with contributors and users to fix bugs and add features</li>
+							</ul>
+						</div>
+								<header>
+									<h3 class="company">
+										Medium
+									</h3>
+									<div class="date">
+										<span class="startDate">
+											January 2015
+										</span>
+										<span class="endDate">
+											- Present
+										</span>
+								</header>
+							<div class="item">
+							<div class="position">
+								Blogger
+							</div>
+							<div class="website">
+								<a href="https://medium.com/@pureooze">https://medium.com/@pureooze</a>
+							</div>
+							<ul class="highlights">
+								<li>Discuss topics like software development and testing</li>
+								<li>Document how to use libraries/programs I find interesting (eg. dom-testing-library)</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+
+		
+		
+
+
+		
+		</div>		
+	</body>
+	
 </html>
