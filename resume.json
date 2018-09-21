@@ -33,11 +33,10 @@
       "startDate": "2017-05-01",
       "endDate": "2018-08-31",
       "highlights": [
-        "Developed React application and tested with Jest, Enzyme, Cypress and React Storybook",
+        "Developed React application and tested with Jest, Enzyme, Cypress, and React Storybook",
         "Developed website with AngularJS, Karma, Protractor/Selenium and Jasmine",
-        "Built a chat application using React, Java, NodeJS, WebSockets and Apache Kafka",
-        "Created RESTful Java 8 services and APIs using Spring",
-        "Built services with tiered architecture (web service, service and domain layers)",
+        "Built a scalable chat application using Docker, React, Java, NodeJS, WebSockets, and Apache Kafka",
+        "Created RESTful Java 8 services and APIs using Spring with a tiered architecture (web service, service and domain layers)",
         "Used Dynatrace to troubleshoot performance issues in web applications",
         "Built, deployed and released applications using Atlassian Bamboo"
       ]
