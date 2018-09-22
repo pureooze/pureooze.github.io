@@ -1,0 +1,61 @@
+* {
+  font-family: "Metrophobic";
+}
+
+h1 {
+  font-size: 60px;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header,
+.stuff {
+  align-items: center;
+}
+
+.header > h1 {
+  margin-bottom: 0.1em;
+}
+
+.header > h2 {
+  margin-top: 0.1em;
+  text-align: center;
+  color: grey;
+}
+
+.pages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: space-evenly;
+  align-items: center;
+}
+
+.icon {
+  width: 50px;
+  height: fixed;
+  padding: 1rem;
+}
+
+.resumeForm {
+  margin-top: 2em;
+}
+
+.resumeButton {
+  background-color: dodgerblue;
+  color: azure;
+  border: 2px solid dodgerblue;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.resumeButton:hover {
+  background-color: azure;
+  color: dodgerblue;
+}
