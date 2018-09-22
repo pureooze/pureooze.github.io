@@ -7,12 +7,16 @@ h1 {
 }
 
 body {
+  display: -webkit-flex;
+  display: -moz-flex;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
   background-image: url("images/imac-off.jpg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header,
@@ -44,8 +48,8 @@ body {
   width: 50px;
   height: fixed;
   padding: 1rem;
-  border-top: 3px solid rgb(245, 245, 245);
-  border-bottom: 3px solid rgb(245, 245, 245);
+  border-top: 3px dashed rgb(245, 245, 245);
+  border-bottom: 3px dashed rgb(245, 245, 245);
   transition: 0.7s;
 }
 
@@ -54,7 +58,7 @@ body {
 }
 
 .iconLink + .iconLink {
-  border-left: 3px solid rgb(245, 245, 245);
+  border-left: 3px dashed rgb(245, 245, 245);
 }
 
 .resumeForm {
