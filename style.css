@@ -48,17 +48,13 @@ body {
   width: 50px;
   height: fixed;
   padding: 1rem;
-  border-top: 3px dashed rgb(245, 245, 245);
-  border-bottom: 3px dashed rgb(245, 245, 245);
-  transition: 0.7s;
+  border-bottom: 3px solid rgb(245, 245, 245);
+  transition: 0.5s;
+  opacity: 0.8;
 }
 
 .icon:hover {
-  background-color: whitesmoke;
-}
-
-.iconLink + .iconLink {
-  border-left: 3px dashed rgb(245, 245, 245);
+  opacity: 1;
 }
 
 .resumeForm {
