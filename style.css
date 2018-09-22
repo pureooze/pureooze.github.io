@@ -11,6 +11,8 @@ body {
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  background-image: url("images/imac-off.jpg");
+  background-size: cover;
 }
 
 .header,
@@ -19,13 +21,15 @@ body {
 }
 
 .header > h1 {
+  margin-top: 2em;
   margin-bottom: 0.1em;
+  color: white;
 }
 
 .header > h2 {
   margin-top: 0.1em;
   text-align: center;
-  color: grey;
+  color: gainsboro;
 }
 
 .pages {
@@ -40,6 +44,17 @@ body {
   width: 50px;
   height: fixed;
   padding: 1rem;
+  border-top: 3px solid rgb(245, 245, 245);
+  border-bottom: 3px solid rgb(245, 245, 245);
+  transition: 0.7s;
+}
+
+.icon:hover {
+  background-color: whitesmoke;
+}
+
+.iconLink + .iconLink {
+  border-left: 3px solid rgb(245, 245, 245);
 }
 
 .resumeForm {
