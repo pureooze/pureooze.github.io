@@ -61,21 +61,23 @@ body {
 }
 
 .resumeButton {
-  background-color: dodgerblue;
-  color: azure;
-  border: 2px solid dodgerblue;
+  background-color: rgb(109, 121, 129);
+  color: whitesmoke;
+  border: 2px solid rgb(109, 121, 129);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
   font-size: 20px;
+  padding: 0.3em 0.3em 0.3em 0.3em;
   cursor: pointer;
 }
 
 .resumeButton:hover {
-  background-color: azure;
-  color: dodgerblue;
+  background-color: rgb(212, 211, 206);
+  color: rgb(109, 121, 129);
 }
 
 .photo-credit {
   position: absolute;
   bottom: 8px;
   right: 16px;
+  font-size: 12px;
 }
