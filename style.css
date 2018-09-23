@@ -12,7 +12,6 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: center;
   background-image: url("images/mac-alone.jpg");
   background-size: cover;
   background-repeat: no-repeat;
