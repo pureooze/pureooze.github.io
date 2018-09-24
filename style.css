@@ -7,31 +7,14 @@ h1 {
 }
 
 body {
-  height: 100%;
-  margin: 0;
-}
-
-.page1,
-.page2 {
   display: -webkit-flex;
   display: -moz-flex;
   display: flex;
   flex-flow: column;
   align-items: center;
-  background-position: center;
+  background-image: url("images/mac-alone.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-.page1 {
-  background-image: url("images/mac-alone.jpg");
-  height: 100%;
-}
-
-.page2 {
-  background-image: url("images/mac.jpg");
-  height: 100%;
 }
 
 .header,
@@ -46,12 +29,6 @@ body {
 }
 
 .header > h2 {
-  margin-top: 0.1em;
-  text-align: center;
-  color: gray;
-}
-
-.header > h3 {
   margin-top: 0.1em;
   text-align: center;
   color: gray;
@@ -101,45 +78,4 @@ body {
   bottom: 8px;
   right: 16px;
   font-size: 12px;
-}
-
-.arrow {
-  box-sizing: border-box;
-  height: 5vw;
-  width: 5vw;
-  border-style: solid;
-  border-color: rgb(109, 121, 129);
-  border-width: 0px 1px 1px 0px;
-  transform: rotate(45deg);
-  transition: border-width 150ms ease-in-out;
-}
-
-.arrow:hover {
-  border-bottom-width: 4px;
-  border-right-width: 4px;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #0e242d;
-  height: 100vh;
-}
-
-.framework-list {
-
-}
-
-.framework-logo {
-  width: 100px;
-  height: fixed;
-  padding: 1rem;
-  border-bottom: 3px solid rgb(10, 10, 10);
-  transition: 0.5s;
-  opacity: 0.8;
-}
-
-.framework-desc {
-  text-align: center;
 }
