@@ -12,7 +12,8 @@ body {
 }
 
 .page1,
-.page2 {
+.page2,
+.page3 {
   display: -webkit-flex;
   display: -moz-flex;
   display: flex;
@@ -21,7 +22,6 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .page1 {
@@ -30,6 +30,10 @@ body {
 }
 
 .page2 {
+  height: 200px;
+}
+
+.page3 {
   background-image: url("images/mac.jpg");
   height: 100%;
 }
@@ -105,8 +109,8 @@ body {
 
 .arrow {
   box-sizing: border-box;
-  height: 5vw;
-  width: 5vw;
+  height: 3vw;
+  width: 3vw;
   border-style: solid;
   border-color: rgb(109, 121, 129);
   border-width: 0px 1px 1px 0px;
@@ -127,19 +131,53 @@ body {
   height: 100vh;
 }
 
-.framework-list {
-
+.project-list {
+  width: 80%;
 }
 
-.framework-logo {
-  width: 100px;
+.project-item:nth-child(odd) {
+  float: left;
+  clear: both;
+  justify-content: left; /* align horizontal */
+}
+
+.project-item:nth-child(even) {
+  float: right;
+  clear: both;
+  justify-content: right; /* align horizontal */
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* align vertical */
+}
+
+.project-heading {
+  width: 90%;
+  display: flex;
+  justify-content: left;
+  border-bottom: solid 1px rgb(109, 121, 129);
+  margin-bottom: 10px;
+}
+
+.project-logo {
+  width: 60px;
   height: fixed;
   padding: 1rem;
-  border-bottom: 3px solid rgb(10, 10, 10);
   transition: 0.5s;
-  opacity: 0.8;
 }
 
-.framework-desc {
-  text-align: center;
+.project-desc {
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+}
+.project-desc > img {
+  padding-top: 20px;
+  width: 500px;
+}
+
+.project-name {
 }
