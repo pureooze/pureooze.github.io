@@ -27,6 +27,16 @@
   },
   "work": [
     {
+      "company": "D2L",
+      "position": "Software Developer",
+      "website": "https://d2l.com",
+      "startDate": "2019-08-26",
+      "highlights": [
+        "Work on the storageable team, improve code quality and migrating local storage usages to AWS",
+        "Working on a C# LMS application and migrating it to AWS"
+      ]
+    },
+    {
       "company": "Ontario Teachers Pension Plan",
       "position": "Software Developer Intern (16 months)",
       "website": "https://www.otpp.com/",
@@ -81,6 +91,7 @@
       "area": "Software Eng. Tech.",
       "studyType": "Bachelor",
       "startDate": "2016-09-01",
+      "endDate": "2019-08-31",
       "courses": [
         "In a team of 3, built a podcast feed in Qt that could fetch and play episodes from a podcast on iTunes",
         "Wrote a program in Qt that uses stenography to embed messages inside of images",

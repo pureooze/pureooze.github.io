@@ -7,14 +7,35 @@ h1 {
 }
 
 body {
+  height: 100%;
+  margin: 0;
+}
+
+.page1,
+.page2,
+.page3 {
   display: -webkit-flex;
   display: -moz-flex;
   display: flex;
   flex-flow: column;
   align-items: center;
-  background-image: url("images/mac-alone.jpg");
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.page1 {
+  background-image: url("images/mac-alone.jpg");
+  height: 100%;
+}
+
+.page2 {
+  height: 200px;
+}
+
+.page3 {
+  background-image: url("images/mac.jpg");
+  height: 100%;
 }
 
 .header,
@@ -29,6 +50,12 @@ body {
 }
 
 .header > h2 {
+  margin-top: 0.1em;
+  text-align: center;
+  color: gray;
+}
+
+.header > h3 {
   margin-top: 0.1em;
   text-align: center;
   color: gray;
@@ -78,4 +105,79 @@ body {
   bottom: 8px;
   right: 16px;
   font-size: 12px;
+}
+
+.arrow {
+  box-sizing: border-box;
+  height: 3vw;
+  width: 3vw;
+  border-style: solid;
+  border-color: rgb(109, 121, 129);
+  border-width: 0px 1px 1px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+}
+
+.arrow:hover {
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0e242d;
+  height: 100vh;
+}
+
+.project-list {
+  width: 80%;
+}
+
+.project-item:nth-child(odd) {
+  float: left;
+  clear: both;
+  justify-content: left; /* align horizontal */
+}
+
+.project-item:nth-child(even) {
+  float: right;
+  clear: both;
+  justify-content: right; /* align horizontal */
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* align vertical */
+}
+
+.project-heading {
+  width: 90%;
+  display: flex;
+  justify-content: left;
+  border-bottom: solid 1px rgb(109, 121, 129);
+  margin-bottom: 10px;
+}
+
+.project-logo {
+  width: 60px;
+  height: fixed;
+  padding: 1rem;
+  transition: 0.5s;
+}
+
+.project-desc {
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+}
+.project-desc > img {
+  padding-top: 20px;
+  width: 500px;
+}
+
+.project-name {
 }
