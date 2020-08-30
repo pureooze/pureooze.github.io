@@ -33,7 +33,9 @@
       "startDate": "2019-08-26",
       "highlights": [
         "Work on the storageable team, improve code quality and migrating local storage usages to AWS",
-        "Working on a C# LMS application and migrating it to AWS"
+        "Working on a C# LMS application and migrating it to AWS",
+        "Working on a core team to provide new functionality within the product",
+        "Working on JavaScript frontend with LitElement and Polymer 3"
       ]
     },
     {
@@ -49,16 +51,6 @@
         "Created RESTful Java 8 services and APIs using Spring with a tiered architecture (web service, service and domain layers)",
         "Used Dynatrace to troubleshoot performance issues in web applications",
         "Built, deployed and released applications using Atlassian Bamboo"
-      ]
-    },
-    {
-      "company": "Department of Economics",
-      "position": "Data Analyst",
-      "website": "https://www.economics.mcmaster.ca/",
-      "startDate": "2016-09-01",
-      "endDate": "2017-05-31",
-      "highlights": [
-        "Developed database for tracking graduate students and faculty/curriculum resources."
       ]
     }
   ],
