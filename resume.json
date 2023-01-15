@@ -28,12 +28,37 @@
   "work": [
     {
       "company": "D2L",
+      "position": "Senior Software Developer",
+      "website": "https://d2l.com",
+      "startDate": "2021-06-01",
+      "highlights": [
+        "Created a new user experience (C#, SQL, JS) for how users setup states for activities in Brightspace",
+        "Created a code search tool with JavaScript, Roslyn and OmniSharp for visualizations of usages of functions in C# code as trees"
+      ]
+    },
+    {
+      "company": "D2L",
+      "position": "Software Developer",
+      "website": "https://d2l.com",
+      "startDate": "2020-01-01",
+      "endDate": "2021-06-01",
+      "highlights": [
+        "Worked on a UI initiative to simplify the user experience of Brightspace",
+        "Helped create, modify and improve Polymer and LitElement web components",
+        "Worked on APIs built using C# and backed with MSSQL",
+        "Helped create a language management system for admins to customize language terms"
+      ]
+    },
+    {
+      "company": "D2L",
       "position": "Software Developer",
       "website": "https://d2l.com",
       "startDate": "2019-08-26",
+      "endDate": "2020-01-01",
       "highlights": [
-        "Work on the storageable team, improve code quality and migrating local storage usages to AWS",
-        "Working on a C# LMS application and migrating it to AWS"
+        "Wrote code for filesystem layer to use AWS S3 (C#)",
+        "Refactored legacy code to meet new development standards",
+        "Writing a testing tool to perform large amounts of operations on the new filesystem and compare to the legacy file system to verify correctness"
       ]
     },
     {
@@ -68,6 +93,7 @@
       "position": "Project Maintainer",
       "website": "https://github.com/lusakasa",
       "startDate": "2018-03-30",
+      "endDate": "2020-03-30",
       "highlights": [
         "Maintainer of Saka, a chrome extension for improving the browsing experience",
         "Written using Preact, tested with Jest and the dom-testing-library",

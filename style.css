@@ -25,17 +25,12 @@ body {
 }
 
 .page1 {
-  background-image: url("images/mac-alone.jpg");
+  background-image: url("images/mac-alone-2.jpg");
   height: 100%;
 }
 
 .page2 {
   height: 200px;
-}
-
-.page3 {
-  background-image: url("images/mac.jpg");
-  height: 100%;
 }
 
 .header,
