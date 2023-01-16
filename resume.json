@@ -27,7 +27,7 @@
   },
   "work": [
     {
-      "company": "D2L",
+      "name": "D2L",
       "position": "Senior Software Developer",
       "website": "https://d2l.com",
       "startDate": "2021-06-01",
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "company": "D2L",
+      "name": "D2L",
       "position": "Software Developer",
       "website": "https://d2l.com",
       "startDate": "2020-01-01",
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "company": "D2L",
+      "name": "D2L",
       "position": "Software Developer",
       "website": "https://d2l.com",
       "startDate": "2019-08-26",
@@ -62,7 +62,7 @@
       ]
     },
     {
-      "company": "Ontario Teachers Pension Plan",
+      "name": "Ontario Teachers Pension Plan",
       "position": "Software Developer Intern (16 months)",
       "website": "https://www.otpp.com/",
       "startDate": "2017-05-01",
@@ -77,7 +77,7 @@
       ]
     },
     {
-      "company": "Department of Economics",
+      "name": "Department of Economics",
       "position": "Data Analyst",
       "website": "https://www.economics.mcmaster.ca/",
       "startDate": "2016-09-01",
