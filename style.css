@@ -34,7 +34,7 @@ h1 {
 }
 
 .avatar {
-  max-height: 200px;
+  max-height: 10em;
   border-radius: 7em;
   margin-right: auto;
   margin-left: auto;
