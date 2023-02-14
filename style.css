@@ -34,11 +34,15 @@ h1 {
 }
 
 .avatar {
-  max-height: 8em;
-  border-radius: 7em;
+  align-self: center;
+}
+
+.avatar > img {
+  max-height: 15em;
+  border-radius: 50%;
   margin-right: auto;
   margin-left: auto;
-  border: 0.2em solid black;
+  border: 0.1em solid black;
 }
 
 .header {
