@@ -36,7 +36,7 @@
       "website": "https://d2l.com",
       "startDate": "2021-06-01",
       "highlights": [
-        "Created a new user experiences using MSSQL, C#, Javascript",
+        "Created new user experiences using MSSQL, C#, Javascript",
         "Created a code search tool with OmniSharp for visualizations of usages of functions in C# code as trees",
         "Used native HTML5 apis and LitElement WebComponents to deliver accessible user experiences in Brightspace",
         "Developed new eventing system to improve scalability of existing MSSQL Servers",
