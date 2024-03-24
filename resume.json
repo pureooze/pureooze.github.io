@@ -4,7 +4,7 @@
   },
   "basics": {
     "name": "Uzair Shamim",
-    "summary": "I am a hardworking individual capable of figuring out problems on my own when it is required of me. I also enjoy working in teams as it allows me to have my ideas critisized and improved on by others, and gives me the opportunity to do the same.",
+    "summary": "I am a hardworking individual capable of working independently and with teams. I love working with people who like to take creative approaches and iterate on ideas. Knowledge sharing is also important to me and I make sure to present about topics I find interesting at developer conferences!",
     "email": "uzashamim@gmail.com",
     "location": {
       "city": "Toronto",
@@ -39,7 +39,7 @@
         "Created a code search tool with JavaScript, Roslyn and OmniSharp for visualizations of usages of functions in C# code as trees",
         "Used native HTML5 apis and LitElement WebComponents to deliver accessible user experiences in Brightspace",
         "Developed new eventing system to improve scalability of existing MSSQL Servers",
-        "Wrote some utilities to help discover potential technical debt in a codebase to make it easier to prioritize",
+        "Wrote some utilities to help discover potential technical debt in a codebase to make it easier to prioritize work",
         "Delivered yearly presentations at internal developer conference (I love knowledge sharing and presenting all the cool things we work on!)"
       ]
     },
