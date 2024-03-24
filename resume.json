@@ -93,6 +93,7 @@
         "HTML5",
         "CSS",
         "Javascript",
+        "Typescript",
         "WebComponents",
         "LitElement"
       ]
@@ -101,10 +102,21 @@
       "name": ".NET",
       "keywords": [
         "Blazor",
+        "Razor",
         "Rx.NET",
         "MAUI",
         "ASP.NET Core",
         ".NET Framework"
+      ]
+    },
+    {
+      "name": "Testing",
+      "keywords": [
+        "Mocha",
+        "Chai",
+        "open-wc",
+        "NUnit",
+        "Moq"
       ]
     }
   ],
@@ -116,24 +128,55 @@
   ],
   "projects": [
     {
-      "name": "TwitchEverywhere",
-      "description": "TwitchEverywhere is a .NET library that allows connecting to a Twitch chat and subscribing to messages in that chat. TwitchEverywhere.Irc uses Rx.NET to provide a reactive API for handling messages from Twitch.",
-      "url": "https://github.com/lusakasa",
-      "startDate": "2018-03-30",
-      "endDate": "2020-03-30",
+      "name": "SimpleTwitch",
+      "description": "SimpleTwitch is a desktop UI for using Twitch built on modern .NET",
+      "url": "https://github.com/pureooze/SimpleTwitch",
+      "startDate": "2024-01-21",
       "highlights": [
-        "Maintainer of Saka, a chrome extension for improving the browsing experience",
-        "Written using Preact, tested with Jest and the dom-testing-library",
-        "Collaborate with contributors and users to fix bugs and add features"
+        "SimpleTwitch is a modern .NET desktop UI that focuses on providing simple user experiences",
+        "SimpleTwitch uses Rx.NET to provide a reactive experience"
       ],
       "keywords": [
         ".NET",
         "Rx.NET",
-        "Twitch IRC API",
-        "Twitch Helix REST API",
-        "Modern .NET"
+        "Modern .NET",
+        "Blazor",
+        "MAUI",
+        "Razor"
       ],
       "type": "application"
+    },
+    {
+      "name": "TwitchEverywhere",
+      "description": "TwitchEverywhere is a modern .NET library that allows connecting to a Twitch chat and subscribing to messages in that chat.",
+      "url": "https://github.com/pureooze/TwitchEverywhere",
+      "startDate": "2023-09-03",
+      "highlights": [
+        "Created a Modern .NET library that provides a fast and easy API for connecting to Twitch",
+        "TwitchEverywhere.Irc uses Rx.NET to provide a reactive API for handling messages from Twitch"
+      ],
+      "keywords": [
+        ".NET",
+        "Rx.NET",
+        "Modern .NET",
+        "Twitch IRC API",
+        "Twitch Helix REST API"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Blog",
+      "url": "https://medium.com/@pureooze",
+      "startDate": "2015-01-30",
+      "highlights": [
+        "Discuss topics like software development and testing",
+        "Document how to use libraries/programs I find interesting (eg. dom-testing-library)"
+      ],
+      "keywords": [
+        "Blog",
+        "Medium",
+        "Development"
+      ]
     },
     {
       "entity": "lusakasa",
@@ -154,20 +197,6 @@
         "Preact"
       ],
       "type": "application"
-    },
-    {
-      "organization": "Medium",
-      "url": "https://medium.com/@pureooze",
-      "startDate": "2015-01-30",
-      "highlights": [
-        "Discuss topics like software development and testing",
-        "Document how to use libraries/programs I find interesting (eg. dom-testing-library)"
-      ],
-      "keywords": [
-        "Blog",
-        "Medium",
-        "Development"
-      ]
     }
   ]
 }
