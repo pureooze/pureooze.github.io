@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "version": "v1.0.0"
+  },
   "basics": {
     "name": "Uzair Shamim",
     "summary": "I am a hardworking individual capable of figuring out problems on my own when it is required of me. I also enjoy working in teams as it allows me to have my ideas critisized and improved on by others, and gives me the opportunity to do the same.",
@@ -33,7 +36,11 @@
       "startDate": "2021-06-01",
       "highlights": [
         "Created a new user experience (C#, SQL, JS) for how users setup states for activities in Brightspace",
-        "Created a code search tool with JavaScript, Roslyn and OmniSharp for visualizations of usages of functions in C# code as trees"
+        "Created a code search tool with JavaScript, Roslyn and OmniSharp for visualizations of usages of functions in C# code as trees",
+        "Used native HTML5 apis and LitElement WebComponents to deliver accessible user experiences in Brightspace",
+        "Developed new eventing system to improve scalability of existing MSSQL Servers",
+        "Wrote some utilities to help discover potential technical debt in a codebase to make it easier to prioritize",
+        "Delivered yearly presentations at internal developer conference (I love knowledge sharing and presenting all the cool things we work on!)"
       ]
     },
     {
@@ -56,7 +63,7 @@
       "startDate": "2019-08-26",
       "endDate": "2020-01-01",
       "highlights": [
-        "Wrote code for filesystem layer to use AWS S3 (C#)",
+        "Wrote code for filesystem layer to use AWS S3 in C# and .NET Framework",
         "Refactored legacy code to meet new development standards",
         "Writing a testing tool to perform large amounts of operations on the new filesystem and compare to the legacy file system to verify correctness"
       ]
@@ -69,45 +76,9 @@
       "endDate": "2018-08-31",
       "highlights": [
         "Developed React application and tested with Jest, Enzyme, Cypress, and React Storybook",
-        "Developed website with AngularJS, Karma, Protractor/Selenium and Jasmine",
-        "Built a scalable chat application using Docker, React, Java, NodeJS, WebSockets, and Apache Kafka",
+        "Developed website with AngularJS, Karma, Protractor/Selenium, Jasmine, Java, and NodeJS",
         "Created RESTful Java 8 services and APIs using Spring with a tiered architecture (web service, service and domain layers)",
-        "Used Dynatrace to troubleshoot performance issues in web applications",
-        "Built, deployed and released applications using Atlassian Bamboo"
-      ]
-    },
-    {
-      "name": "Department of Economics",
-      "position": "Data Analyst",
-      "website": "https://www.economics.mcmaster.ca/",
-      "startDate": "2016-09-01",
-      "endDate": "2017-05-31",
-      "highlights": [
-        "Developed database for tracking graduate students and faculty/curriculum resources."
-      ]
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "lusakasa",
-      "position": "Project Maintainer",
-      "website": "https://github.com/lusakasa",
-      "startDate": "2018-03-30",
-      "endDate": "2020-03-30",
-      "highlights": [
-        "Maintainer of Saka, a chrome extension for improving the browsing experience",
-        "Written using Preact, tested with Jest and the dom-testing-library",
-        "Collaborate with contributors and users to fix bugs and add features"
-      ]
-    },
-    {
-      "organization": "Medium",
-      "position": "Blogger",
-      "website": "https://medium.com/@pureooze",
-      "startDate": "2015-01-30",
-      "highlights": [
-        "Discuss topics like software development and testing",
-        "Document how to use libraries/programs I find interesting (eg. dom-testing-library)"
+        "Used Dynatrace to troubleshoot performance issues in web applications"
       ]
     }
   ],
@@ -123,15 +94,69 @@
         "Wrote a program in Qt that uses stenography to embed messages inside of images",
         "Applied software design patterns to code and analyzed design patterns in a project (JHotDraw)"
       ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "keywords": [
+        "HTML5",
+        "CSS",
+        "Javascript",
+        "WebComponents",
+        "LitElement"
+      ]
     },
     {
-      "institution": "Seneca College",
-      "area": "Computer Systems Technology",
-      "studyType": "Diploma",
-      "startDate": "2013-09-01",
-      "endDate": "2016-05-31",
-      "courses": [
-        "Created a website using JQuery and Perl that allows booking and cancellation of seats on a train with arbitrary amount of seats"
+      "name": ".NET",
+      "keywords": [
+        "Blazor",
+        "Rx.NET",
+        "MAUI",
+        "ASP.NET Core",
+        ".NET Framework"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+  "projects": [
+    {
+      "entity": "lusakasa",
+      "name": "Saka",
+      "description": "Project Maintainer of an Elegant tab, bookmark and history search in the browser",
+      "url": "https://github.com/lusakasa",
+      "startDate": "2018-03-30",
+      "endDate": "2020-03-30",
+      "highlights": [
+        "Maintainer of Saka, a chrome extension for improving the browsing experience",
+        "Written using Preact, tested with Jest and the dom-testing-library",
+        "Collaborate with contributors and users to fix bugs and add features"
+      ],
+      "keywords": [
+        "Saka",
+        "Chrome Extension",
+        "Javascript",
+        "Preact"
+      ],
+      "type": "application"
+    },
+    {
+      "organization": "Medium",
+      "url": "https://medium.com/@pureooze",
+      "startDate": "2015-01-30",
+      "highlights": [
+        "Discuss topics like software development and testing",
+        "Document how to use libraries/programs I find interesting (eg. dom-testing-library)"
+      ],
+      "keywords": [
+        "Blog",
+        "Medium",
+        "Development"
       ]
     }
   ]

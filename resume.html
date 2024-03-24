@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Uzair Shamim</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+  <link as="font" href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100..800&family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
   /********************************************
 * 	reset from
@@ -145,8 +146,8 @@ table {
 
 body,
 html {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 13px;
+  font-family: 'Anek Malayalam','Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: medium;
   color: #40484f;
   font-weight: 400;
   letter-spacing: 0;
@@ -250,7 +251,7 @@ section .location {
 
 #header h1.name {
   font-size: 2.8rem;
-  font-weight: 100;
+  font-weight: 600;
   line-height: 100%;
 }
 
@@ -573,7 +574,7 @@ section .location {
 }
 
 .section > section > section {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 /******************
@@ -649,7 +650,7 @@ section .location {
 }
 
 @media print {
-  a:not(.hide-href-print)::after{
+  #profiles a:not(.hide-href-print)::after{
     content: " (" attr(href) ") ";
   }
   #resume {
@@ -819,13 +820,44 @@ section .location {
     
     	<section class="section">
     		<section class="main-summary">
-    			<div><p>I am a hardworking individual capable of figuring out problems on my own when it is required of me. I also enjoy working in teams as it allows me to have my ideas critisized and improved on by others, and gives me the opportunity to do the same.</p></div>
+    			<div><p><p>I am a hardworking individual capable of figuring out problems on my own when it is required of me. I also enjoy working in teams as it allows me to have my ideas critisized and improved on by others, and gives me the opportunity to do the same.</p></p></div>
     		</section>
     	</section>
     
     <section class="section">
+    	<header>
+    		<h2 class='section-title'>Skills</h2>
+    	</header>
+    	<section id="skills">
+    		<div class="item">
+    			<h3 class="name">
+    				Web Development
+    			</h3>
+    			 			<ul class="keywords">
+    				<li>HTML5</li>
+    				<li>CSS</li>
+    				<li>Javascript</li>
+    				<li>WebComponents</li>
+    				<li>LitElement</li>
+    			</ul>
+    		</div>
+    		<div class="item">
+    			<h3 class="name">
+    				.NET
+    			</h3>
+    			 			<ul class="keywords">
+    				<li>Blazor</li>
+    				<li>Rx.NET</li>
+    				<li>MAUI</li>
+    				<li>ASP.NET Core</li>
+    				<li>.NET Framework</li>
+    			</ul>
+    		</div>
+    	</section>
+    </section>
+    <section class="section">
       <header>
-        <h2 class='section-title'>Work Experience <span class="item-count">(5)</span></h2>
+        <h2 class='section-title'>Work Experience <span class="item-count">(4)</span></h2>
       </header>
     
       <section id="work">
@@ -841,13 +873,14 @@ section .location {
             <div class="company">D2L</div>
           </header>
     
-          <span class="website">
-            <span class="fas fa-external-link-alt"></span>
-            <a target="_blank" href="https://d2l.com">https://d2l.com</a>
-          </span>        <div class="item" id="work-item">
+           <div class="item" id="work-item">
             <ul class="highlights">
-              <li><p>Created a new user experience (C#, SQL, JS) for how users setup states for activities in Brightspace</p></li>
-              <li><p>Created a code search tool with JavaScript, Roslyn and OmniSharp for visualizations of usages of functions in C# code as trees</p></li>
+              <li><p><p>Created a new user experience (C#, SQL, JS) for how users setup states for activities in Brightspace</p></p></li>
+              <li><p><p>Created a code search tool with JavaScript, Roslyn and OmniSharp for visualizations of usages of functions in C# code as trees</p></p></li>
+              <li><p><p>Used native HTML5 apis and LitElement WebComponents to deliver accessible user experiences in Brightspace</p></p></li>
+              <li><p><p>Developed new eventing system to improve scalability of existing MSSQL Servers</p></p></li>
+              <li><p><p>Wrote some utilities to help discover potential technical debt in a codebase to make it easier to prioritize</p></p></li>
+              <li><p><p>Delivered yearly presentations at internal developer conference (I love knowledge sharing and presenting all the cool things we work on!)</p></p></li>
             </ul>
           </div>
         </section>
@@ -863,15 +896,12 @@ section .location {
             <div class="company">D2L</div>
           </header>
     
-          <span class="website">
-            <span class="fas fa-external-link-alt"></span>
-            <a target="_blank" href="https://d2l.com">https://d2l.com</a>
-          </span>        <div class="item" id="work-item">
+           <div class="item" id="work-item">
             <ul class="highlights">
-              <li><p>Worked on a UI initiative to simplify the user experience of Brightspace</p></li>
-              <li><p>Helped create, modify and improve Polymer and LitElement web components</p></li>
-              <li><p>Worked on APIs built using C# and backed with MSSQL</p></li>
-              <li><p>Helped create a language management system for admins to customize language terms</p></li>
+              <li><p><p>Worked on a UI initiative to simplify the user experience of Brightspace</p></p></li>
+              <li><p><p>Helped create, modify and improve Polymer and LitElement web components</p></p></li>
+              <li><p><p>Worked on APIs built using C# and backed with MSSQL</p></p></li>
+              <li><p><p>Helped create a language management system for admins to customize language terms</p></p></li>
             </ul>
           </div>
         </section>
@@ -887,14 +917,11 @@ section .location {
             <div class="company">D2L</div>
           </header>
     
-          <span class="website">
-            <span class="fas fa-external-link-alt"></span>
-            <a target="_blank" href="https://d2l.com">https://d2l.com</a>
-          </span>        <div class="item" id="work-item">
+           <div class="item" id="work-item">
             <ul class="highlights">
-              <li><p>Wrote code for filesystem layer to use AWS S3 (C#)</p></li>
-              <li><p>Refactored legacy code to meet new development standards</p></li>
-              <li><p>Writing a testing tool to perform large amounts of operations on the new filesystem and compare to the legacy file system to verify correctness</p></li>
+              <li><p><p>Wrote code for filesystem layer to use AWS S3 in C# and .NET Framework</p></p></li>
+              <li><p><p>Refactored legacy code to meet new development standards</p></p></li>
+              <li><p><p>Writing a testing tool to perform large amounts of operations on the new filesystem and compare to the legacy file system to verify correctness</p></p></li>
             </ul>
           </div>
         </section>
@@ -910,38 +937,12 @@ section .location {
             <div class="company">Ontario Teachers Pension Plan</div>
           </header>
     
-          <span class="website">
-            <span class="fas fa-external-link-alt"></span>
-            <a target="_blank" href="https://www.otpp.com/">https://www.otpp.com/</a>
-          </span>        <div class="item" id="work-item">
+           <div class="item" id="work-item">
             <ul class="highlights">
-              <li><p>Developed React application and tested with Jest, Enzyme, Cypress, and React Storybook</p></li>
-              <li><p>Developed website with AngularJS, Karma, Protractor/Selenium and Jasmine</p></li>
-              <li><p>Built a scalable chat application using Docker, React, Java, NodeJS, WebSockets, and Apache Kafka</p></li>
-              <li><p>Created RESTful Java 8 services and APIs using Spring with a tiered architecture (web service, service and domain layers)</p></li>
-              <li><p>Used Dynatrace to troubleshoot performance issues in web applications</p></li>
-              <li><p>Built, deployed and released applications using Atlassian Bamboo</p></li>
-            </ul>
-          </div>
-        </section>
-        <section class="work-item">
-    
-    
-          <header class="clear">
-            <div class="date">
-              <span class="startDate">Sep 2016</span>
-              <span class="endDate">- May 2017</span>
-            </div>
-            <div class="position">Data Analyst</div>
-            <div class="company">Department of Economics</div>
-          </header>
-    
-          <span class="website">
-            <span class="fas fa-external-link-alt"></span>
-            <a target="_blank" href="https://www.economics.mcmaster.ca/">https://www.economics.mcmaster.ca/</a>
-          </span>        <div class="item" id="work-item">
-            <ul class="highlights">
-              <li><p>Developed database for tracking graduate students and faculty/curriculum resources.</p></li>
+              <li><p><p>Developed React application and tested with Jest, Enzyme, Cypress, and React Storybook</p></p></li>
+              <li><p><p>Developed website with AngularJS, Karma, Protractor/Selenium, Jasmine, Java, and NodeJS</p></p></li>
+              <li><p><p>Created RESTful Java 8 services and APIs using Spring with a tiered architecture (web service, service and domain layers)</p></p></li>
+              <li><p><p>Used Dynatrace to troubleshoot performance issues in web applications</p></p></li>
             </ul>
           </div>
         </section>
@@ -949,71 +950,51 @@ section .location {
     </section>
     <section class="section">
       <header>
-        <h2 class='section-title'>Volunteer</h2>
+        <h2 class='section-title'>Projects <span class="item-count">(2)</span></h2>
       </header>
-      <section id="volunteer">
-        <section class="volunteer-item">
-    
+      <section id="projects">
+        <section class="project-item">
     
           <header class="clear">
-            <div class="header-left">
-              <div class="position">
-                Project Maintainer
-              </div>
-              <div class="organization">
-                lusakasa
-              </div>
-            </div>
+            <div class="position">Saka</div>
             <div class="date">
-              <span class="startDate">
-                Mar 2018
-              </span>
-              <span class="endDate">
-                - Mar 2020
-              </span>
+              <span class="startDate">Mar 2018</span>
+              <span class="endDate">- Mar 2020</span>
             </div>
           </header>
-          <div class="website">
+          <span class="website">
             <span class="fas fa-external-link-alt"></span>
             <a target="_blank" href="https://github.com/lusakasa">https://github.com/lusakasa</a>
-          </div>
+          </span>
+          <ul class="keywords">
+              <li>Saka</li>
+              <li>Chrome Extension</li>
+              <li>Javascript</li>
+              <li>Preact</li>
+          </ul>
           <div class="item">
             <ul class="highlights">
-              <li><p>Maintainer of Saka, a chrome extension for improving the browsing experience</p></li>
-              <li><p>Written using Preact, tested with Jest and the dom-testing-library</p></li>
-              <li><p>Collaborate with contributors and users to fix bugs and add features</p></li>
+                <li><p><p>Maintainer of Saka, a chrome extension for improving the browsing experience</p></p></li>
+                <li><p><p>Written using Preact, tested with Jest and the dom-testing-library</p></p></li>
+                <li><p><p>Collaborate with contributors and users to fix bugs and add features</p></p></li>
             </ul>
           </div>
         </section>
-        <section class="volunteer-item">
+        <section class="project-item">
     
-    
-          <header class="clear">
-            <div class="header-left">
-              <div class="position">
-                Blogger
-              </div>
-              <div class="organization">
-                Medium
-              </div>
-            </div>
-            <div class="date">
-              <span class="startDate">
-                Jan 2015
-              </span>
-              <span class="endDate">
-                - Current
-              </span>
-            </div>
-          </header>
-          <div class="website">
+          <span class="website">
             <span class="fas fa-external-link-alt"></span>
             <a target="_blank" href="https://medium.com/@pureooze">https://medium.com/@pureooze</a>
-          </div>
+          </span>
+          <ul class="keywords">
+              <li>Blog</li>
+              <li>Medium</li>
+              <li>Development</li>
+          </ul>
           <div class="item">
             <ul class="highlights">
-              <li><p>Discuss topics like software development and testing</p></li>
-              <li><p>Document how to use libraries/programs I find interesting (eg. dom-testing-library)</p></li>
+                <li><p><p>Discuss topics like software development and testing</p></p></li>
+                <li><p><p>Document how to use libraries/programs I find interesting (eg. dom-testing-library)</p></p></li>
             </ul>
           </div>
         </section>
@@ -1021,12 +1002,20 @@ section .location {
     </section>
     <section class="section">
       <header>
-        <h2 class='section-title'>Education <span class="item-count">(2)</span></h2>
+        <h2 class='section-title'>Education <span class="item-count">(1)</span></h2>
       </header>
     
       <section id="education">
         <section class="education-item">
           <header class="clear">
+            <div class="date">
+              <span class="startDate">
+              2016
+              </span>
+              <span class="endDate">
+              - 2019
+              </span>
+            </div>
             <div class="header-left">
               <div class="studyType">
                 Bachelor
@@ -1037,14 +1026,6 @@ section .location {
               <div class="institution">
                 McMaster University
               </div>
-            </div>
-            <div class="date">
-              <span class="startDate">
-              2016
-              </span>
-              <span class="endDate">
-              - 2019
-              </span>
             </div>
           </header>
     
@@ -1058,37 +1039,24 @@ section .location {
           <div class="item">
           </div>
         </section>
-        <section class="education-item">
-          <header class="clear">
-            <div class="header-left">
-              <div class="studyType">
-                Diploma
-              </div>
-              <div class="area">
-                Computer Systems Technology
-              </div>
-              <div class="institution">
-                Seneca College
-              </div>
-            </div>
-            <div class="date">
-              <span class="startDate">
-              2013
-              </span>
-              <span class="endDate">
-              - 2016
-              </span>
-            </div>
-          </header>
-    
-    
-          <ul class="courses">
-            <li>Created a website using JQuery and Perl that allows booking and cancellation of seats on a train with arbitrary amount of seats</li>
-          </ul>
-    
+      </section>
+    </section>
+    <section class="section">
+      <header>
+        <h2 class='section-title'>Languages</h2>
+      </header>
+      <section id="languages">
+        <div class="display">
+          <h3 class="language">
+            English
+          </h3>
           <div class="item">
+            <div class="level fluency native speaker">
+              <em>Native speaker</em>
+              <div class="bar"></div>
+            </div>
           </div>
-        </section>
+        </div>
       </section>
     </section>
 

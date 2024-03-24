@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jsonresume-theme-flat": "^0.3.7",
+    "jsonresume-theme-stackoverflow": "^2.0.2"
+  }
+}

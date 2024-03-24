@@ -1,3 +1,4 @@
 node_modules/
 jsonresume-theme-stackoverflow/
 *.icloud
+package-lock.json
