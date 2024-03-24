@@ -6,6 +6,7 @@
     "name": "Uzair Shamim",
     "summary": "I am a hardworking individual capable of working independently and with teams. I love working with people who like to take creative approaches and iterate on ideas. Knowledge sharing is also important to me and I make sure to present about topics I find interesting at developer conferences!",
     "email": "uzashamim@gmail.com",
+    "image": "./images/me.webp",
     "location": {
       "city": "Toronto",
       "region": "Ontario"
@@ -35,11 +36,11 @@
       "website": "https://d2l.com",
       "startDate": "2021-06-01",
       "highlights": [
-        "Created a new user experience (C#, SQL, JS) for how users setup states for activities in Brightspace",
-        "Created a code search tool with JavaScript, Roslyn and OmniSharp for visualizations of usages of functions in C# code as trees",
+        "Created a new user experiences using MSSQL, C#, Javascript",
+        "Created a code search tool with OmniSharp for visualizations of usages of functions in C# code as trees",
         "Used native HTML5 apis and LitElement WebComponents to deliver accessible user experiences in Brightspace",
         "Developed new eventing system to improve scalability of existing MSSQL Servers",
-        "Wrote some utilities to help discover potential technical debt in a codebase to make it easier to prioritize work",
+        "Wrote Git and Roslyn utilities to find potential technical debt in a codebase to make it easier to prioritize work",
         "Delivered yearly presentations at internal developer conference (I love knowledge sharing and presenting all the cool things we work on!)"
       ]
     },
@@ -47,25 +48,14 @@
       "name": "D2L",
       "position": "Software Developer",
       "website": "https://d2l.com",
-      "startDate": "2020-01-01",
+      "startDate": "2019-08-26",
       "endDate": "2021-06-01",
       "highlights": [
-        "Worked on a UI initiative to simplify the user experience of Brightspace",
+        "Wrote code for filesystem layer to use AWS S3 in C# and .NET Framework",
+        "Writing a testing tool to perform large amounts of operations on the new filesystem and compare to the legacy file system to verify correctness",
         "Helped create, modify and improve Polymer and LitElement web components",
         "Worked on APIs built using C# and backed with MSSQL",
         "Helped create a language management system for admins to customize language terms"
-      ]
-    },
-    {
-      "name": "D2L",
-      "position": "Software Developer",
-      "website": "https://d2l.com",
-      "startDate": "2019-08-26",
-      "endDate": "2020-01-01",
-      "highlights": [
-        "Wrote code for filesystem layer to use AWS S3 in C# and .NET Framework",
-        "Refactored legacy code to meet new development standards",
-        "Writing a testing tool to perform large amounts of operations on the new filesystem and compare to the legacy file system to verify correctness"
       ]
     },
     {
@@ -103,6 +93,7 @@
         "HTML5",
         "CSS",
         "Javascript",
+        "Typescript",
         "WebComponents",
         "LitElement"
       ]
@@ -111,10 +102,21 @@
       "name": ".NET",
       "keywords": [
         "Blazor",
+        "Razor",
         "Rx.NET",
         "MAUI",
         "ASP.NET Core",
         ".NET Framework"
+      ]
+    },
+    {
+      "name": "Testing",
+      "keywords": [
+        "Mocha",
+        "Chai",
+        "open-wc",
+        "NUnit",
+        "Moq"
       ]
     }
   ],
@@ -125,6 +127,57 @@
     }
   ],
   "projects": [
+    {
+      "name": "SimpleTwitch",
+      "description": "SimpleTwitch is a desktop UI for using Twitch built on modern .NET",
+      "url": "https://github.com/pureooze/SimpleTwitch",
+      "startDate": "2024-01-21",
+      "highlights": [
+        "SimpleTwitch is a modern .NET desktop UI that focuses on providing simple user experiences",
+        "SimpleTwitch uses Rx.NET to provide a reactive experience"
+      ],
+      "keywords": [
+        ".NET",
+        "Rx.NET",
+        "Modern .NET",
+        "Blazor",
+        "MAUI",
+        "Razor"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "TwitchEverywhere",
+      "description": "TwitchEverywhere is a modern .NET library that allows connecting to a Twitch chat and subscribing to messages in that chat.",
+      "url": "https://github.com/pureooze/TwitchEverywhere",
+      "startDate": "2023-09-03",
+      "highlights": [
+        "Created a Modern .NET library that provides a fast and easy API for connecting to Twitch",
+        "TwitchEverywhere.Irc uses Rx.NET to provide a reactive API for handling messages from Twitch"
+      ],
+      "keywords": [
+        ".NET",
+        "Rx.NET",
+        "Modern .NET",
+        "Twitch IRC API",
+        "Twitch Helix REST API"
+      ],
+      "type": "application"
+    },
+    {
+      "name": "Blog",
+      "url": "https://medium.com/@pureooze",
+      "startDate": "2015-01-30",
+      "highlights": [
+        "Discuss topics like software development and testing",
+        "Document how to use libraries/programs I find interesting (eg. dom-testing-library)"
+      ],
+      "keywords": [
+        "Blog",
+        "Medium",
+        "Development"
+      ]
+    },
     {
       "entity": "lusakasa",
       "name": "Saka",
@@ -144,20 +197,6 @@
         "Preact"
       ],
       "type": "application"
-    },
-    {
-      "organization": "Medium",
-      "url": "https://medium.com/@pureooze",
-      "startDate": "2015-01-30",
-      "highlights": [
-        "Discuss topics like software development and testing",
-        "Document how to use libraries/programs I find interesting (eg. dom-testing-library)"
-      ],
-      "keywords": [
-        "Blog",
-        "Medium",
-        "Development"
-      ]
     }
   ]
 }

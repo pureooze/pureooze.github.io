@@ -772,7 +772,8 @@ section .location {
   
   <div id="resume">
     	<header id="header" class="clear">
-    		<div>
+    		<img class="image" src="./images/me.webp" alt="Uzair Shamim" />
+    		<div class="middle">
     			<h1 class="name">Uzair Shamim</h1>
     			<h2 class="label"></h2>
     		</div>
@@ -837,6 +838,7 @@ section .location {
     				<li>HTML5</li>
     				<li>CSS</li>
     				<li>Javascript</li>
+    				<li>Typescript</li>
     				<li>WebComponents</li>
     				<li>LitElement</li>
     			</ul>
@@ -847,17 +849,30 @@ section .location {
     			</h3>
     			 			<ul class="keywords">
     				<li>Blazor</li>
+    				<li>Razor</li>
     				<li>Rx.NET</li>
     				<li>MAUI</li>
     				<li>ASP.NET Core</li>
     				<li>.NET Framework</li>
     			</ul>
     		</div>
+    		<div class="item">
+    			<h3 class="name">
+    				Testing
+    			</h3>
+    			 			<ul class="keywords">
+    				<li>Mocha</li>
+    				<li>Chai</li>
+    				<li>open-wc</li>
+    				<li>NUnit</li>
+    				<li>Moq</li>
+    			</ul>
+    		</div>
     	</section>
     </section>
     <section class="section">
       <header>
-        <h2 class='section-title'>Work Experience <span class="item-count">(4)</span></h2>
+        <h2 class='section-title'>Work Experience <span class="item-count">(3)</span></h2>
       </header>
     
       <section id="work">
@@ -875,11 +890,11 @@ section .location {
     
            <div class="item" id="work-item">
             <ul class="highlights">
-              <li><p><p>Created a new user experience (C#, SQL, JS) for how users setup states for activities in Brightspace</p></p></li>
-              <li><p><p>Created a code search tool with JavaScript, Roslyn and OmniSharp for visualizations of usages of functions in C# code as trees</p></p></li>
+              <li><p><p>Created a new user experiences using MSSQL, C#, Javascript</p></p></li>
+              <li><p><p>Created a code search tool with OmniSharp for visualizations of usages of functions in C# code as trees</p></p></li>
               <li><p><p>Used native HTML5 apis and LitElement WebComponents to deliver accessible user experiences in Brightspace</p></p></li>
               <li><p><p>Developed new eventing system to improve scalability of existing MSSQL Servers</p></p></li>
-              <li><p><p>Wrote some utilities to help discover potential technical debt in a codebase to make it easier to prioritize work</p></p></li>
+              <li><p><p>Wrote Git and Roslyn utilities to find potential technical debt in a codebase to make it easier to prioritize work</p></p></li>
               <li><p><p>Delivered yearly presentations at internal developer conference (I love knowledge sharing and presenting all the cool things we work on!)</p></p></li>
             </ul>
           </div>
@@ -889,7 +904,7 @@ section .location {
     
           <header class="clear">
             <div class="date">
-              <span class="startDate">Jan 2020</span>
+              <span class="startDate">Aug 2019</span>
               <span class="endDate">- Jun 2021</span>
             </div>
             <div class="position">Software Developer</div>
@@ -898,30 +913,11 @@ section .location {
     
            <div class="item" id="work-item">
             <ul class="highlights">
-              <li><p><p>Worked on a UI initiative to simplify the user experience of Brightspace</p></p></li>
+              <li><p><p>Wrote code for filesystem layer to use AWS S3 in C# and .NET Framework</p></p></li>
+              <li><p><p>Writing a testing tool to perform large amounts of operations on the new filesystem and compare to the legacy file system to verify correctness</p></p></li>
               <li><p><p>Helped create, modify and improve Polymer and LitElement web components</p></p></li>
               <li><p><p>Worked on APIs built using C# and backed with MSSQL</p></p></li>
               <li><p><p>Helped create a language management system for admins to customize language terms</p></p></li>
-            </ul>
-          </div>
-        </section>
-        <section class="work-item">
-    
-    
-          <header class="clear">
-            <div class="date">
-              <span class="startDate">Aug 2019</span>
-              <span class="endDate">- Jan 2020</span>
-            </div>
-            <div class="position">Software Developer</div>
-            <div class="company">D2L</div>
-          </header>
-    
-           <div class="item" id="work-item">
-            <ul class="highlights">
-              <li><p><p>Wrote code for filesystem layer to use AWS S3 in C# and .NET Framework</p></p></li>
-              <li><p><p>Refactored legacy code to meet new development standards</p></p></li>
-              <li><p><p>Writing a testing tool to perform large amounts of operations on the new filesystem and compare to the legacy file system to verify correctness</p></p></li>
             </ul>
           </div>
         </section>
@@ -950,9 +946,89 @@ section .location {
     </section>
     <section class="section">
       <header>
-        <h2 class='section-title'>Projects <span class="item-count">(2)</span></h2>
+        <h2 class='section-title'>Projects <span class="item-count">(4)</span></h2>
       </header>
       <section id="projects">
+        <section class="project-item">
+    
+          <header class="clear">
+            <div class="position">SimpleTwitch</div>
+            <div class="date">
+              <span class="startDate">Jan 2024</span>
+              <span class="endDate">- Current</span>
+            </div>
+          </header>
+          <span class="website">
+            <span class="fas fa-external-link-alt"></span>
+            <a target="_blank" href="https://github.com/pureooze/SimpleTwitch">https://github.com/pureooze/SimpleTwitch</a>
+          </span>
+          <ul class="keywords">
+              <li>.NET</li>
+              <li>Rx.NET</li>
+              <li>Modern .NET</li>
+              <li>Blazor</li>
+              <li>MAUI</li>
+              <li>Razor</li>
+          </ul>
+          <div class="item">
+            <ul class="highlights">
+                <li><p><p>SimpleTwitch is a modern .NET desktop UI that focuses on providing simple user experiences</p></p></li>
+                <li><p><p>SimpleTwitch uses Rx.NET to provide a reactive experience</p></p></li>
+            </ul>
+          </div>
+        </section>
+        <section class="project-item">
+    
+          <header class="clear">
+            <div class="position">TwitchEverywhere</div>
+            <div class="date">
+              <span class="startDate">Sep 2023</span>
+              <span class="endDate">- Current</span>
+            </div>
+          </header>
+          <span class="website">
+            <span class="fas fa-external-link-alt"></span>
+            <a target="_blank" href="https://github.com/pureooze/TwitchEverywhere">https://github.com/pureooze/TwitchEverywhere</a>
+          </span>
+          <ul class="keywords">
+              <li>.NET</li>
+              <li>Rx.NET</li>
+              <li>Modern .NET</li>
+              <li>Twitch IRC API</li>
+              <li>Twitch Helix REST API</li>
+          </ul>
+          <div class="item">
+            <ul class="highlights">
+                <li><p><p>Created a Modern .NET library that provides a fast and easy API for connecting to Twitch</p></p></li>
+                <li><p><p>TwitchEverywhere.Irc uses Rx.NET to provide a reactive API for handling messages from Twitch</p></p></li>
+            </ul>
+          </div>
+        </section>
+        <section class="project-item">
+    
+          <header class="clear">
+            <div class="position">Blog</div>
+            <div class="date">
+              <span class="startDate">Jan 2015</span>
+              <span class="endDate">- Current</span>
+            </div>
+          </header>
+          <span class="website">
+            <span class="fas fa-external-link-alt"></span>
+            <a target="_blank" href="https://medium.com/@pureooze">https://medium.com/@pureooze</a>
+          </span>
+          <ul class="keywords">
+              <li>Blog</li>
+              <li>Medium</li>
+              <li>Development</li>
+          </ul>
+          <div class="item">
+            <ul class="highlights">
+                <li><p><p>Discuss topics like software development and testing</p></p></li>
+                <li><p><p>Document how to use libraries/programs I find interesting (eg. dom-testing-library)</p></p></li>
+            </ul>
+          </div>
+        </section>
         <section class="project-item">
     
           <header class="clear">
@@ -977,24 +1053,6 @@ section .location {
                 <li><p><p>Maintainer of Saka, a chrome extension for improving the browsing experience</p></p></li>
                 <li><p><p>Written using Preact, tested with Jest and the dom-testing-library</p></p></li>
                 <li><p><p>Collaborate with contributors and users to fix bugs and add features</p></p></li>
-            </ul>
-          </div>
-        </section>
-        <section class="project-item">
-    
-          <span class="website">
-            <span class="fas fa-external-link-alt"></span>
-            <a target="_blank" href="https://medium.com/@pureooze">https://medium.com/@pureooze</a>
-          </span>
-          <ul class="keywords">
-              <li>Blog</li>
-              <li>Medium</li>
-              <li>Development</li>
-          </ul>
-          <div class="item">
-            <ul class="highlights">
-                <li><p><p>Discuss topics like software development and testing</p></p></li>
-                <li><p><p>Document how to use libraries/programs I find interesting (eg. dom-testing-library)</p></p></li>
             </ul>
           </div>
         </section>
