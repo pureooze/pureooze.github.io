@@ -6,7 +6,7 @@
     "name": "Uzair Shamim",
     "summary": "I am a hardworking individual capable of working independently and with teams. I love working with people who like to take creative approaches and iterate on ideas. Knowledge sharing is also important to me and I make sure to present about topics I find interesting at developer conferences!",
     "email": "uzashamim@gmail.com",
-    "image": "./images/me.webp",
+    "image": "../images/me.webp",
     "location": {
       "city": "Toronto",
       "region": "Ontario"
