@@ -1,6 +1,12 @@
 {
+  "scripts": {
+    "build": "resume export resume.html --theme stackoverflow && npx @11ty/eleventy",
+    "watch": "resume export resume.html --theme stackoverflow && npx @11ty/eleventy --serve"
+  },
   "dependencies": {
-    "jsonresume-theme-flat": "^0.3.7",
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
     "jsonresume-theme-stackoverflow": "^2.0.2"
   }
 }
