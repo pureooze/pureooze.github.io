@@ -7,6 +7,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "jsonresume-theme-stackoverflow": "^2.0.2"
+    "jsonresume-theme-stackoverflow": "^2.0.2",
+    "resume-cli": "^3.0.8"
   }
 }
