@@ -1,0 +1,37 @@
+[
+  {
+    "href": "https://github.com/pureooze",
+    "ariaLabel": "Link to my github profile",
+    "icon": "images/github-logo.avif"
+  },
+  {
+    "href": "https://github.com/pureooze/TwitchEverywhere",
+    "ariaLabel": "Link to TwitchEverywhere, a .NET library for connecting to Twitch.tv",
+    "icon": "images/twitcheverywhere.webp"
+  },
+  {
+    "href": "https://github.com/pureooze/SimpleTwitch",
+    "ariaLabel": "Link to SimpleTwitch, a .NET desktop application for using Twitch.tv built on TwitchEverywhere",
+    "icon": "images/simpletwitch.webp"
+  },
+  {
+    "href": "https://toot.community/@pureooze",
+    "ariaLabel": "Link to my mastodon account",
+    "icon": "images/mastodon-logo-black.webp"
+  },
+  {
+    "href": "https://medium.com/@pureooze",
+    "ariaLabel": "Link to my old Medium.com blog, it is no longer updated",
+    "icon": "images/Monogram.avif"
+  },
+  {
+    "href": "https://dev.to/pureooze",
+    "ariaLabel": "Link to my old dev.to blog, it is no longer updated",
+    "icon": "images/thepracticaldev.avif"
+  },
+  {
+    "href": "https://github.com/lusakasa",
+    "ariaLabel": "Link to a previous project I maintained Saka on github",
+    "icon": "images/lusakasawebp.webp"
+  }
+]

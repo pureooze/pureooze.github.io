@@ -1,0 +1,20 @@
+---
+layout: layouts/blogBase.liquid
+---
+<link rel="stylesheet" type="text/css" href="/css/prism-diff.css?v=1" />
+<div class="post">
+    {% if thumbnail %}
+        <img class="post-thumbnail" src="{{ thumbnail }}" alt="">
+    {% endif %}
+    <div class="post-content">
+        <h1 class="post-title">{{ title }}</h1>
+        <div class="post-tags">
+            {% for tag in tags %}
+                <a class="post-tag">{{ tag | downcase }}</a>
+            {% endfor %}
+        </div>
+        {% assign toc = content | toc %}
+        {% assign contentWithTOC = content | replace: "<!--TOC-->", toc %}
+        {{ contentWithTOC }}
+    </div>
+</div>

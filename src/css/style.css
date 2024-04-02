@@ -3,16 +3,29 @@ html, body {
     height: 100%;
 }
 
-* {
-    font-family: 'Anek Malayalam', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+:root {
+    font-family: Anek Malayalam, Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: large;
+
+    --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+    --syntax-tab-size: 2;
     font-weight: 600;
+
+    /*colors*/
+    --pureooze-light-mode-primary: #f2f2f2;
+    --pureooze-primary: #26196f;
+    --pureooze-primary-for-rgba: 38, 25, 111;
+    --pureooze-primary-text: #000;
+    --pureooze-secondary-text: white;
+    --pureooze-accent: #9232D8FF;
+    --pureooze-accent-light: #ac73d8;
 }
 
 h1 {
     font-size: 60px;
 }
 
-.page1,
+.homepage,
 .page2,
 .page3 {
     display: -webkit-flex;
@@ -25,8 +38,8 @@ h1 {
     background-repeat: no-repeat;
 }
 
-.page1 {
-    background-image: url("../images/mac-alone-2.jpg");
+.homepage {
+    background-image: url("../../images/mac-alone-2.jpg");
     height: 100%;
 }
 
@@ -93,8 +106,8 @@ h1 {
 
 .icon:hover {
     opacity: 1;
-    border-bottom: 0.6em solid rgb(146, 50, 216);
-    background-color: rgba(146, 50, 216, 0.2);
+    border-bottom: 0.6em solid var(--pureooze-primary);
+    background-color: rgba(var(--pureooze-primary-for-rgba), 0.2);
 }
 
 .resumeForm {
@@ -113,8 +126,8 @@ h1 {
 
 .resumeButton:hover {
     /*border: 0.1em solid rgba(146, 50, 216, 0.2);*/
-    box-shadow: 0 4px 8px 0 rgba(146, 50, 216, 0.2), 0 3px 6px 0 rgba(146, 50, 216, 0.2);
-    background-color: rgb(146, 50, 216);
+    box-shadow: 0 4px 8px 0 rgba(146, 50, 216, 0.2), 0 3px 6px 0 rgba(var(--pureooze-primary-for-rgba), 0.2);
+    background-color: var(--pureooze-primary);
 }
 
 .photo-credit {
@@ -139,8 +152,8 @@ h1 {
 
 .photo-credit-link:hover {
     /*border: 0.1em solid rgba(146, 50, 216, 0.2);*/
-    box-shadow: 0 4px 8px 0 rgba(146, 50, 216, 0.2), 0 3px 6px 0 rgba(146, 50, 216, 0.2);
-    background-color: rgb(146, 50, 216);
+    box-shadow: 0 4px 8px 0 rgba(146, 50, 216, 0.2), 0 3px 6px 0 rgba(var(--pureooze-primary-for-rgba), 0.2);
+    background-color: var(--pureooze-primary);
 }
 
 .arrow {

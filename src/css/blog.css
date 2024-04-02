@@ -1,0 +1,204 @@
+/*elements*/
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+:root {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: medium;
+    font-weight: 400;
+
+    --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+    --syntax-tab-size: 2;
+    
+    /*colors*/
+    --pureooze-light-mode-primary: #f2f2f2;
+    --pureooze-primary: #26196f;
+    --pureooze-primary-for-rgba: 146, 50, 216;
+    --pureooze-primary-text: #000;
+    --pureooze-secondary-text: white;
+    --pureooze-accent: #9232D8FF;
+    --pureooze-accent-light: #ac73d8;
+    --pureooze-accent-light-mode: #f9f9f9;
+    --pureooze-detail: #aaa;
+    --pureooze-light-mode-detail: white;
+}
+
+blockquote {
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    border-left: 0.5em solid var(--pureooze-primary);
+    background-color: rgba(var(--pureooze-primary-for-rgba), 0.1);
+}
+
+a {
+    color: var(--pureooze-primary);
+}
+
+a:hover {
+    color: var(--pureooze-accent);
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--pureooze-primary);
+}
+
+pre,
+code {
+    font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+    margin: .5em 0;
+    line-height: 1.375; /* 22px /16 */
+    -moz-tab-size: var(--syntax-tab-size);
+    tab-size: var(--syntax-tab-size);
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+}
+
+details {
+    background-color: var(--pureooze-light-mode-detail);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    width: auto;
+}
+
+details[open] {
+    background-color: #fff;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    color: #333;
+    border: 1px solid var(--pureooze-primary);
+}
+
+summary:hover {
+    background-color: rgba(var(--pureooze-primary-for-rgba), 0.1);
+    border: 1px solid var(--pureooze-primary);
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+p > code {
+    background-color: rgba(var(--pureooze-primary-for-rgba), 0.1);
+    padding: 0.2em 0.2em;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid var(--pureooze-primary);
+    color: var(--pureooze-primary);
+}
+
+/*classes*/
+.header-anchor {
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+    align-items: center;
+    padding: 0.2em 1em;
+    border-bottom: 1px solid var(--pureooze-accent-light);
+    background-color: var(--pureooze-primary);
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: var(--pureooze-secondary-text);
+    border: none;
+    padding: 0.2em 0.3em;
+    cursor: pointer;
+    border-bottom: 0.2em solid transparent;
+    font-weight: bold;
+}
+
+.navbar-link:hover {
+    border-bottom: 0.2em solid var(--pureooze-light-mode-primary);
+    text-decoration: none;
+    color: var(--pureooze-secondary-text);
+}
+
+.post {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.post-content {
+    display: flex;
+    flex-direction: column;
+    column-gap: 1em;
+    margin: 1vh auto;
+    max-width: 70em;
+    
+}
+
+.toc {
+    background-color: var(--pureooze-light-mode-primary);
+}
+
+.toc > ul {
+    list-style-type: none;
+    padding: 1em;
+}
+
+.post-title {
+    font-size: xxx-large;
+    font-weight: 600;
+    margin: 0.2em 0;
+}
+
+.post-thumbnail {
+    width: 80vw;
+    max-width: 100em;
+    height: auto;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.post-tags {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+}
+
+.post-tag {
+    background-color: var(--pureooze-primary);
+    color: var(--pureooze-secondary-text);
+    padding: 0.3em 0.3em 0.3em 0.3em;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.post-tag:hover {
+    cursor: pointer;
+    color: var(--pureooze-secondary-text);
+    text-decoration: none;
+    outline: 3px solid black;
+}
+
+.post-image {
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+    max-height: 60vh;
+}
