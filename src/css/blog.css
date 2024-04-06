@@ -9,7 +9,7 @@ html, body {
     font-size: medium;
     font-weight: 400;
 
-    --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+    --font-family-monospace: Menlo, Monaco, Consolas, DejaVu Sans Mono, Liberation Mono, Courier New, Courier, monospace;
     --syntax-tab-size: 2;
     
     /*colors*/
@@ -99,8 +99,8 @@ p > code {
     padding: 0.2em 0.2em;
     border-radius: 4px;
     font-weight: 600;
-    border: 1px solid var(--pureooze-primary);
     color: var(--pureooze-primary);
+    font-size: 10pt;
 }
 
 /*classes*/
@@ -152,13 +152,18 @@ p > code {
     
 }
 
-.toc {
-    background-color: var(--pureooze-light-mode-primary);
+.toc-container {
+    background-color: var(--pureooze-accent-light-mode);
+    margin: 2em 0;
+    padding: 0 1em;
 }
 
 .toc > ul {
+    padding: 0;
+}
+
+.toc > ul * {
     list-style-type: none;
-    padding: 1em;
 }
 
 .post-title {

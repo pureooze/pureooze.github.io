@@ -7,6 +7,7 @@ tags:
   - csharp
 ---
 
+## Introduction
 We don't spend enough time doing maintenance! We have too much legacy code! We only build new features and never cleanup the old things we made! We have too much technical debt!
 Sound familiar? If you have been involved in any meaningful software development project – especially one that is large – you will have heard complaints like this. 
 It's a topic that many software developers (including yours truly) are passionate about.
@@ -21,8 +22,6 @@ It might seem unreasonable to many developers, but I can see why a business woul
 Why should we spend time doing things that don't improve the one thing companies actually care about: the bottom line.
 
 So to make meaningful impact I think we need to focus on three things: have a definition for technical debt that illustrates its significance, create measurable ways to improve the technical debt and communicate this to the business effectively.
-
-<!--TOC-->
 
 ## What Is Technical Debt?
 A surprising amount of people have differing definitions of "technical debt".
@@ -84,10 +83,11 @@ I really liked this talk and I recommend watching it on YouTube [here](https://w
 
 Adam Tornhill has a few metrics that he uses to identify risks in this talk:
 * **Commit Hotspots**: Files that are changed frequently
+* **Hotspot Method X-Ray**: Methods in hotspot files that are changed frequently
 * **Code Complexity**: Files that are hard for humans to understand
-* **Hotspot X-Ray**: Methods in hotspot files that are changed frequently
 
-These are great metrics to start with, and it turns out it's not too hard to get these metrics out of a git repository.
+The first two (hotspots and method x-ray) are great metrics to start with, and it turns out it's not too hard to get these metrics out of a git repository.
+The last one (code complexity) is a bit trickier, so I will leave that as an exercise for the reader (and for me at a later date 😉).
 
 ### Commit Hotspots
 Let's start with commit hotspots. 
@@ -182,6 +182,27 @@ plt.show()
 
 And now we get this nice visualization:
 {% image "/blog/img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-file-cs" "Visualization of commit count per file as a bar chart" %}
+
+### Hotspot Method X-Ray
+The other metric that Adam Tornhill talks about is "hotspot x-ray".
+This metric focuses on methods in hotspot files that are changed frequently.
+If there are methods that change a lot – and especially if there are outliers – we should focus our efforts on them.
+
+So from the previous example we saw that `TwitchConnection.cs` was by far the most commited to file in `TwitchEverywhere`.
+We can use the following general algorithm to find these methods:
+1. Get the commits for the file in the given time range
+2. Get the changes for each commit
+3. Get the methods that were changed in the commit
+4. Count the number of times each method was changed
+5. Sort the methods by the number of changes
+6. Visualize the data
+
+Figuring out what methods change between commits (step 3) using git is a little tricky – since it does not track methods.
+There are some hacky ways to try and work around this but in C# we can just use Roslyn to get the change for us.
+We can compare the file contents between commits and ask Roslyn to determine if the method bodies are the same.
+If there are any differences then a change must have taken place!
+
+{% image "/blog/img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-method" "Visualization of commit count per file as a bar chart" %}
 
 ## Communicate With The Business
 

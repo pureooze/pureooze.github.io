@@ -14,7 +14,12 @@ layout: layouts/blogBase.liquid
             {% endfor %}
         </div>
         {% assign toc = content | toc %}
-        {% assign contentWithTOC = content | replace: "<!--TOC-->", toc %}
-        {{ contentWithTOC }}
+        {% if toc.size > 0 %}
+            <div class="toc-container">
+                <h2>Table of Contents</h2>
+                {{ toc }}
+            </div>
+        {% endif %}
+        {{ content }}
     </div>
 </div>
