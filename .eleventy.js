@@ -1,16 +1,18 @@
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItFootnote = require('markdown-it-footnote');
+import markdownItAnchor  from "markdown-it-anchor";
+import markdownItFootnote from 'markdown-it-footnote';
+import {getHighlighter} from 'shiki';
 
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginBundle = require("@11ty/eleventy-plugin-bundle");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const pluginTOC = require("eleventy-plugin-toc");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import pluginBundle from "@11ty/eleventy-plugin-bundle";
+import pluginNavigation from "@11ty/eleventy-navigation";
+import pluginTOC from "eleventy-plugin-toc";
+import inclusiveLangPlugin from "@11ty/eleventy-plugin-inclusive-language";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
-const pluginImages = require("./eleventy.config.images.js");
+import pluginImages from "./eleventy.config.images.js";
 
-module.exports = function (eleventyConfig) {
+export default async function(eleventyConfig) {
     // Output directory: _site
 
     // Official plugins
@@ -18,13 +20,14 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginNavigation);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
     eleventyConfig.addPlugin(pluginBundle,);
+    eleventyConfig.addPlugin(inclusiveLangPlugin);
     eleventyConfig.addPlugin(pluginSyntaxHighlight, {
         preAttributes: { tabindex: 0 }
     });
 
     // App plugins
     eleventyConfig.addPlugin(pluginImages);
-    
+
     // Copy `img/` to `_site/img`
     eleventyConfig.addPassthroughCopy("src/blog/img");
 
@@ -34,9 +37,21 @@ module.exports = function (eleventyConfig) {
         "./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
     });
     eleventyConfig.addPassthroughCopy("images");
-    eleventyConfig.addPassthroughCopy("resume.html");
 
-    // Customize Markdown library settings:
+    eleventyConfig.on("eleventy.before", async () => {
+        const highlighter = await getHighlighter({
+            themes: ["material-theme-palenight"],
+            langs:["shell", "csharp", "python", "javascript"]
+        });
+        eleventyConfig.amendLibrary("md", (mdLib) =>
+            mdLib.set({
+                highlight: (code, lang) => highlighter.codeToHtml(code, {
+                    lang: lang,
+                    theme: "material-theme-palenight"
+                }),
+            })
+        );
+    });
     eleventyConfig.amendLibrary("md", mdLib => {
         mdLib.use(markdownItAnchor, {
             permalink: markdownItAnchor.permalink.ariaHidden({
@@ -47,15 +62,16 @@ module.exports = function (eleventyConfig) {
             }),
             level: [1,2,3,4],
             slugify: eleventyConfig.getFilter("slugify")
-        }).use(markdownItFootnote);
+        })
+            .use(markdownItFootnote);
     });
     eleventyConfig.addPlugin(pluginTOC, {
         ul: true
     })
-    
+
     // Watch content images for the image pipeline.
-    // eleventyConfig.addWatchTarget("blog/**/*.{svg,webp,png,jpeg}");
-    
+    eleventyConfig.addWatchTarget("blog/**/*.{svg,webp,png,jpeg}");
+
     return {
         templateFormats: [
             "md",
@@ -73,4 +89,4 @@ module.exports = function (eleventyConfig) {
         },
         pathPrefix: "/"
     }
-};
+}

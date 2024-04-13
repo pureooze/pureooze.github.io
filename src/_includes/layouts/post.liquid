@@ -2,7 +2,7 @@
 layout: layouts/blogBase.liquid
 ---
 <link rel="stylesheet" type="text/css" href="/css/prism-diff.css?v=1" />
-<div class="post">
+<article class="post">
     {% if thumbnail %}
         <img class="post-thumbnail" src="{{ thumbnail }}" alt="">
     {% endif %}
@@ -22,4 +22,4 @@ layout: layouts/blogBase.liquid
         {% endif %}
         {{ content }}
     </div>
-</div>
+</article>

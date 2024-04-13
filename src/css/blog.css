@@ -9,9 +9,9 @@ html, body {
     font-size: medium;
     font-weight: 400;
 
-    --font-family-monospace: Menlo, Monaco, Consolas, DejaVu Sans Mono, Liberation Mono, Courier New, Courier, monospace;
+    --font-family-monospace: Menlo, Monaco, Consolas,Liberation Mono, Courier New, Courier, monospace;
     --syntax-tab-size: 2;
-    
+
     /*colors*/
     --pureooze-light-mode-primary: #f2f2f2;
     --pureooze-primary: #26196f;
@@ -75,6 +75,10 @@ details[open] {
     background-color: #fff;
 }
 
+details + details {
+    margin-top: 1em;
+}
+
 summary {
     cursor: pointer;
     font-weight: bold;
@@ -100,7 +104,34 @@ p > code {
     border-radius: 4px;
     font-weight: 600;
     color: var(--pureooze-primary);
-    font-size: 10pt;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+/* Style for table headers */
+thead tr {
+    background-color: var(--pureooze-primary);
+    color: var(--pureooze-secondary-text);
+    text-align: left;
+}
+
+th, td {
+    padding: 0.5em 1em;
+    text-align: left;
+    border: 1px solid var(--pureooze-primary);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--pureooze-light-mode-primary);
+}
+
+figcaption {
+    display: flex;
+    justify-content: center;
 }
 
 /*classes*/
@@ -109,6 +140,10 @@ p > code {
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     flex-direction: row;
     column-gap: 1em;
@@ -136,7 +171,7 @@ p > code {
 
 .post {
     margin: 10px;
-    padding: 10px;
+    padding: 3em 1em 1em 1em;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -149,7 +184,7 @@ p > code {
     column-gap: 1em;
     margin: 1vh auto;
     max-width: 70em;
-    
+
 }
 
 .toc-container {
@@ -206,4 +241,8 @@ p > code {
     margin: auto;
     max-width: 100%;
     max-height: 60vh;
+}
+
+.shiki {
+    padding: 1em;
 }
