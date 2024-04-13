@@ -100,92 +100,37 @@ And it turns out there is a simple bash command that can do this:
 git log --since='1 year ago' --name-only --pretty=format: | sort | uniq -c | sort -nr
 ```
 
-This is a language neutral way to get the hotspot data but if we use a language specific tool we can build on it to get more insights (more on that in a bit).
-I'm going to focus on C# for these language specific examples to illustrate how it works, but this should be doable in other languages as well.
-
-We can use `LibGit2Sharp` to get data out of `git` and then process it using LINQ:
-
-<details>
-
-<summary>C# example for GetFilesSortedByCommitCount for the last 365 days</summary>
-
-```csharp
-using LibGit2Sharp;
-
-namespace CommitHotspots;
-
-public abstract class CommitHotspots {
-
-    public static IOrderedEnumerable<KeyValuePair<string,int>> GetCommitHotspotFiles( 
-        string pathToRepo 
-    ) {
-
-        DateTimeOffset since = DateTimeOffset.Now.AddYears(-1);
-
-        using Repository repo = new(pathToRepo);
-        CommitFilter filter = new() {
-            IncludeReachableFrom = repo.Branches
-        };
-
-        ICommitLog? commitLog = repo.Commits.QueryBy( filter );
-        IEnumerable<Commit> commits = commitLog.Where( c => c.Committer.When > since );
-
-        Dictionary<string, int> fileCommitCounts = new();
-            
-        foreach (Commit commit in commits) {
-            foreach (Commit? parent in commit.Parents) {
-                TreeChanges? changesSincePreviousCommit = repo.Diff.Compare<TreeChanges>( 
-                    oldTree: parent.Tree, 
-                    newTree: commit.Tree 
-                );
-                    
-                foreach (TreeEntryChanges? change in changesSincePreviousCommit) {
-                    if (!fileCommitCounts.TryAdd( change.Path, 1 )) {
-                        fileCommitCounts[change.Path]++;
-                    }
-                }
-            }
-        }
-        
-        return fileCommitCounts.OrderByDescending( x => x.Value );
-    }
-}
-```
-
-</details>
-
+Running this on the [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) code gives the following results:
 <details>
 <summary>Data results (top 20)</summary>
 
 | Path                                                                 | Count |
 |----------------------------------------------------------------------|-------|
-| TwitchEverywhereCLI/TwitchConnection.cs                              | 82    |
-| TwitchEverywhere/Implementation/TwitchConnector.cs                   | 61    |
-| TwitchEverywhere.Benchmark/MsgBenchmark.cs                           | 38    |
-| TwitchEverywhere/Implementation/MessagePlugins/MessagePluginUtils.cs | 34    |
-| TwitchEverywhere/TwitchEverywhere.csproj                             | 31    |
-| TwitchEverywhere/Implementation/MessageProcessor.cs                  | 27    |
-| TwitchEverywhere.UnitTests/TwitchConnectorTests/NoticeTests.cs       | 26    |
-| TwitchEverywhere.UnitTests/TwitchConnectorTests/PrivMsgTests.cs      | 25    |
-| TwitchEverywhere/TwitchEverywhere.cs                                 | 25    |
-| TwitchEverywhereCLI/Program.cs                                       | 23    |
-| TwitchEverywhere/ITwitchConnector.cs                                 | 22    |
-| TwitchEverywhere.Irc/Implementation/TwitchConnector.cs               | 21    |
-| TwitchEverywhere.Rest/Implementation/RestApiService.cs               | 19    |
-| TwitchEverywhere.Rest/RestClient.cs                                  | 19    |
-| TwitchEverywhere.UnitTests/TwitchConnectorTests/ClearChatTests.cs    | 19    |
-| TwitchEverywhere.Rest/IRestApiService.cs                             | 18    |
-| TwitchEverywhere/Implementation/MessagePlugins/ClearChatPlugin.cs    | 17    |
-| TwitchEverywhere/Types/PrivMsg.cs                                    | 17    |
-| TwitchEverywhere/Implementation/MessagePlugins/PrivMsgPlugin.cs      | 16    |
-| TwitchEverywhere.Irc/IrcClient.cs                                    | 15    |
-| TwitchEverywhere/Implementation/MessagePlugins/ClearMsgPlugin.cs     | 15    |
-| TwitchEverywhere.UnitTests/TwitchConnectorTests/ClearMsgTests.cs     | 15    |
+| TwitchEverywhereCLI/TwitchConnection.cs                              | 46    |
+| TwitchEverywhere/Implementation/TwitchConnector.cs                   | 36    |
+| TwitchEverywhere.Benchmark/MsgBenchmark.cs                           | 20    |
+| TwitchEverywhere/Implementation/MessagePlugins/MessagePluginUtils.cs | 18    |
+| TwitchEverywhere/TwitchEverywhere.cs                                 | 14    |
+| TwitchEverywhere.UnitTests/TwitchConnectorTests/NoticeTests.cs       | 13    |
+| TwitchEverywhere.UnitTests/TwitchConnectorTests/PrivMsgTests.cs      | 13    |
+| TwitchEverywhere/Implementation/MessageProcessor.cs                  | 13    |
+| TwitchEverywhereCLI/Program.cs                                       | 12    |
+| TwitchEverywhere.Rest/Implementation/RestApiService.cs               | 11    |
+| TwitchEverywhere.Rest/RestClient.cs                                  | 11    |
+| TwitchEverywhere/ITwitchConnector.cs                                 | 11    |
+| TwitchEverywhere.Irc/Implementation/TwitchConnector.cs               | 10    |
+| TwitchEverywhere.Rest/IRestApiService.cs                             | 10    |
+| TwitchEverywhere.UnitTests/TwitchConnectorTests/ClearChatTests.cs    | 10    |
+| TwitchEverywhere.Irc/Implementation/MessageProcessor.cs              | 9     |
+| TwitchEverywhere/Implementation/MessagePlugins/ClearChatPlugin.cs    | 9     |
+| TwitchEverywhere/Implementation/MessagePlugins/PrivMsgPlugin.cs      | 9     |
+| TwitchEverywhere/Types/PrivMsg.cs                                    | 9     |
+| TwitchEverywhere.Irc/ITwitchConnector.cs                             | 8     |
 
 </details>
 
-The data returned from this method is nice, but it's hard to get a sense of the scale we are working on.
-Let's use a small python and look at the top 20 entries in a horizontal bar chart:
+It's nice to have the data, but it's hard to get a sense of the scale we are dealing with.
+Let's use a small python script to create a visualization of these file commit counts sorted from highest to lowest:
 
 <details>
 <summary>Python script for plotting the csv to a horizontal bar chart</summary>
@@ -195,18 +140,18 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the CSV file
-df = pd.read_csv("/path/to/file.csv")
+df = pd.read_csv("myFile.csv")
+
 df_filtered = df[df['Key'].str.endswith('.cs')]
-df_sorted = df_filtered.sort_values(by='Value', ascending=False).head(20)
+df_sorted = df_filtered.sort_values(by='Value', ascending=False)
 
 # Plotting
-plt.figure(figsize=(20,10), dpi=100)
-plt.barh(df_sorted['Key'], df_sorted['Value'])
-plt.ylabel('Path')  # Adjust as necessary
-plt.xlabel('Commit Count')
-plt.title('Top 20: Number Of Commits In The Past Year Per File (.cs)')
-plt.xticks(rotation='vertical')
-plt.tight_layout()
+plt.figure(figsize=(25,10), dpi=50)
+plt.bar(df_sorted['Key'], df_sorted['Value'], color='#26196f')
+plt.xlabel('File')
+plt.ylabel('Number Of Commits')
+plt.title('Most Modified File By Commit Count')
+plt.xticks(ticks=plt.xticks()[0], labels=[''] * len(plt.xticks()[0])) # hide labels on x-axis
 plt.show()
 ```
 
@@ -245,15 +190,15 @@ The implementation for this is a little more complex than the first example – 
 |----------------------|-------|
 | MessageCallback      | 25    |
 | ConnectToRestClient  | 11    |
-| PrivMessageCallback  | 8     |
+| PrivMessageCallback  | 7     |
 | ClearChatCallback    | 7     |
 | Connect              | 5     |
 | ConnectToIrcClient   | 5     |
 | NoticeMsgCallback    | 4     |
 | ClearMsgCallback     | 4     |
-| ConnectToIrcClientRx | 4     |
 | WriteToStore         | 3     |
 | SaveBufferToFile     | 3     |
+| ConnectToIrcClientRx | 3     |
 | WriteMessagesToStore | 2     |
 | ClearMessageCallback | 2     |
 | SaveBinaryDataToFile | 2     |

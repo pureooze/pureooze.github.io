@@ -4,7 +4,7 @@ html, body {
 }
 
 :root {
-    font-family: Anek Malayalam, Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: 'Noto Sans', Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: large;
 
     --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
@@ -87,15 +87,13 @@ h1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    flex-flow: space-evenly;
     align-items: center;
 }
 
 .icon {
     width: 50px;
-    height: fixed;
     padding: 1rem;
-    border-bottom: 0.6em solid rgba(10, 10, 10, 0.38);
+    border-bottom: 0.6em solid var(--pureooze-primary);
     transition: 0.3s;
     opacity: 0.8;
 }
@@ -115,19 +113,20 @@ h1 {
 }
 
 .resumeButton {
-    background-color: rgba(10, 10, 10, 0.38);
+    background-color: var(--pureooze-primary);
     color: whitesmoke;
     border: none;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
     font-size: 20px;
     padding: 0.3em 0.3em 0.3em 0.3em;
     cursor: pointer;
+    border-radius: 0.2em;
 }
 
 .resumeButton:hover {
     /*border: 0.1em solid rgba(146, 50, 216, 0.2);*/
     box-shadow: 0 4px 8px 0 rgba(146, 50, 216, 0.2), 0 3px 6px 0 rgba(var(--pureooze-primary-for-rgba), 0.2);
-    background-color: var(--pureooze-primary);
+    outline: 2px solid black;
 }
 
 .photo-credit {
@@ -138,22 +137,22 @@ h1 {
 }
 
 .photo-credit-link {
-    background-color: rgba(10, 10, 10, 0.38);
+    background-color: var(--pureooze-primary);
     color: white;
     text-decoration: none;
     padding: 4px 6px;
-    font-family:'Anek Malayalam', -apple-system, "Helvetica Neue", Helvetica, Ubuntu, Roboto, Arial, sans-serif;
     font-size: 12px;
     font-weight: bold;
     line-height: 1.2;
     display: inline-block;
-    border-radius: 3px;
+    border-radius: 0.2em;
 }
 
 .photo-credit-link:hover {
     /*border: 0.1em solid rgba(146, 50, 216, 0.2);*/
     box-shadow: 0 4px 8px 0 rgba(146, 50, 216, 0.2), 0 3px 6px 0 rgba(var(--pureooze-primary-for-rgba), 0.2);
-    background-color: var(--pureooze-primary);
+    outline: 2px solid black;
+    color: white;
 }
 
 .arrow {
