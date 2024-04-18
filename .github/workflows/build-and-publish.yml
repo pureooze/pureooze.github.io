@@ -35,6 +35,7 @@ jobs:
         uses: actions/deploy-pages@v4
   aws:
     runs-on: ubuntu-latest
+    needs: build
     steps: 
       - name: Assume Role
         uses: aws-actions/configure-aws-credentials@v1.7.0
