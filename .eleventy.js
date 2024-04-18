@@ -28,16 +28,13 @@ export default async function(eleventyConfig) {
     // App plugins
     eleventyConfig.addPlugin(pluginImages);
 
-    // Copy `img/` to `_site/img`
-    eleventyConfig.addPassthroughCopy("src/blog/img");
-
     // Keeps the same directory structure.
     eleventyConfig.addPassthroughCopy({
         "src/css/": "css",
         "./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
     });
     eleventyConfig.addPassthroughCopy("images");
-
+    
     eleventyConfig.on("eleventy.before", async () => {
         const highlighter = await getHighlighter({
             themes: ["material-theme-palenight"],
@@ -53,16 +50,17 @@ export default async function(eleventyConfig) {
         );
     });
     eleventyConfig.amendLibrary("md", mdLib => {
-        mdLib.use(markdownItAnchor, {
-            permalink: markdownItAnchor.permalink.ariaHidden({
-                placement: "after",
-                class: "header-anchor",
-                symbol: "#",
-                ariaHidden: false,
-            }),
-            level: [1,2,3,4],
-            slugify: eleventyConfig.getFilter("slugify")
-        })
+        mdLib
+            .use(markdownItAnchor, {
+                permalink: markdownItAnchor.permalink.ariaHidden({
+                    placement: "after",
+                    class: "header-anchor",
+                    symbol: "#",
+                    ariaHidden: false,
+                }),
+                level: [1,2,3,4],
+                slugify: eleventyConfig.getFilter("slugify")
+            })
             .use(markdownItFootnote);
     });
     eleventyConfig.addPlugin(pluginTOC, {
@@ -72,6 +70,12 @@ export default async function(eleventyConfig) {
     // Watch content images for the image pipeline.
     eleventyConfig.addWatchTarget("blog/**/*.{svg,webp,png,jpeg}");
 
+    eleventyConfig.setFrontMatterParsingOptions({
+        excerpt: true,
+        // Optional, default is "---"
+        excerpt_separator: "<!-- excerpt -->",
+    });
+    
     return {
         templateFormats: [
             "md",

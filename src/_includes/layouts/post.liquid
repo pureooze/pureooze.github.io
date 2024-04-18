@@ -2,14 +2,19 @@
 layout: layouts/base.liquid
 ---
 <link rel="stylesheet" type="text/css" href="/css/prism-diff.css?v=1" />
-<article class="post">
+<link rel="stylesheet" type="text/css" href="/css/blog.css?v=1" />
+<article class="page">
     {% if thumbnail %}
-        <img class="post-thumbnail" src="{{ thumbnail }}" alt="">
+        {% assign thumbnailRelativePath = "../img/" | append: thumbnail %}
+        {% image thumbnailRelativePath "" "post-thumbnail" %}
     {% endif %}
-    <div class="post-content">
+    <div class="page-content">
         <h1 class="post-title">{{ title }}</h1>
         <div class="post-tags">
             {% for tag in tags %}
+                {% if tag == "posts" %}
+                    {% continue %}
+                {% endif %}
                 <a class="post-tag">{{ tag | downcase }}</a>
             {% endfor %}
         </div>

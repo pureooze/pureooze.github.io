@@ -1,0 +1,13 @@
+---
+layout: layouts/base.liquid
+title: Ramblings
+numberOfLatestPostsToShow: 3
+---
+
+<div class="page">
+  <div class="page-content">
+    <h1 class="blog-title">{{ title }}</h1>
+    {% assign postslist = collections.posts %}
+    {% include "layouts/postslist.liquid" %}
+  </div>
+</div>

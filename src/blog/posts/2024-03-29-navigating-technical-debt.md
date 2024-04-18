@@ -1,31 +1,25 @@
 ---
-layout: layouts/post.liquid
 title: "Navigating Technical Debt"
-thumbnail: /blog/img/2024-03-29-navigating-technical-debt/thumbnail.avif #TODO: make it dynamic type
+thumbnail: 2024-03-29-navigating-technical-debt/thumbnail.avif #TODO: make it dynamic type
+small-thumbnail: 2024-03-29-navigating-technical-debt/small-thumbnail.webp #TODO: make it dynamic type
 tags: 
   - technical debt
   - csharp
 ---
 
-## Introduction
 We don't spend enough time doing maintenance! We have too much legacy code! We only build new features and never cleanup the old things we made! We have too much technical debt!
 Sound familiar? If you have been involved in any meaningful software development project – especially one that is large – you will have heard complaints like this. 
 It's a topic that many software developers (including yours truly) are passionate about.
 
+<!-- excerpt -->
+
 I would be willing to bet that if you surveyed random developers at a conference, you would find that the majority of them consider technical debt to be a significant problem in their organization.
 I would also be willing to bet that they could not agree on **what the problem is** and **how to address it**.
-Some people may say they need dedicated time in sprints for maintenance, others may say they want dedicated sprints specifically for technical debt and some really radical individuals may even say they need to pause feature work to focus on tech debt!
-
 The issue is further complicated by the fact that many businesses seem to not care about tech debt.
-They view it as a waste of time because it doesn't create new value (features) for customers or reduce costs significantly.
-It might seem unreasonable to many developers, but I can see why a business would have this point of view.
-Why should we spend time doing things that don't improve the one thing companies actually care about: the bottom line.
 
-So to make meaningful impact I think we need to focus on three things: have a definition for technical debt that illustrates its significance, create measurable ways to improve the technical debt and communicate this to the business effectively.
 
 ## What Is Technical Debt?
-A surprising amount of people have differing definitions of "technical debt".
-It is used to describe things from "we don't use the shiny new framework" to "this code is not written in the style I like" and even "I inherited the code from someone else".
+The term is used to describe things from "we don't use the shiny new framework" to "this code is not written in the style I like" and even "I inherited the code from someone else".
 Let's start by looking at Ward Cunningham's original definition:
 
 > Shipping first-time code is like going into debt. A little debt speeds development so long as it is paid back promptly with refactoring. 
@@ -35,16 +29,10 @@ Let's start by looking at Ward Cunningham's original definition:
 > 
 > *- Ward Cunningham*
 
-This definition focuses on the idea that technical debt is a trade-off **when developing new features** and that **it is not always bad**. 
-As long as you are planning to pay of the debt promptly the "interest" will be manageable.
-In this sense it can be good when we intentionally take on debt to speed up development.
-For example, we could have an initial implementation that isn't ideal, but we merge it to unblock other developers.
-Then we immediately focus on bringing the implementation closer to our ideal state.
-
-The problem though is unlike financial debt – where creditors are responsible for determining if the debtor is able to take on more financial debt – who is responsible for making sure an organization can handle more technical debt?
-When organizations start thinking of this in terms of "debt" they quickly realize that there don't seem to be any consequences of the debt.
-I can hear them saying: *"Oh we took a shortcut on project XYZ, and it caused no issues but saved us months of work? Well we are going to do that again!"*.
-This may be because the project hasn't been enabled in production long enough (or at all 😱) and given more time it will cause issues.
+This definition focuses on the idea that technical debt is a trade-off **when developing new features** and that **it is not always bad** as long as its addressed promptly. 
+The problem though is that unlike financial debt – where creditors are responsible for determining if the debtor is able to take on more financial debt – who is responsible for making sure an organization can handle more technical debt?
+Can an organization be "technical debt" bankrupt? 
+When organizations start thinking of this in terms of "debt" they quickly realize that there don't *seem* to be any consequences of the debt, so they ignore it.
 
 Steve Freeman (whose work I first encountered in the wonderful book [Growing Object-Oriented Software, Guided by Tests](https://github.com/sf105/goos-code)) describes technical debt as an ["Unhedged Call Option"](https://higherorderlogic.com/programming/2023/10/06/bad-code-isnt-technical-debt-its-an-unhedged-call-option.html):
 
@@ -61,20 +49,45 @@ Steve Freeman (whose work I first encountered in the wonderful book [Growing Obj
 
 This definition highlights the **unpredictability of cost**.
 Unlike debt – where we know what the interest rate will be – options could be infinitely more costly than doing the work in the first place.
+I like this definition because it brings forth this idea that the cost can become due suddenly and without warning.
+This means we need a quantifiable way to measure the risk in our codebase and understand where to focus our efforts because the "debt" is a disaster waiting to happen.
 
-With these two definitions I think this is a good way to describe "tech debt":
-> In order to deliver software on a given deadline we must incur some risk.
-> This risk can present itself in several ways like a lack of tests, brittle code or a very confusing implementation[^1].
-> We can choose to take on this risk for immediate gains as long as we intend to address it in the very near future.
-> Putting off dealing with the risk for longer may cause an infinitely more expensive payment if unforeseen requirements – like regulatory changes – emerge.
+### Lensing To Understand Technical Debt
+{% image "../img/2024-03-29-navigating-technical-debt/nasa-hubble-space-telescope-e9x-jhQgHZk-unsplash.jpg" "" "post-wide-image" "The Tarantula Nebula captured from The Hubble Space Telescope. – Photo by [NASA Hubble Space Telescope](https://unsplash.com/@hubblespacetelescope)" %}
 
-Naturally this means we need a way to determine: Where are the risks? Are some parts riskier than others?
-We should also be able to figure out any risks in the code we wrote in the past and the code we will write in the future.
+The Hubble Space Telescope uses a Ritchey-Chrétien design to capture images in a wide field of view[^1].
+Scientists use it to capture images of all sorts of amazing things in space.
+Among them are galaxies, nebulae and of course solar *systems*.
+The data from the telescope can help us answer important questions like: which planets have water on them?
+Instead of visiting each planet, we can observe these interesting properties from a distance.
+
+Michael Feathers made a blog post – [Lensing to Understand](https://michaelfeathers.substack.com/p/lensing-to-understand) – about how we change our focus to understand a system.
+We focus on the high level system to identify potentially interesting areas and then drill down into details to investigate them.
+Once we have a better understanding, we zoom back out to see how it affects the system as a whole.
+The idea of "lensing" is really important when it comes to understanding technical debt.
+
+> I mentioned that I’d love to have a tool that allows you to TL;DR articles at different levels of detail. 
+> It would be like dynamically increasing and decreasing font size in an editor or a Kindle. 
+> You adjust the size down when your vision is sharp and up when you are fatigued.
+> 
+> I’d love to be able to do this with detailed writing. 
+> It would be great to be able to pull back and read a single page condensation of a 10 page article and then zoom in to see the concepts in 3 pages. 
+> Yes, you can do that today with prompts in LLM chat interfaces but having a tool to do just that would be great.
+>  
+> *- Michael Feathers*
+
+I often make the mistake of starting with a focus on very specific parts of the system.
+The code was weird/bad/confusing but there is often recency bias in that approach.
+Starting with a systems view and then drilling down into the details may be a better way to understand the system.
+Where do people encounter the most issues?
+Are some parts of the system riskier than others?
+What parts of the system are most likely to change in the future?
+
+These are the kinds of questions we need to be asking.
+Too often we focus on bits of code and forget the context of the systems it's used in – which is the actual thing that matters.
 
 ## How Do We Improve Technical Debt
 So how do we identify risks in our codebase?
-There are many ways to measure it, but I think it can be helpful to focus on a few metrics that we can run quickly and frequently to have tight feedback loops on when things are getting out of hand.
-
 Adam Tornhill has a great talk on ["Prioritizing Technical Debt"](https://www.youtube.com/watch?v=w9YhmMPLQ4U) where he talks about how we can use metrics to identify risks in our codebase.
 If we have a way to find out **where to focus our efforts** we can get a lot more value out of the work we do – **allowing us to ship quicker and build high quality features**.
 I really liked this talk and I recommend watching it on YouTube [here](https://www.youtube.com/watch?v=w9YhmMPLQ4U).
@@ -84,14 +97,14 @@ He has a few metrics that he uses to identify risks:
 * **Hotspot Method X-Ray**: Methods in hotspot files that are changed frequently
 * **Code Complexity**: Files that are hard for humans to understand
 
-The first two (hotspots and method x-ray) are great metrics to start with, and it turns out it's not too hard to get these metrics out of a git repository.
-The last one (code complexity) is a bit trickier, so I will leave that as an exercise for the reader (and for me at a later date 😉).
+Incase the analogy hasn't kicked in yet, these metrics are different lenses that we can use to understand the system.
+They will help us identify potential risks in the system and give us a way to focus our efforts.
 
-To help demonstrate the value of these metrics I am going to run them on the [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) code – which is a C# library I wrote for a side project.
-I also created a small .NET library called [DebtCollector.NET](https://github.com/pureooze/DebtCollector.NET) that can be used to get these metrics out of a C# git repository.
-It's a simple library that uses `LibGit2Sharp` to extract data out of git and `Roslyn` to process code and output data for the metrics described above.
+To help demonstrate application of these metrics I am going to run them on the [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) code – which is a C# library I wrote for a side project.
 
 ### Commit Hotspots
+{% image "../img/2024-03-29-navigating-technical-debt/danny-mc-dAAdBZgREEg-unsplash.jpg" "" "post-wide-image" "Mountains in the distance through a lens – Photo by [Danny Mc](https://unsplash.com/@dannymc)" %}
+
 Let's start with commit hotspots. 
 These are files that are changed frequently in a given time period (say the past year) which could mean we will continue to change them in the future.
 And it turns out there is a simple bash command that can do this:
@@ -158,15 +171,56 @@ plt.show()
 </details>
 
 And now we get this nice visualization:
-{% image "/blog/img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-file-cs" "Visualization of commit count per file as a bar chart" %}
+{% image "../img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-file-cs.png" "Visualization of commit count per file for TwitchEverywhere as a bar chart" %}
 
-### Hotspot Method X-Ray
-The other metric that Adam Tornhill talks about is "hotspot x-ray".
-This metric focuses on methods in hotspot files that are changed frequently.
-If there are methods that change a lot – and especially if there are outliers – we should focus our efforts on them.
+Visualized like this there is a shocking revelation: the top 25% of files are responsible for the vast majority of commits!
+If you are familiar with the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle) – it can be applied here.
+There is a minority of files that receive the majority of commits.
+Seeing this you might think this is just for the specific library that I ran this report on.
+It doesn't apply to your codebases.
+
+What if I told you this distribution is extremely common?
+So common that it's a pattern that is seen in codebases regardless of language!
+Sounds crazy right? But we can test if it is true.
+I'm going to run this on the following codebases:
+* [ASP.NET Core (.cs files)](https://github.com/dotnet/aspnetcore)
+* [Roslyn (.cs files)](https://github.com/dotnet/roslyn)
+* [Django (.py files)](https://github.com/django/django)
+* [Linux (.c files)](https://github.com/torvalds/linux)
+
+<details>
+<summary>Results for ASP.NET Core, Roslyn, Django and Linux</summary>
+{% image "../img/2024-03-29-navigating-technical-debt/commit-counter-results/other-projects-commit-per-file.png" "Results for ASP.NET Core, Roslyn, Django and Linux" %}
+</details>
+
+What an interesting result.
+It seems even across projects that were created in different decades, in different languages, by different people and for different purposes the same pattern emerges.
+Maybe this is because software development is a social activity and even in a solo project the code you write today has to be understood by your future self.
+Something about this causes us to focus intensely on a small part of the codebase.
+This can cause tight coupling (especially temporal coupling[^5]) in those areas.
+
+But its worth mentioning: this is not guaranteed! Software is a living thing and so any analysis needs to be tempered with nuance.
+People do things because they are incentivized to do them.
+That doesn't mean there isn't an issue, but we need to be careful to not jump to conclusions.
+
+From my analysis of some of these projects the highest commited files could be tests or files written in a different language/format (json, yml, etc.).
+For example in `ASP.NET Core` the highest committed file is `FormWithParentBindingContextTest.cs`.
+
+So there are two questions we can ask:
+1. What parts of these files are being changed? 
+   * Are all methods changed equally often?
+   * In test files are there specific tests that are modified more often?
+2. What is the temporal coupling between these files? (outside the scope of this post but an interesting question to ask!)
+
+### Hotspot Methods
+{% image "../img/2024-03-29-navigating-technical-debt/ash-hayes-MV5ro8zkXys-unsplash.jpg" "" "post-wide-image" "Insect wings through a microscope lens – Photo by [ Ash Hayes](https://unsplash.com/@ashley_hayes)" %}
+
+The other metric that Adam Tornhill talks about is method hotspots.
+If there are methods that change a lot we should focus our efforts on them.
+It's costly to run this analysis on the whole codebase but once we have a few files to focus on, we can try and find the hotspots in them.
 
 So from the previous example we saw that `TwitchConnection.cs` was by far the most commited to file in `TwitchEverywhere`.
-We can use the following general algorithm to find these methods:
+We can use the following algorithm to find its hotspot methods:
 1. Get the commits for the file in the given time range
 2. Get the changes for each commit
 3. Compare the current commit and the next commit
@@ -175,13 +229,11 @@ We can use the following general algorithm to find these methods:
 6. Visualize the data
 
 Figuring out what methods change between commits (steps 3 and 4) using git is a little tricky – since it does not track methods.
-There are some hacky ways to try and work around this but in C# we can use Roslyn to get the changes for us.
-We can compare the file contents between commits and ask Roslyn to determine if the method bodies are the same.
-If there are any differences then a change must have taken place!
+There are some hacky ways to try and work around this but in C# we can use `Roslyn` to get the changes for us.
+The implementation for this is a little more complex than the first example, so I created a small .NET project called [DebtCollector.NET](https://github.com/pureooze/DebtCollector.NET) that can be used for this.
+It's a simple library that uses `LibGit2Sharp` to extract data out of git and `Roslyn` to process the code.
 
-The implementation for this is a little more complex than the first example – so I won't share a code snippet – but you can find a working example [here](https://github.com/pureooze/DebtCollector.NET/blob/main/DebtCollector.NET/HotspotXray.cs).
-
-{% image "/blog/img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-method" "Visualization of commit count per method in the most committed file as a bar chart" %}
+{% image "../img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-method.png" "Visualization of commit count per method in the most committed file as a bar chart" %}
 
 <details>
 <summary>Data table for xray results</summary>
@@ -225,7 +277,7 @@ These areas are often high risk because a lot of things can go wrong talking to 
 But in the other parts of the system this can be harmful because it creates coupling to the current business logic – which will likely change in the future.
 And when the time to change comes, the tests can be a hindrance rather than a help.
 
-{% image "/blog/img/2024-03-29-navigating-technical-debt/effort-vs-value" "Effort vs value of code coverage: As the coverage percent increases the effort increases exponentially" "https://jeroenmols.com/blog/2017/11/28/coveragproblem/" %}
+{% image "../img/2024-03-29-navigating-technical-debt/effort-vs-value.png" "Effort vs value of code coverage: As the coverage percent increases the effort increases exponentially" "" "[Jeroen Mols : The 100% code coverage problem](https://jeroenmols.com/blog/2017/11/28/coveragproblem/)" %}
 
 ### Context Is Key
 If we focus on the metrics themselves we can lose sight of the goal: to deliver high quality software quickly.
@@ -238,9 +290,8 @@ To this extent you might not want dashboards for these metrics.
 Instead, strive to have technical people involved in the conversation to help make decisions based on the data. Commit hotspots could be the result of a developer who likes to make a lot of commits.
 Without technical context, it's hard to know if this is a problem in the specific situation.
 
-
 ### Empowering Developers
-In teams that I have been a part of we found a lot of success by making maintenance a part of the sprint planning process[^3].
+In teams that I have been a part of we found a lot of success by making maintenance a part of the planning process.
 We designate one developer – through a [rigorous selection process](https://wheelofnames.com/) – who is expected to work on tech debt one day that week.
 There is a curated list of tasks that the team has prioritized and the lucky winner can choose from that list or something else they think is important.
 
@@ -248,19 +299,21 @@ This is where the hotspot metrics can be really useful.
 The developer can run the report on a repo – or even a subset of the repo – and then focus on the areas that are most risky. It allows them to quickly answer the question: **Which part of this domain can I have the most impact on?**
 Refactoring in hotspots is also satisfying because the work has a direct impact on the experience of other developers.
 
+## How can we use AI to help us with this process?
+
 ## Conclusion
 Technical debt is a complex problem that can be hard to define and even harder to solve.
 Focusing on hotspots should help us deliver high quality software quickly[^4].
 We can use metrics to identify these risks and communicate them effectively to others.
 By empowering developers we can make sure that the work is meaningful and impactful.
 
-{% image "/blog/img/2024-03-29-navigating-technical-debt/tackling-technical-debt" "Tackling technical debt" %}
+{% image "../img/2024-03-29-navigating-technical-debt/tackling-technical-debt.jpg" "Tackling technical debt" %}
 
 I hope this post has given you some ideas on how to navigate technical debt in your organization.
 If you have any questions or comments feel free to reach out to me on [Mastodon](https://toot.community/@pureooze) or [GitHub](https://github.com/pureooze).
 
 ## Additional Notes
-[^1]: This is not a comprehensive list, there are many other causes of risk
+[^1]: https://science.nasa.gov/mission/hubble/observatory/design/optics/
 [^2]: Things like network errors, api contract changes, version mismatch, protocol mismatch, etc.
-[^3]: I'm not a huge fan of sprint planning because there is a focus on things like story points or estimating work that has never been done before (so there is a lack of experience)... but oh well we can't have it all 😉
-[^4]: If you implement the things described in this post, and it doesn't seem to work/be useful that can be a sign that your situation is different than what is described here
+[^4]: If you implement the things described in this post, and it doesn't seem to work/be useful that can be a sign that your situation is different from what is described here
+[^5]: Temporal coupling is when two things are coupled because they change at the same time. So if we change two files at the same time frequently it's likely there is some kind of coupling between them.
