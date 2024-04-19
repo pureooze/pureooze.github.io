@@ -55,7 +55,7 @@ This means we need a quantifiable way to measure the risk in our codebase and un
 ### Lensing To Understand Technical Debt
 {% image "../img/2024-03-29-navigating-technical-debt/nasa-hubble-space-telescope-e9x-jhQgHZk-unsplash.jpg" "" "post-wide-image" "The Tarantula Nebula captured from The Hubble Space Telescope. – Photo by [NASA Hubble Space Telescope](https://unsplash.com/@hubblespacetelescope)" %}
 
-The Hubble Space Telescope can capture images of all sorts of amazing things in space.
+The Hubble Space Telescope can capture images of all sorts of amazing things in space [^1].
 Among them are galaxies, nebulae and of course solar *systems*.
 The data from the telescope can help us answer important questions like: which planets have water on them?
 Instead of having to visit each planet, we can observe these interesting properties from a distance.
@@ -173,14 +173,14 @@ And now we get this nice visualization:
 {% image "../img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-file-cs.png" "Visualization of commit count per file for TwitchEverywhere as a bar chart" %}
 
 Visualized like this there is a shocking revelation: a small percentage of files are responsible for the vast majority of commits!
-If you are familiar with the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle) – a similar idea can be applied here.
-You might think this pattern is specific to just the library that I ran this report against.
+If you are familiar with the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle) – this distribution certainly seems to resemble it.
 
+You might think this pattern is specific to just the [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) codebase.
 What if I told you this distribution is extremely common?
 So common that it's a pattern that is seen in codebases regardless of factors like language, age, or size.
 The only thing in common is that the code is written by humans.
 Sounds crazy right? But we can test if it is true.
-I ran this on the following codebases:
+I ran the same command on the following codebases:
 * [ASP.NET Core (.cs files)](https://github.com/dotnet/aspnetcore)
 * [Roslyn (.cs files)](https://github.com/dotnet/roslyn)
 * [Django (.py files)](https://github.com/django/django)
@@ -188,7 +188,7 @@ I ran this on the following codebases:
 
 <details>
 <summary>Results for ASP.NET Core, Roslyn, Django and Linux</summary>
-{% image "../img/2024-03-29-navigating-technical-debt/commit-counter-results/other-projects-commit-per-file.png" "Results for ASP.NET Core, Roslyn, Django and Linux" %}
+{% image "../img/2024-03-29-navigating-technical-debt/commit-counter-results/other-projects-commit-per-file.png" "Results for ASP.NET Core, Roslyn, Django and Linux showing the same distribution as before" %}
 </details>
 
 What an interesting result.
@@ -196,22 +196,23 @@ It seems regardless of language, author and purpose – the same pattern emerges
 But of course the big question is: why?
 Something about this causes us to focus intensely on a small part of the codebase.
 
-I've heard a story Michael Feathers once asked in a seminar: *"Is it easier for people to add code to existing place than to create a new method/class/etc? Why?"*
+I've heard a story where Michael Feathers once asked in a seminar: *"Is it easier for people to add code to existing place than to create a new method/class/etc? Why?"*
 People do things because they are incentivized to do them.
 Adding to existing places is easier because we don't have to think about the context of the code, and it's just faster to do.
-The social system between developers and the codebase is the culprit.
+The social system incentivizes us to do things fast at the cost of other things.
 There is a constant pressure to deliver features, and so the path of least resistance is very tempting.
 
-But its worth mentioning: software is a living thing and so any analysis needs to be tempered with nuance.
+But its worth mentioning: software is a complicated "living" thing and so any analysis like this needs to be tempered with nuance.
 Just because a file is changed frequently doesn't mean we should refactor it ASAP.
 From my analysis of some of these projects the highest commited files are often code files, but they are also tests or files written in a different language/format (json, yml, etc.).
 For example in `ASP.NET Core` the highest committed file is `FormWithParentBindingContextTest.cs`.
+Do these files need to be fixed right away? Maybe there are underlying design issues that are the real things we need to address.
 
 So there are two questions we can ask:
 1. What parts of these files are being changed? 
    * Are all methods changed equally often?
    * In test files are there specific tests that are modified more often?
-2. What is the temporal coupling between these files? (outside the scope of this post but an interesting question to ask!)
+2. What is the temporal coupling between these files? (outside the scope of this post but an interesting question to ask!)[^5]
 
 ### Hotspot Methods
 {% image "../img/2024-03-29-navigating-technical-debt/ash-hayes-MV5ro8zkXys-unsplash.jpg" "" "post-wide-image" "Insect wings through a microscope lens – Photo by [ Ash Hayes](https://unsplash.com/@ashley_hayes)" %}
@@ -317,4 +318,4 @@ If you have any questions or comments feel free to reach out to me on [Mastodon]
 [^1]: [https://science.nasa.gov/mission/hubble/observatory/design/optics/](https://science.nasa.gov/mission/hubble/observatory/design/optics/)
 [^2]: Things like network errors, api contract changes, version mismatch, protocol mismatch, etc.
 [^4]: If you implement the things described in this post, and it doesn't seem to work/be useful that can be a sign that your situation is different from what is described here
-[^5]: There is also potential for "Temporal coupling" – when two things are coupled because they change at the same time. So if we change two files at the same time frequently it's likely there is some kind of coupling between them.
+[^5]: "Temporal coupling" – when two things are considered coupled because they change at the same time. So if we change two files at the same time frequently it's likely there is some kind of coupling between them.
