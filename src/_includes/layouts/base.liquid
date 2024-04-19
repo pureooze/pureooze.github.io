@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="/css/style.css?v=1" />
     <meta charset="UTF-8">
     <meta name="description" content="Uzair Shamim is a software developer passionate about HTML5, Javascript and .NET.">
     <meta name="author" content="Uzair Shamim" />
@@ -11,6 +10,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <title>{{ "Pureooze - " |  append: title }}</title>
+    {%- css %}{% include "css/blog.css" %}{% endcss %}
+    {%- css %}{% include "css/style.css" %}{% endcss %}
+    <style>{% getBundle "css" %}</style>
 </head>
 <body>
 <div class="navbar">

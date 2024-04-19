@@ -9,7 +9,7 @@ html, body {
 
     --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
     --syntax-tab-size: 2;
-    font-weight: 600;
+    font-weight: 400;
 
     /*colors*/
     --pureooze-light-mode-primary: #f2f2f2;
@@ -266,35 +266,6 @@ h1 {
     width: 500px;
 }
 
-@media (orientation: portrait) {
-    .portrait { display: block; }
-    .landscape { display: none; }
-    
-    .homepage {
-        background-image: url("../images/michel-catalisano-F6NvgzU3RfM-unsplash-cropped.jpg");
-        height: 100%;
-        justify-content: center;
-        row-gap: 3vw;
-        flex-direction: column;
-    }
-
-    .header-name {
-        color: var(--pureooze-primary-text);
-    }
-    
-    .icon {
-        width: 2em;
-        padding: 0.5em;
-        border-bottom-color: var(--pureooze-light-mode-primary);
-    }
-
-    .pages {
-        padding: 0.2em 1em;
-        border-radius: 1em;
-    }
-
-}
-
 @media (max-width: 300px) {
     .portrait { display: block; }
     .landscape { display: none; }
@@ -392,7 +363,7 @@ h1 {
     }
 
     .header {
-        padding-right: 6vw;
+        padding-left: 10vw;
         margin: auto 20em auto auto;
     }
 
@@ -417,7 +388,7 @@ h1 {
     }
 
     .header {
-        padding-right: 14vw;
+        padding-left: 8vw;
         margin: auto;
     }
 
@@ -442,7 +413,7 @@ h1 {
     }
 
     .header {
-        padding-right: 8vw;
+        padding-left: 7vw;
         margin: auto;
     }
 
@@ -467,7 +438,7 @@ h1 {
     }
     
     .header {
-        padding-left: 2vw;
+        padding-left: 8.5vw;
         margin: auto;
     }
     
@@ -496,5 +467,45 @@ h1 {
         font-size: 1.5em;
         padding: 0.3em 0.3em 0.3em 0.3em;
         border-radius: 0.2em;
+    }
+}
+
+@media (orientation: portrait) {
+    .portrait { display: block; }
+    .landscape { display: none; }
+
+    .homepage {
+        background-image: url("../images/michel-catalisano-F6NvgzU3RfM-unsplash-cropped.jpg");
+        height: 100%;
+        justify-content: center;
+        row-gap: 3vw;
+        flex-direction: column;
+    }
+
+    .header-name {
+        color: var(--pureooze-primary-text);
+    }
+
+    .icon {
+        width: 2em;
+        padding: 0.5em;
+        border-bottom-color: var(--pureooze-light-mode-primary);
+    }
+
+    .pages {
+        padding: 0.2em 1em;
+        border-radius: 1em;
+    }
+
+}
+
+@media (orientation: portrait) and (min-width: 1025px) {
+    .header {
+        padding: 0;
+        margin: 20em 0 0 0;
+    }
+    
+    .icon {
+        width: 50px;
     }
 }
