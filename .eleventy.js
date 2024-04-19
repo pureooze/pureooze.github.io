@@ -34,6 +34,7 @@ export default async function(eleventyConfig) {
         "./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
     });
     eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addPassthroughCopy("src/img/favicon.ico");
     
     eleventyConfig.on("eleventy.before", async () => {
         const highlighter = await getHighlighter({
