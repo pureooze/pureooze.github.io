@@ -6,7 +6,7 @@
     "name": "Uzair Shamim",
     "summary": "I am a hardworking individual capable of working independently and with teams. I love working with people who like to take creative approaches and iterate on ideas. Knowledge sharing is also important to me and I make sure to present about topics I find interesting at our internal developer conferences!",
     "email": "uzashamim@gmail.com",
-    "image": "../images/me.webp",
+    "image": "img/me.jpg",
     "location": {
       "city": "Kitchener",
       "region": "Ontario"
@@ -166,8 +166,21 @@
     },
     {
       "name": "Blog",
+      "url": "https://pureooze.com/blog",
+      "startDate": "2024-04-10",
+      "highlights": [
+        "Discussing topics in software development that I find interesting."
+      ],
+      "keywords": [
+        "Blog",
+        "Development"
+      ]
+    },
+    {
+      "name": "Medium Blog",
       "url": "https://medium.com/@pureooze",
       "startDate": "2015-01-30",
+      "endDate": "2018-10-02",
       "highlights": [
         "Discuss topics like software development and testing",
         "Document how to use libraries/programs I find interesting (eg. dom-testing-library)"
