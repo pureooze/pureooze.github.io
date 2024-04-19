@@ -35,6 +35,7 @@ export default async function(eleventyConfig) {
     });
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addPassthroughCopy("src/img/favicon.ico");
+    eleventyConfig.addPassthroughCopy("src/img/me.jpg");
     
     eleventyConfig.on("eleventy.before", async () => {
         const highlighter = await getHighlighter({
