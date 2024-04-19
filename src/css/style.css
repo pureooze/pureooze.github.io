@@ -523,4 +523,12 @@ h1 {
     .icon {
         width: 50px;
     }
+
+    #photo-credit-link-full {
+        display: block;
+    }
+
+    #photo-credit-link-small {
+        display: none;
+    }
 }
