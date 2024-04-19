@@ -194,6 +194,14 @@ h1 {
     color: white;
 }
 
+#photo-credit-link-full {
+    display: block;
+}
+
+#photo-credit-link-small {
+    display: none;
+}
+
 .arrow {
     box-sizing: border-box;
     height: 3vw;
@@ -497,6 +505,13 @@ h1 {
         border-radius: 1em;
     }
 
+    #photo-credit-link-full {
+        display: none;
+    }
+
+    #photo-credit-link-small {
+        display: block;
+    }
 }
 
 @media (orientation: portrait) and (min-width: 1025px) {
@@ -507,5 +522,13 @@ h1 {
     
     .icon {
         width: 50px;
+    }
+
+    #photo-credit-link-full {
+        display: block;
+    }
+
+    #photo-credit-link-small {
+        display: none;
     }
 }
