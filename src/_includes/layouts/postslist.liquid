@@ -1,7 +1,6 @@
-<link rel="stylesheet" type="text/css" href="/css/blog.css?v=1" />
 <ol reversed class="postlist">
 {% for post in postslist reversed %}
-	<div class="blog-post">
+	<li class="blog-post">
 		<a href="{{ post.url }}" class="postlist-post-link">
 			{% assign smallThumbnail = "img/" | append: post.data.small-thumbnail %}
 			{% image smallThumbnail "" "postlist-post-thumbnail" %}
@@ -11,6 +10,6 @@
 				<p class="postlist-post-excerpt">{{ post.page.excerpt  | truncate: 450, '...'}}</p>
 			</div>
 		</a>
-	</div>
+	</li>
 {% endfor %}
 </ol>

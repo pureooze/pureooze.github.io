@@ -33,7 +33,7 @@ export default async function(eleventyConfig) {
         "src/css/": "css",
         "./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
     });
-    eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addPassthroughCopy("src/font");
     eleventyConfig.addPassthroughCopy("src/img/favicon.ico");
     eleventyConfig.addPassthroughCopy("src/img/me.jpg");
     
