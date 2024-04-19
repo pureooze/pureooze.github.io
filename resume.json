@@ -4,7 +4,7 @@
   },
   "basics": {
     "name": "Uzair Shamim",
-    "summary": "I am a hardworking individual capable of working independently and with teams. I love working with people who like to take creative approaches and iterate on ideas. Knowledge sharing is also important to me and I make sure to present about topics I find interesting at our internal developer conferences!",
+    "summary": "I am a hardworking individual capable of working independently and with teams. I love working with people who like to take creative approaches and iterate on ideas. Knowledge sharing is also important to me and I make sure to present about topics I find interesting at our internal developer conferences! I also have a blog at: https://pureooze.com/blog/",
     "email": "uzashamim@gmail.com",
     "image": "img/me.jpg",
     "location": {
@@ -16,10 +16,6 @@
         "network": "Github",
         "username": "@pureooze",
         "url": "https://github.com/pureooze"
-      },
-      {
-        "network": "Blog",
-        "url": "https://pureooze.com/blog/"
       },
       {
         "network": "LinkedIn",
