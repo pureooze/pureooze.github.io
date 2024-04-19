@@ -11,6 +11,9 @@ title: "Random Stuff"
 * [PodcastFeed](https://github.com/pureooze/PodcastFeed) - Old, Fun school project to build a podcast player built using Qt with a team of three. Learned a lot about how to collaborate with others.
 
 ## People Who I Think Are Cool
+Just some people whose work I have found interesting and learned from.
+Linking is not an endorsement of their views or opinions.
+
 * [Dylan Beattie](https://dylanbeattie.net/)
 * [Michael Feathers](https://michaelfeathers.substack.com/)
 * [Adam Tornhill](https://www.adamtornhill.com/)
