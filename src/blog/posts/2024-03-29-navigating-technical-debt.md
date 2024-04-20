@@ -53,7 +53,7 @@ I like this definition because it brings forth this idea that the cost can becom
 This means we need a quantifiable way to measure the risk in our codebase and understand where to focus our efforts because the "debt" is a disaster waiting to happen.
 
 ### Lensing To Understand Technical Debt
-{% image "../img/2024-03-29-navigating-technical-debt/nasa-hubble-space-telescope-e9x-jhQgHZk-unsplash.jpg" "" "post-wide-image" "The Tarantula Nebula captured from The Hubble Space Telescope. – Photo by [NASA Hubble Space Telescope](https://unsplash.com/@hubblespacetelescope)" %}
+{% image "../img/2024-03-29-navigating-technical-debt/no-mans-sky.webp" "Screenshot from the game No Man's Sky with the players spaceship approaching a planet" "" "Players spaceship approaching a planet in No Mans Sky" %}
 
 The Hubble Space Telescope can capture images of all sorts of amazing things in space [^1].
 Among them are galaxies, nebulae and of course solar *systems*.
@@ -86,20 +86,31 @@ These are the kinds of questions we need to be asking.
 Too often we focus on bits of code and forget the context of the systems it's used in – which is extremely important.
 
 ## How Do We Improve Technical Debt
+{% image "../img/2024-03-29-navigating-technical-debt/nasa-hubble-space-telescope-e9x-jhQgHZk-unsplash.jpg" "" "post-wide-image" "The Tarantula Nebula captured from The Hubble Space Telescope. – Photo by [NASA Hubble Space Telescope](https://unsplash.com/@hubblespacetelescope)" %}
 So how do we identify risks in our codebase?
 Adam Tornhill has a great talk on ["Prioritizing Technical Debt"](https://www.youtube.com/watch?v=w9YhmMPLQ4U) where he talks about how we can use metrics to identify risks in our codebase.
 If we have a way to find out **where to focus our efforts** we can get a lot more value out of the work we do – **allowing us to ship quicker and build high quality features**.
 I really liked this talk and I recommend watching it.
 
 Adam has a few metrics that he uses to identify risks:
+* **Code Complexity**: Files that are hard for humans to understand
 * **Commit Hotspots**: Files that are changed frequently
 * **Hotspot Method X-Ray**: Methods in hotspot files that are changed frequently
-* **Code Complexity**: Files that are hard for humans to understand
 
 These are the different lenses we can use to understand the system.
 They will help us identify *potential* risks in the system and give us a way to focus our efforts.
-
 To help demonstrate application of these metrics I am going to run them on the [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) code – which is a C# library I wrote for a side project.
+
+### Code Complexity
+A very traditional way to perform code analysis is to look at the cyclomatic complexity of methods.
+In C# we can use `Roslyn` to get the complexity of a method. IDEs like Visual Studio and Rider also support this.
+Using this on one of the files in a method in [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) gives a result like this: 
+
+{% image "../img/2024-03-29-navigating-technical-debt/code-complexity.png" "Code complexity of the MessageCallback method with a score of 18 (mildly complex)" "" "Code complexity of the MessageCallback method with a score of 18 (mildly complex)" %}
+
+This `MessageCallback` method is just a switch case for different message types.
+It's not insanely complex, but I know from experience that this method is modified a lot because I was lazy and didn't make separate methods for each message type.
+So that's something I can focus on when I refactor this file.
 
 ### Commit Hotspots
 {% image "../img/2024-03-29-navigating-technical-debt/danny-mc-dAAdBZgREEg-unsplash.jpg" "" "post-wide-image" "Mountains in the distance – Photo by [Danny Mc](https://unsplash.com/@dannymc)" %}
@@ -262,46 +273,46 @@ These are the results for the `TwitchConnection.cs` file:
 With this data we can see the `MessageCallback` method is something that developers work with extremely often! 
 So we can focus on that when looking to do refactors!
 
-### Code Complexity
-So what about code complexity?
+### Putting It All Together
+Just for fun I ran the analysis on the `ASP.NET Core` codebase.
+The most complex method was `CreateArgument` in the `RequestDelegateFactory` class.
+You can find it [here](https://github.com/dotnet/aspnetcore/blob/main/src/Http/Http.Extensions/src/RequestDelegateFactory.cs).
+With a complexity score of 58 it's pretty complicated and hotspot analysis shows that in the past 2 years the file was modified 52 times and the method 12 times.
+So if this a place where we anticipate future changes, maybe it makes sense to do a refactor.
+Of course that decision has to be made by someone who is working on the project and knows the code, but it seems like an interesting place to start.
 
-## Communicate With Others
+## What Do We Do Next
 
 When it comes to **technical metrics** we need to be careful how we communicate them to others.
 It's vital to ensure metrics don't become the goal – the goal is always to deliver software safer and faster.
-If you've ever worked with code coverage you might have experienced the pain of people becoming obsessed with it to the point where it's no longer useful. Metrics are a tool to help us make decisions.
+Metrics are just tools to help us make decisions, not a mandatory target we have to hit.
 
-### Code Coverage
-Relying on code coverage as an indicator of quality can lead to bad practices like writing tests that don't actually test anything or writing tests that are so brittle they break on every change.
-To me code coverage is most effective when working on the edge of a system – like connecting to a database.
+### No Silver Bullets
+Measuring code quality always reminds me of code coverage.
+There was this popular idea that a codebase with 100% coverage meant it was good, and anything less needed improvements.
+From experience, we have learned this is not the case.
+Depending on code coverage as the sign of quality lead to tests that don't actually test anything or tests that were so brittle they broke on every change.
+
+To me, code coverage is most effective when working on the edge of a system – often involving I/O like connecting to a database.
 These areas are often high risk because a lot of things can go wrong talking to other systems [^2] and code coverage can help us be sure the system doesn't explode at these integration points.
 
 But in the other parts of the system this can be harmful because it creates coupling to the current business logic – which will likely change in the future.
 And when the time to change comes, the tests can be a hindrance rather than a help.
-
-{% image "../img/2024-03-29-navigating-technical-debt/effort-vs-value.png" "Effort vs value of code coverage: As the coverage percent increases the effort increases exponentially" "" "[Jeroen Mols : The 100% code coverage problem](https://jeroenmols.com/blog/2017/11/28/coveragproblem/)" %}
-
-### Context Is Key
-If we focus on the metrics themselves we can lose sight of the goal: to deliver high quality software quickly.
-Metrics should help us make decisions and not be a mandatory target we have to hit.
-Ever have your boss say something like "We need to get our code coverage to 100%" because they equate it to quality?
-We want to avoid that kind of misunderstanding.
+**There are no silver bullets when it comes to software development.**
 
 When communicating "tech debt metrics" to others it's important to help them understand the context of the data.
 To this extent you might not want dashboards for these metrics.
-Instead, strive to have technical people involved in the conversation to help make decisions based on the data. Commit hotspots could be the result of a developer who likes to make a lot of commits.
+Instead, strive to have technical people involved in the conversation to help make decisions based on the data.
+Commit hotspots could be the result of a developer who likes to make a lot of commits.
 Without technical context, it's hard to know if this is a problem in the specific situation.
 
-### Empowering Developers
-In teams that I have been a part of we found a lot of success by making maintenance a part of the planning process.
-We designate one developer – through a [rigorous selection process](https://wheelofnames.com/) – who is expected to work on tech debt one day that week.
-There is a curated list of tasks that the team has prioritized and the lucky winner can choose from that list or something else they think is important.
+## Lensing With AI
+To end off this post let's go back to the idea that we started with: lensing.
+What if we could use AI to connect the dots between the different lenses we have?
+Like linking the global hotspots to the local hotspots and method complexity.
+Then we could view the system at a distance, ask questions about the different kinds of risks and then zoom in to see the details.
 
-This is where the hotspot metrics can be really useful.
-The developer can run the report on a repo – or even a subset of the repo – and then focus on the areas that are most risky. It allows them to quickly answer the question: **Which part of this domain can I have the most impact on?**
-Refactoring in hotspots is also satisfying because the work has a direct impact on the experience of other developers.
-
-## How can we use AI to help us with this process?
+https://pf.bigpixel.cn/en-US/pano/772196334345129984.html
 
 ## Conclusion
 Technical debt is a complex problem that can be hard to define and even harder to solve.
@@ -309,10 +320,10 @@ Focusing on hotspots should help us deliver high quality software quickly[^4].
 We can use metrics to identify these risks and communicate them effectively to others.
 By empowering developers we can make sure that the work is meaningful and impactful.
 
-{% image "../img/2024-03-29-navigating-technical-debt/tackling-technical-debt.jpg" "Tackling technical debt" %}
-
 I hope this post has given you some ideas on how to navigate technical debt in your organization.
 If you have any questions or comments feel free to reach out to me on [Mastodon](https://toot.community/@pureooze) or [GitHub](https://github.com/pureooze).
+
+{% image "../img/2024-03-29-navigating-technical-debt/tackling-technical-debt.jpg" "Tackling technical debt" %}
 
 ## Additional Notes
 [^1]: [https://science.nasa.gov/mission/hubble/observatory/design/optics/](https://science.nasa.gov/mission/hubble/observatory/design/optics/)

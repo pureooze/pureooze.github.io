@@ -183,12 +183,11 @@ figure {
     width: 400px;
     height: 240px;
     object-fit: cover;
-    border-radius: 10px 0 0 10px;
-    padding: 20px 0px 20px 20px;
+    border-radius: 1.5em;
+    padding: 20px 20px 20px 20px;
 }
 
 .postlist-post-content {
-    padding: 20px;
     display: grid;
     grid-template-rows: auto auto 1fr;
 }
