@@ -17,6 +17,7 @@ I would be willing to bet that if you surveyed random developers at a conference
 I would also be willing to bet that they could not agree on **what the problem is** and **how to address it**.
 The issue is further complicated by the fact that many businesses seem to not care about tech debt.
 
+In this post I want to explore the idea of technical debt. What is it? Can we measure it? What can we do about it?
 
 ## What Is Technical Debt?
 The term is used to describe things from "we don't use the shiny new framework" to "this code is not written in the style I like" and even "I inherited the code from someone else".
@@ -29,7 +30,7 @@ Let's start by looking at Ward Cunningham's original definition:
 > 
 > *- Ward Cunningham*
 
-This definition focuses on the idea that technical debt is a trade-off **when developing new features** and that **it is not always bad** as long as its addressed promptly. 
+This definition focuses on technical debt being a trade-off **when developing new features** and that **it is not always bad** as long as its addressed promptly. 
 The problem though is that unlike financial debt – where creditors are responsible for determining if the debtor is able to take on more financial debt – who is responsible for making sure an organization can handle more technical debt?
 Can an organization be "technical debt" bankrupt? 
 When organizations start thinking of this in terms of "debt" they quickly realize that there don't *seem* to be any consequences of the debt, so they ignore it.
@@ -52,27 +53,23 @@ Unlike debt – where we know what the interest rate will be – options could b
 I like this definition because it brings forth this idea that the cost can become due suddenly and without warning.
 This means we need a quantifiable way to measure the risk in our codebase and understand where to focus our efforts because the "debt" is a disaster waiting to happen.
 
-### Lensing To Understand Technical Debt
-{% image "../img/2024-03-29-navigating-technical-debt/no-mans-sky.webp" "Screenshot from the game No Man's Sky with the players spaceship approaching a planet" "" "Players spaceship approaching a planet in No Mans Sky" %}
 
-The Hubble Space Telescope can capture images of all sorts of amazing things in space [^1].
-Among them are galaxies, nebulae and of course solar *systems*.
-The data from the telescope can help us answer important questions like: which planets have water on them?
-Instead of having to visit each planet, we can observe these interesting properties from a distance.
+## Lensing To Understand Technical Debt
+{% image "../img/2024-03-29-navigating-technical-debt/nasa-hubble-space-telescope-e9x-jhQgHZk-unsplash.jpg" "" "" "The Tarantula Nebula captured from The Hubble Space Telescope. – Photo by [NASA Hubble Space Telescope](https://unsplash.com/@hubblespacetelescope)" %}
 
-Michael Feathers made a blog post – [Lensing to Understand](https://michaelfeathers.substack.com/p/lensing-to-understand) – about how we change our focus to understand a system.
+Michael Feathers has a great post – [Lensing to Understand](https://michaelfeathers.substack.com/p/lensing-to-understand) – about how we change our focus to understand a system.
 We focus on the high level system to identify potentially interesting areas and then drill down into details to investigate them.
 Once we have a better understanding, we zoom back out to see how it affects the system as a whole.
 The idea of "lensing" is really important when it comes to understanding technical debt.
 
-> I mentioned that I’d love to have a tool that allows you to TL;DR articles at different levels of detail. 
-> It would be like dynamically increasing and decreasing font size in an editor or a Kindle. 
+> I mentioned that I’d love to have a tool that allows you to TL;DR articles at different levels of detail.
+> It would be like dynamically increasing and decreasing font size in an editor or a Kindle.
 > You adjust the size down when your vision is sharp and up when you are fatigued.
-> 
-> I’d love to be able to do this with detailed writing. 
-> It would be great to be able to pull back and read a single page condensation of a 10 page article and then zoom in to see the concepts in 3 pages. 
+>
+> I’d love to be able to do this with detailed writing.
+> It would be great to be able to pull back and read a single page condensation of a 10 page article and then zoom in to see the concepts in 3 pages.
 > Yes, you can do that today with prompts in LLM chat interfaces but having a tool to do just that would be great.
->  
+>
 > *- Michael Feathers*
 
 In previous attempts of tacking technical debt, I have made the mistake of *starting* with a focus on very specific parts of a system.
@@ -85,39 +82,27 @@ What parts of the system are most likely to change in the future?
 These are the kinds of questions we need to be asking.
 Too often we focus on bits of code and forget the context of the systems it's used in – which is extremely important.
 
-## How Do We Improve Technical Debt
-{% image "../img/2024-03-29-navigating-technical-debt/nasa-hubble-space-telescope-e9x-jhQgHZk-unsplash.jpg" "" "post-wide-image" "The Tarantula Nebula captured from The Hubble Space Telescope. – Photo by [NASA Hubble Space Telescope](https://unsplash.com/@hubblespacetelescope)" %}
 So how do we identify risks in our codebase?
 Adam Tornhill has a great talk on ["Prioritizing Technical Debt"](https://www.youtube.com/watch?v=w9YhmMPLQ4U) where he talks about how we can use metrics to identify risks in our codebase.
 If we have a way to find out **where to focus our efforts** we can get a lot more value out of the work we do – **allowing us to ship quicker and build high quality features**.
 I really liked this talk and I recommend watching it.
 
 Adam has a few metrics that he uses to identify risks:
-* **Code Complexity**: Files that are hard for humans to understand
-* **Commit Hotspots**: Files that are changed frequently
-* **Hotspot Method X-Ray**: Methods in hotspot files that are changed frequently
+* **File Hotspots**: Files that are changed frequently
+* **Method Hotspots**: Methods in hotspot files that are changed frequently
+* **Complexity**: Files that are hard for humans to understand
 
-These are the different lenses we can use to understand the system.
-They will help us identify *potential* risks in the system and give us a way to focus our efforts.
-To help demonstrate application of these metrics I am going to run them on the [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) code – which is a C# library I wrote for a side project.
+If we find places that meet all three of these criteria we have a high risk area that we should focus on.
 
-### Code Complexity
-A very traditional way to perform code analysis is to look at the cyclomatic complexity of methods.
-In C# we can use `Roslyn` to get the complexity of a method. IDEs like Visual Studio and Rider also support this.
-Using this on one of the files in a method in [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) gives a result like this: 
+## Hotspot Analysis
+To demonstrate application of these metrics I am going to run them on the [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) code – which is a C# library I wrote for a side project.
 
-{% image "../img/2024-03-29-navigating-technical-debt/code-complexity.png" "Code complexity of the MessageCallback method with a score of 18 (mildly complex)" "" "Code complexity of the MessageCallback method with a score of 18 (mildly complex)" %}
+### File Hotspots
+{% image "../img/2024-03-29-navigating-technical-debt/danny-mc-dAAdBZgREEg-unsplash.jpg" "" "" "Mountains in the distance – Photo by [Danny Mc](https://unsplash.com/@dannymc)" %}
 
-This `MessageCallback` method is just a switch case for different message types.
-It's not insanely complex, but I know from experience that this method is modified a lot because I was lazy and didn't make separate methods for each message type.
-So that's something I can focus on when I refactor this file.
-
-### Commit Hotspots
-{% image "../img/2024-03-29-navigating-technical-debt/danny-mc-dAAdBZgREEg-unsplash.jpg" "" "post-wide-image" "Mountains in the distance – Photo by [Danny Mc](https://unsplash.com/@dannymc)" %}
-
-Let's start with commit hotspots. 
-These are files that are changed frequently in a given time period (say the past year) which could mean we will continue to change them in the future.
-And it turns out there is a simple bash command that can do this:
+Let's start with file hotspots.
+I'm going to look at commits from the past year and see which files have been changed the most.
+Turns out there is a simple bash command that can do this:
 
 ```bash
 git log --since='1 year ago' --name-only --pretty=format: | sort | uniq -c | sort -nr
@@ -125,7 +110,7 @@ git log --since='1 year ago' --name-only --pretty=format: | sort | uniq -c | sor
 
 Running this on the [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) code gives the following results:
 <details>
-<summary>Data results (top 20)</summary>
+<summary>Data results (top 20, commit count per file for past year)</summary>
 
 | Path                                                                 | Count |
 |----------------------------------------------------------------------|-------|
@@ -180,18 +165,13 @@ plt.show()
 
 </details>
 
-And now we get this nice visualization:
 {% image "../img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-file-cs.png" "Visualization of commit count per file for TwitchEverywhere as a bar chart" %}
 
 Visualized like this there is a shocking revelation: a small percentage of files are responsible for the vast majority of commits!
-If you are familiar with the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle) – this distribution certainly seems to resemble it.
-
-You might think this pattern is specific to just the [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) codebase.
-What if I told you this distribution is extremely common?
-So common that it's a pattern that is seen in codebases regardless of factors like language, age, or size.
-The only thing in common is that the code is written by humans.
+What if I told you that the distribution of commits per file in a codebase is common across most codebases?
+So common that it's a pattern that is seen regardless of factors like language, age, or size.
 Sounds crazy right? But we can test if it is true.
-I ran the same command on the following codebases:
+I ran the file hotspot analysis on the following codebases:
 * [ASP.NET Core (.cs files)](https://github.com/dotnet/aspnetcore)
 * [Roslyn (.cs files)](https://github.com/dotnet/roslyn)
 * [Django (.py files)](https://github.com/django/django)
@@ -199,37 +179,29 @@ I ran the same command on the following codebases:
 
 <details>
 <summary>Results for ASP.NET Core, Roslyn, Django and Linux</summary>
-{% image "../img/2024-03-29-navigating-technical-debt/commit-counter-results/other-projects-commit-per-file.png" "Results for ASP.NET Core, Roslyn, Django and Linux showing the same distribution as before" %}
+{% image "../img/2024-03-29-navigating-technical-debt/commit-counter-results/other-projects-commit-per-file.png" "Results for ASP.NET Core, Roslyn, Django and Linux showing very similar distributions" ""%}
 </details>
 
 What an interesting result.
+If you are familiar with the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle) – these distributions certainly seems to resemble it.
 It seems regardless of language, author and purpose – the same pattern emerges.
-But of course the big question is: why?
-Something about this causes us to focus intensely on a small part of the codebase.
+I've heard a story where Michael Feathers once asked in a seminar: *"Is it easier for people to add code to existing place than to create a new method/class/etc? Why?"*[^easier-to-add]
+What do you think?
 
-I've heard a story where Michael Feathers once asked in a seminar: *"Is it easier for people to add code to existing place than to create a new method/class/etc? Why?"*
 People do things because they are incentivized to do them.
-Adding to existing places is easier because we don't have to think about the context of the code, and it's just faster to do.
-The social system incentivizes us to do things fast at the cost of other things.
+Adding to existing places is easier because we don't have to think about context, so it's faster to do.
+The social system incentivizes us to do things fast, but it comes at the cost of other things.
 There is a constant pressure to deliver features, and so the path of least resistance is very tempting.
 
-But its worth mentioning: software is a complicated "living" thing and so any analysis like this needs to be tempered with nuance.
-Just because a file is changed frequently doesn't mean we should refactor it ASAP.
-From my analysis of some of these projects the highest commited files are often code files, but they are also tests or files written in a different language/format (json, yml, etc.).
-For example in `ASP.NET Core` the highest committed file is `FormWithParentBindingContextTest.cs`.
-Do these files need to be fixed right away? Maybe there are underlying design issues that are the real things we need to address.
+It's worth mentioning though that software is a complicated – almost "living" – thing. Any analysis like this needs to be tempered with nuance.
+Just because a file is really large or changed frequently doesn't mean we should refactor it ASAP.
 
-So there are two questions we can ask:
-1. What parts of these files are being changed? 
-   * Are all methods changed equally often?
-   * In test files are there specific tests that are modified more often?
-2. What is the temporal coupling between these files? (outside the scope of this post but an interesting question to ask!)[^5]
+From my analysis of these projects, the highest commited files are often code files, but they are also tests or files written in a different language/format (json, yml, etc.).
+For example in `ASP.NET Core` the highest committed `.cs` seems to be `FormWithParentBindingContextTest.cs`.
+Does this need to be "fixed" right away? What would a fix even look like? Maybe there are underlying design issues that are the real things to address?
 
-### Hotspot Methods
-{% image "../img/2024-03-29-navigating-technical-debt/ash-hayes-MV5ro8zkXys-unsplash.jpg" "" "post-wide-image" "Insect wings through a microscope lens – Photo by [ Ash Hayes](https://unsplash.com/@ashley_hayes)" %}
-
-The next metric on our list are method hotspots: if there are methods that change frequently we should focus our efforts on them.
-It's costly to run this analysis on the whole codebase but once we have a few files to focus on (from the previous analysis), we can try and find the hotspots in them.
+### Method Hotspots
+{% image "../img/2024-03-29-navigating-technical-debt/ash-hayes-MV5ro8zkXys-unsplash.jpg" "" "" "Insect wings through a microscope lens – Photo by [Ash Hayes](https://unsplash.com/@ashley_hayes)" %}
 
 From the previous example we saw that `TwitchConnection.cs` was by far the most commited to file in `TwitchEverywhere`.
 We can use the following algorithm to find its hotspot methods:
@@ -270,51 +242,43 @@ These are the results for the `TwitchConnection.cs` file:
 
 </details>
 
-With this data we can see the `MessageCallback` method is something that developers work with extremely often! 
-So we can focus on that when looking to do refactors!
+With this data its obvious I modify `MessageCallback` extremely often.
+So this could be an interesting place to focus on during a refactoring session.
 
-### Putting It All Together
-Just for fun I ran the analysis on the `ASP.NET Core` codebase.
-The most complex method was `CreateArgument` in the `RequestDelegateFactory` class.
-You can find it [here](https://github.com/dotnet/aspnetcore/blob/main/src/Http/Http.Extensions/src/RequestDelegateFactory.cs).
-With a complexity score of 58 it's pretty complicated and hotspot analysis shows that in the past 2 years the file was modified 52 times and the method 12 times.
-So if this a place where we anticipate future changes, maybe it makes sense to do a refactor.
-Of course that decision has to be made by someone who is working on the project and knows the code, but it seems like an interesting place to start.
+### Code Complexity
+{% image "../img/2024-03-29-navigating-technical-debt/code-complexity.png" "Code complexity of the MessageCallback method with a score of 18 (mildly complex)" "" "Code complexity of the MessageCallback method with a score of 18 (mildly complex)" %}
 
-## What Do We Do Next
+Doing a cyclomatic complexity analysis on the `MessageCallback` method in [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) gives a score of 18 (mildly complex).
+It's not too complex, but I know from experience that this method is modified a lot because I was lazy and didn't make separate methods for each message type.
+Instead, all the logic is in one method and ends up being changed really often.
+So that's something I can focus on when I refactor this file.
 
-When it comes to **technical metrics** we need to be careful how we communicate them to others.
-It's vital to ensure metrics don't become the goal – the goal is always to deliver software safer and faster.
-Metrics are just tools to help us make decisions, not a mandatory target we have to hit.
+## Lensing With AI
+Let's go back to the idea that we started with: lensing.
+What if we could use AI to connect the dots between the different lenses we have?
+Like linking complexity to the global hotspots to the local hotspots.
+Then we could view the system at a distance, ask questions about the different kinds of risks and then zoom in to see the details.
 
-### No Silver Bullets
-Measuring code quality always reminds me of code coverage.
-There was this popular idea that a codebase with 100% coverage meant it was good, and anything less needed improvements.
+We have this kind of thing in photography already. We can take [extremely high resolution photographs](https://pf.bigpixel.cn/en-US.html)[^bigpixel] and have people zoom in and out as they please.
+Why can't the same be done for code?
+
+Imagine being able to see a visualization of the whole codebase and then being able to zoom in to see details.
+I think this could be implemented using a "zoomable circle packing" chart with [D3.js](https://observablehq.com/@d3/zoomable-circle-packing).
+And then being able to add secondary metrics like temporal coupling[^temporalcoupling] as links between files could help us quickly understand the relationship between domains.
+
+## No Silver Bullets
+There's this idea that a codebase with 100% coverage means it is good, and anything less needed improvements.
 From experience, we have learned this is not the case.
 Depending on code coverage as the sign of quality lead to tests that don't actually test anything or tests that were so brittle they broke on every change.
 
-To me, code coverage is most effective when working on the edge of a system – often involving I/O like connecting to a database.
-These areas are often high risk because a lot of things can go wrong talking to other systems [^2] and code coverage can help us be sure the system doesn't explode at these integration points.
-
-But in the other parts of the system this can be harmful because it creates coupling to the current business logic – which will likely change in the future.
-And when the time to change comes, the tests can be a hindrance rather than a help.
+To me, code coverage is most effective when working on the edge of a system – often involving I/O.
+But in the other parts of the system this can be harmful because when the time to change comes, the tests can be a hindrance rather than a help.
+When communicating "tech debt metrics" to others it's important to help them understand the context of the data.
 **There are no silver bullets when it comes to software development.**
 
-When communicating "tech debt metrics" to others it's important to help them understand the context of the data.
-To this extent you might not want dashboards for these metrics.
-Instead, strive to have technical people involved in the conversation to help make decisions based on the data.
-Commit hotspots could be the result of a developer who likes to make a lot of commits.
+For example, commit hotspots could be the result of a developer who likes to make a lot of commits.
 Without technical context, it's hard to know if this is a problem in the specific situation.
 
-## Lensing With AI
-To end off this post let's go back to the idea that we started with: lensing.
-What if we could use AI to connect the dots between the different lenses we have?
-Like linking the global hotspots to the local hotspots and method complexity.
-Then we could view the system at a distance, ask questions about the different kinds of risks and then zoom in to see the details.
-
-https://pf.bigpixel.cn/en-US/pano/772196334345129984.html
-
-## Conclusion
 Technical debt is a complex problem that can be hard to define and even harder to solve.
 Focusing on hotspots should help us deliver high quality software quickly[^4].
 We can use metrics to identify these risks and communicate them effectively to others.
@@ -326,7 +290,7 @@ If you have any questions or comments feel free to reach out to me on [Mastodon]
 {% image "../img/2024-03-29-navigating-technical-debt/tackling-technical-debt.jpg" "Tackling technical debt" %}
 
 ## Additional Notes
-[^1]: [https://science.nasa.gov/mission/hubble/observatory/design/optics/](https://science.nasa.gov/mission/hubble/observatory/design/optics/)
-[^2]: Things like network errors, api contract changes, version mismatch, protocol mismatch, etc.
-[^4]: If you implement the things described in this post, and it doesn't seem to work/be useful that can be a sign that your situation is different from what is described here
-[^5]: "Temporal coupling" – when two things are considered coupled because they change at the same time. So if we change two files at the same time frequently it's likely there is some kind of coupling between them.
+[^wheatandchaff]: [to judge which people or things in a group are bad and which ones are good](https://www.merriam-webster.com/dictionary/separate%20the%20wheat%20from%20the%20chaff)
+[^easier-to-add]: [Notes from Michael Feathers’ Brutal Refactoring](https://www.thekua.com/atwork/2011/05/notes-from-michael-feathers-brutal-refactoring/)
+[^bigpixel]: This seems to only work in some browsers so if it doesn't work try a different browser (FWIW it worked in Firefox for me)
+[^temporalcoupling]: When two things are considered coupled because they change at the same time. So if we change two files at the same time frequently it's likely there is some kind of coupling between them.

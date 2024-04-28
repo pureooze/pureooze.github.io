@@ -486,7 +486,6 @@ h1 {
     .landscape { display: none; }
 
     .homepage {
-        background-image: url("../images/michel-catalisano-F6NvgzU3RfM-unsplash-cropped.jpg");
         height: 100%;
         justify-content: center;
         row-gap: 3vw;
