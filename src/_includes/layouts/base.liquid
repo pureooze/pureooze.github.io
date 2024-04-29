@@ -5,7 +5,7 @@
     <meta name="author" content="Uzair Shamim" />
 
     {% if tags %}
-        <meta name="excerpt" content="{{ page.excerpt | truncate: 450, '...' | replace: '"', "'" }}">
+        <meta name="description" content="{{ page.excerpt | truncate: 450, '...' | replace: '"', "'" }}">
     {% else %}
         <meta name="description" content="Uzair Shamim is a software developer passionate about HTML5, Javascript and .NET.">
     {% endif %}
