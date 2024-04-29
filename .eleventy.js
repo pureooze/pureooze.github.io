@@ -31,6 +31,7 @@ export default async function(eleventyConfig) {
     // Keeps the same directory structure.
     eleventyConfig.addPassthroughCopy({
         "src/css/": "css",
+        "src/blog/video/": "video",
         "./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
     });
     eleventyConfig.addPassthroughCopy("src/font");
@@ -40,7 +41,7 @@ export default async function(eleventyConfig) {
     eleventyConfig.on("eleventy.before", async () => {
         const highlighter = await getHighlighter({
             themes: ["material-theme-palenight"],
-            langs:["shell", "csharp", "python", "javascript"]
+            langs:["shell", "csharp", "python", "javascript", "java", "xml", "json"]
         });
         eleventyConfig.amendLibrary("md", (mdLib) =>
             mdLib.set({

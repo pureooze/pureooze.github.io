@@ -6,6 +6,7 @@
 			{% image smallThumbnail "" "postlist-post-thumbnail" %}
 			<div class="postlist-post-content">
 				<h2 class="postlist-post-title">{{ post.data.title }}</h2>
+				<p class="postlist-post-author">Uzair Shamim</p>
 				<time class="postlist-post-date">{{ post.date | date: "%d/%m/%Y" }}</time>
 				<p class="postlist-post-excerpt">{{ post.page.excerpt  | truncate: 450, '...'}}</p>
 			</div>

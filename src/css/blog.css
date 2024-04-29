@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-    margin: 0 auto;
+    margin: 0 0;
 }
 
 pre,
@@ -102,7 +102,7 @@ summary::-webkit-details-marker {
 
 p > code {
     background-color: rgba(var(--pureooze-primary-for-rgba), 0.1);
-    padding: 0.2em 0.2em;
+    padding: 0.05em 0.2em;
     border-radius: 4px;
     font-weight: 600;
     color: var(--pureooze-primary);
@@ -183,12 +183,11 @@ figure {
     width: 400px;
     height: 240px;
     object-fit: cover;
-    border-radius: 10px 0 0 10px;
-    padding: 20px 0px 20px 20px;
+    border-radius: 1.5em;
+    padding: 20px 20px 20px 20px;
 }
 
 .postlist-post-content {
-    padding: 20px;
     display: grid;
     grid-template-rows: auto auto 1fr;
 }
@@ -199,10 +198,15 @@ figure {
     margin-bottom: 5px;
 }
 
+.postlist-post-author {
+    font-size: 0.85em;
+    color: var(--pureooze-primary-text);
+    margin-bottom: 5px;
+}
+
 .postlist-post-date {
     font-size: 0.85em;
     color: var(--pureooze-primary-text);
-    margin-bottom: 10px;
 }
 
 .postlist-post-excerpt {

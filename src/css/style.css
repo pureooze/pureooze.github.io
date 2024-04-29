@@ -4,7 +4,7 @@ html, body {
 }
 
 :root {
-    font-family: 'Noto Sans', Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: 'Noto Sans',  sans-serif;
     font-size: medium;
 
     --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
@@ -14,11 +14,14 @@ html, body {
     /*colors*/
     --pureooze-light-mode-primary: #f2f2f2;
     --pureooze-primary: #26196f;
-    --pureooze-primary-for-rgba: 38, 25, 111;
+    --pureooze-primary-for-rgba: 146, 50, 216;
     --pureooze-primary-text: #000;
     --pureooze-secondary-text: white;
     --pureooze-accent: #9232D8FF;
     --pureooze-accent-light: #ac73d8;
+    --pureooze-accent-light-mode: #f9f9f9;
+    --pureooze-detail: #aaa;
+    --pureooze-light-mode-detail: white;
 }
 
 h1 {
@@ -483,7 +486,6 @@ h1 {
     .landscape { display: none; }
 
     .homepage {
-        background-image: url("../images/michel-catalisano-F6NvgzU3RfM-unsplash-cropped.jpg");
         height: 100%;
         justify-content: center;
         row-gap: 3vw;

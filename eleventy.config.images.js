@@ -26,7 +26,7 @@ export default function(eleventyConfig) {
         let metadata = await processImage(src, this.page.inputPath);
 
         caption = caption || "";
-        let classes = cssClass ?? "post-image"
+        let classes = cssClass === "" ? "post-image" : cssClass;
         return `
             <figure>
                 <picture>
