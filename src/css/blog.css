@@ -198,10 +198,15 @@ figure {
     margin-bottom: 5px;
 }
 
+.postlist-post-author {
+    font-size: 0.85em;
+    color: var(--pureooze-primary-text);
+    margin-bottom: 5px;
+}
+
 .postlist-post-date {
     font-size: 0.85em;
     color: var(--pureooze-primary-text);
-    margin-bottom: 10px;
 }
 
 .postlist-post-excerpt {
