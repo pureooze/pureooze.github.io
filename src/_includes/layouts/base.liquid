@@ -2,8 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Uzair Shamim is a software developer passionate about HTML5, Javascript and .NET.">
     <meta name="author" content="Uzair Shamim" />
+
+    {% if tags %}
+        <meta name="description" content="{{ page.excerpt | truncate: 450, '...' | replace: '"', "'" }}">
+    {% else %}
+        <meta name="description" content="Uzair Shamim is a software developer passionate about HTML5, Javascript and .NET.">
+    {% endif %}
+    {% if tags %}
+        <meta name="tags" content="{% for tag in tags %}{{ tag }}{% if forloop.last == false %}, {% endif %}{% endfor %}">
+    {% endif %}
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
