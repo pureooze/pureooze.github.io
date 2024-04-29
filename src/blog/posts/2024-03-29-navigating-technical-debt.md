@@ -243,7 +243,7 @@ Then we could view the system at a distance, ask questions about the different k
 We have this kind of thing in photography already. We can take [extremely high resolution photographs](https://pf.bigpixel.cn/en-US.html)[^bigpixel] and have people zoom in and out as they please.
 Why can't the same be done for code?
 
-{% image "../img/2024-03-29-navigating-technical-debt/shanghai.jpg" "" "" "Shanghai Big Pixel Image, Source: https://pf.bigpixel.cn/en-US.html " %}
+{% image "../img/2024-03-29-navigating-technical-debt/shanghai.jpg" "" "" "\"195 Billion Pixels to see Shanghai\" by BigPixel, Source: [https://pf.bigpixel.cn/en-US/pano/772196334345129984.html](https://pf.bigpixel.cn/en-US/pano/772196334345129984.html)[^bigpixel]" %}
 
 Imagine being able to make a visualization of a codebase and then being able to zoom in and out to see different levels of detail.
 This isn't a far-fetched idea and could be implemented using a "zoomable circle packing" chart with [D3.js](https://observablehq.com/@d3/zoomable-circle-packing).
