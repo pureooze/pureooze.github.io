@@ -102,7 +102,7 @@ summary::-webkit-details-marker {
 
 p > code {
     background-color: rgba(var(--pureooze-primary-for-rgba), 0.1);
-    padding: 0.2em 0.2em;
+    padding: 0.05em 0.2em;
     border-radius: 4px;
     font-weight: 600;
     color: var(--pureooze-primary);

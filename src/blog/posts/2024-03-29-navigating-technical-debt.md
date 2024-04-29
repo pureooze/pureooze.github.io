@@ -5,6 +5,8 @@ small-thumbnail: 2024-03-29-navigating-technical-debt/small-thumbnail.webp #TODO
 tags: 
   - technical debt
   - csharp
+  - python
+  - git
 ---
 
 We don't spend enough time doing maintenance! We have too much legacy code! We only build new features and never cleanup the old things we made! We have too much technical debt!
@@ -31,11 +33,11 @@ Let's start by looking at Ward Cunningham's original definition:
 > *- Ward Cunningham*
 
 This definition focuses on technical debt being a trade-off **when developing new features** and that **it is not always bad** as long as its addressed promptly. 
-The problem though is that unlike financial debt – where creditors are responsible for determining if the debtor is able to take on more financial debt – who is responsible for making sure an organization can handle more technical debt?
+The problem though is that unlike financial debt, who is responsible for making sure an organization can handle more technical debt?
 Can an organization be "technical debt" bankrupt? 
 When organizations start thinking of this in terms of "debt" they quickly realize that there don't *seem* to be any consequences of the debt, so they ignore it.
 
-Steve Freeman (whose work I first encountered in the wonderful book [Growing Object-Oriented Software, Guided by Tests](https://github.com/sf105/goos-code)) describes technical debt as an ["Unhedged Call Option"](https://higherorderlogic.com/programming/2023/10/06/bad-code-isnt-technical-debt-its-an-unhedged-call-option.html):
+Steve Freeman (whose work I first encountered in the wonderful book [Growing Object-Oriented Software, Guided by Tests](https://github.com/sf105/goos-code)) describes technical debt as an ["Unhedged Call Option"](https://higherorderlogic.com/programming/2023/10/06/bad-code-isnt-technical-debt-its-an-unhedged-call-option.html).
 
 > Call options are a better model than debt for cruddy code (without tests) because they capture the unpredictability of what we do.
 > If I pop in a feature without cleaning up then I get the benefit immediately, I collect the premium.
@@ -50,8 +52,7 @@ Steve Freeman (whose work I first encountered in the wonderful book [Growing Obj
 
 This definition highlights the **unpredictability of cost**.
 Unlike debt – where we know what the interest rate will be – options could be infinitely more costly than doing the work in the first place.
-I like this definition because it brings forth this idea that the cost can become due suddenly and without warning.
-This means we need a quantifiable way to measure the risk in our codebase and understand where to focus our efforts because the "debt" is a disaster waiting to happen.
+I like this definition because it brings forth this idea that the cost can become due suddenly and without warning, and we need to understand where to focus our efforts because the "debt" is a disaster waiting to happen.
 
 
 ## Lensing To Understand Technical Debt
@@ -62,18 +63,7 @@ We focus on the high level system to identify potentially interesting areas and 
 Once we have a better understanding, we zoom back out to see how it affects the system as a whole.
 The idea of "lensing" is really important when it comes to understanding technical debt.
 
-> I mentioned that I’d love to have a tool that allows you to TL;DR articles at different levels of detail.
-> It would be like dynamically increasing and decreasing font size in an editor or a Kindle.
-> You adjust the size down when your vision is sharp and up when you are fatigued.
->
-> I’d love to be able to do this with detailed writing.
-> It would be great to be able to pull back and read a single page condensation of a 10 page article and then zoom in to see the concepts in 3 pages.
-> Yes, you can do that today with prompts in LLM chat interfaces but having a tool to do just that would be great.
->
-> *- Michael Feathers*
-
 In previous attempts of tacking technical debt, I have made the mistake of *starting* with a focus on very specific parts of a system.
-The code was weird/bad/confusing but there is often recency bias in the approach.
 Starting with a systems view and then drilling down into the details may be a better way to understand the system.
 Where do people encounter the most issues?
 Are some parts of the system riskier than others?
@@ -184,21 +174,13 @@ I ran the file hotspot analysis on the following codebases:
 
 What an interesting result.
 If you are familiar with the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle) – these distributions certainly seems to resemble it.
-It seems regardless of language, author and purpose – the same pattern emerges.
-I've heard a story where Michael Feathers once asked in a seminar: *"Is it easier for people to add code to existing place than to create a new method/class/etc? Why?"*[^easier-to-add]
-What do you think?
+It seems regardless of language, author, age and purpose – the same pattern emerges.
+Why do you think this is the case?
 
 People do things because they are incentivized to do them.
 Adding to existing places is easier because we don't have to think about context, so it's faster to do.
 The social system incentivizes us to do things fast, but it comes at the cost of other things.
-There is a constant pressure to deliver features, and so the path of least resistance is very tempting.
-
-It's worth mentioning though that software is a complicated – almost "living" – thing. Any analysis like this needs to be tempered with nuance.
-Just because a file is really large or changed frequently doesn't mean we should refactor it ASAP.
-
-From my analysis of these projects, the highest commited files are often code files, but they are also tests or files written in a different language/format (json, yml, etc.).
-For example in `ASP.NET Core` the highest committed `.cs` seems to be `FormWithParentBindingContextTest.cs`.
-Does this need to be "fixed" right away? What would a fix even look like? Maybe there are underlying design issues that are the real things to address?
+There is a constant pressure to deliver features, and so the path of least resistance is very tempting.[^easier-to-add]
 
 ### Method Hotspots
 {% image "../img/2024-03-29-navigating-technical-debt/ash-hayes-MV5ro8zkXys-unsplash.jpg" "" "" "Insect wings through a microscope lens – Photo by [Ash Hayes](https://unsplash.com/@ashley_hayes)" %}
@@ -206,15 +188,14 @@ Does this need to be "fixed" right away? What would a fix even look like? Maybe 
 From the previous example we saw that `TwitchConnection.cs` was by far the most commited to file in `TwitchEverywhere`.
 We can use the following algorithm to find its hotspot methods:
 1. Get the commits for the file in the given time range
-2. Get the changes for each commit
+2. Get the changes for the file in each commit
 3. Compare the current commit and the next commit
 4. Count the number of times each method was changed between commits
 5. Sort the methods by the number of changes
 6. Visualize the data
 
 Finding method changes between commits (steps 3 and 4) using git is a little tricky – since it doesn't track methods.
-There are some hacky ways to try and work around this but in C# we can use `Roslyn` to get the changes for us.
-The implementation for this is a little more complex than the first example, so I created a small .NET project called [DebtCollector.NET](https://github.com/pureooze/DebtCollector.NET) that can be used for this.
+In C# we can use `Roslyn` to get the changes for us and I created a small .NET project called [DebtCollector.NET](https://github.com/pureooze/DebtCollector.NET) that can be used for this.
 It's a simple library that uses `LibGit2Sharp` to extract data out of git and `Roslyn` to process the code.
 
 These are the results for the `TwitchConnection.cs` file:
@@ -246,43 +227,38 @@ With this data its obvious I modify `MessageCallback` extremely often.
 So this could be an interesting place to focus on during a refactoring session.
 
 ### Code Complexity
-{% image "../img/2024-03-29-navigating-technical-debt/code-complexity.png" "Code complexity of the MessageCallback method with a score of 18 (mildly complex)" "" "Code complexity of the MessageCallback method with a score of 18 (mildly complex)" %}
+{% image "../img/2024-03-29-navigating-technical-debt/code-complexity.png" "" "" "Code complexity of the MessageCallback method with a score of 18 (mildly complex)" %}
 
 Doing a cyclomatic complexity analysis on the `MessageCallback` method in [TwitchEverywhere](https://github.com/pureooze/TwitchEverywhere) gives a score of 18 (mildly complex).
 It's not too complex, but I know from experience that this method is modified a lot because I was lazy and didn't make separate methods for each message type.
+The method signature even gives a hint to this.
 Instead, all the logic is in one method and ends up being changed really often.
 So that's something I can focus on when I refactor this file.
 
 ## Lensing With AI
-Let's go back to the idea that we started with: lensing.
 What if we could use AI to connect the dots between the different lenses we have?
-Like linking complexity to the global hotspots to the local hotspots.
+Like linking complexity ➡ global hotspots ➡ local hotspots.
 Then we could view the system at a distance, ask questions about the different kinds of risks and then zoom in to see the details.
 
 We have this kind of thing in photography already. We can take [extremely high resolution photographs](https://pf.bigpixel.cn/en-US.html)[^bigpixel] and have people zoom in and out as they please.
 Why can't the same be done for code?
 
-Imagine being able to see a visualization of the whole codebase and then being able to zoom in to see details.
-I think this could be implemented using a "zoomable circle packing" chart with [D3.js](https://observablehq.com/@d3/zoomable-circle-packing).
-And then being able to add secondary metrics like temporal coupling[^temporalcoupling] as links between files could help us quickly understand the relationship between domains.
+{% image "../img/2024-03-29-navigating-technical-debt/shanghai.jpg" "" "" "Shanghai Big Pixel Image, Source: https://pf.bigpixel.cn/en-US.html " %}
+
+Imagine being able to make a visualization of a codebase and then being able to zoom in and out to see different levels of detail.
+This isn't a far-fetched idea and could be implemented using a "zoomable circle packing" chart with [D3.js](https://observablehq.com/@d3/zoomable-circle-packing).
+And then being able to link relationships between files – like temporal coupling[^temporalcoupling] – could help us quickly understand the relationship between domains.
 
 ## No Silver Bullets
-There's this idea that a codebase with 100% coverage means it is good, and anything less needed improvements.
-From experience, we have learned this is not the case.
-Depending on code coverage as the sign of quality lead to tests that don't actually test anything or tests that were so brittle they broke on every change.
-
-To me, code coverage is most effective when working on the edge of a system – often involving I/O.
-But in the other parts of the system this can be harmful because when the time to change comes, the tests can be a hindrance rather than a help.
-When communicating "tech debt metrics" to others it's important to help them understand the context of the data.
+From experience, we have learned that a codebase with 100% coverage does not mean it is good.
+Depending on code coverage as the sign of quality leads to tests that don't actually test anything or tests that were so brittle they broke on every change.
 **There are no silver bullets when it comes to software development.**
 
-For example, commit hotspots could be the result of a developer who likes to make a lot of commits.
-Without technical context, it's hard to know if this is a problem in the specific situation.
-
+Commit hotspots could be the result of a developer who likes to make a lot of commits.
+Without context, it's hard to know if this is a problem in the specific situation.
 Technical debt is a complex problem that can be hard to define and even harder to solve.
-Focusing on hotspots should help us deliver high quality software quickly[^4].
 We can use metrics to identify these risks and communicate them effectively to others.
-By empowering developers we can make sure that the work is meaningful and impactful.
+By empowering developers we make sure that the work is meaningful and impactful.
 
 I hope this post has given you some ideas on how to navigate technical debt in your organization.
 If you have any questions or comments feel free to reach out to me on [Mastodon](https://toot.community/@pureooze) or [GitHub](https://github.com/pureooze).
