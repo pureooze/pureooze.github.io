@@ -155,7 +155,7 @@ plt.show()
 
 </details>
 
-{% image "../img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-file-cs.png" "Visualization of commit count per file for TwitchEverywhere as a bar chart" %}
+{% image "../img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-file-cs.png" "Visualization of commit count per file for TwitchEverywhere as a bar chart" "post-image" %}
 
 Visualized like this there is a shocking revelation: a small percentage of files are responsible for the vast majority of commits!
 What if I told you that the distribution of commits per file in a codebase is common across most codebases?
@@ -199,7 +199,7 @@ In C# we can use `Roslyn` to get the changes for us and I created a small .NET p
 It's a simple library that uses `LibGit2Sharp` to extract data out of git and `Roslyn` to process the code.
 
 These are the results for the `TwitchConnection.cs` file:
-{% image "../img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-method.png" "Visualization of commit count per method in the most committed file as a bar chart" %}
+{% image "../img/2024-03-29-navigating-technical-debt/TwitchEverywhere-commit-count-per-method.png" "Visualization of commit count per method in the most committed file as a bar chart" "post-image" %}
 
 <details>
 <summary>Data table for xray results</summary>
@@ -263,7 +263,7 @@ By empowering developers we make sure that the work is meaningful and impactful.
 I hope this post has given you some ideas on how to navigate technical debt in your organization.
 If you have any questions or comments feel free to reach out to me on [Mastodon](https://toot.community/@pureooze) or [GitHub](https://github.com/pureooze).
 
-{% image "../img/2024-03-29-navigating-technical-debt/tackling-technical-debt.jpg" "Tackling technical debt" %}
+{% image "../img/2024-03-29-navigating-technical-debt/tackling-technical-debt.jpg" "Tackling technical debt" "post-image" %}
 
 ## Additional Notes
 [^wheatandchaff]: [to judge which people or things in a group are bad and which ones are good](https://www.merriam-webster.com/dictionary/separate%20the%20wheat%20from%20the%20chaff)
