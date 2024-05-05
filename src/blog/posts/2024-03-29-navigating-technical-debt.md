@@ -38,18 +38,6 @@ Can an organization be "technical debt" bankrupt?
 When organizations start thinking of this in terms of "debt" they quickly realize that there don't *seem* to be any consequences of the debt, so they ignore it.
 
 Steve Freeman (whose work I first encountered in the wonderful book [Growing Object-Oriented Software, Guided by Tests](https://github.com/sf105/goos-code)) describes technical debt as an ["Unhedged Call Option"](https://higherorderlogic.com/programming/2023/10/06/bad-code-isnt-technical-debt-its-an-unhedged-call-option.html).
-
-> Call options are a better model than debt for cruddy code (without tests) because they capture the unpredictability of what we do.
-> If I pop in a feature without cleaning up then I get the benefit immediately, I collect the premium.
-> If I never see that code again, then I’m ahead and, in retrospect, it would have been foolish to have spent time cleaning it up.
-> 
-> On the other hand, if a radical new feature comes in that I have to do, all those quick fixes suddenly become very expensive to work with. 
-> Examples I’ve seen are a big new client that requires a port to a different platform, or a new regulatory requirement that needs a new report.
-> I get equivalent problems if there’s a failure I have to interpret and fix just before a deadline, or the team members turn over completely and no-one remembers the tacit knowledge that helps the code make sense.
-> The market has moved away from where I thought it was going to be and my option has been called.
-> 
-> *- Steve Freeman*
-
 This definition highlights the **unpredictability of cost**.
 Unlike debt – where we know what the interest rate will be – options could be infinitely more costly than doing the work in the first place.
 I like this definition because it brings forth this idea that the cost can become due suddenly and without warning, and we need to understand where to focus our efforts because the "debt" is a disaster waiting to happen.
@@ -63,12 +51,10 @@ We focus on the high level system to identify potentially interesting areas and 
 Once we have a better understanding, we zoom back out to see how it affects the system as a whole.
 The idea of "lensing" is really important when it comes to understanding technical debt.
 
-In previous attempts of tacking technical debt, I have made the mistake of *starting* with a focus on very specific parts of a system.
 Starting with a systems view and then drilling down into the details may be a better way to understand the system.
 Where do people encounter the most issues?
 Are some parts of the system riskier than others?
 What parts of the system are most likely to change in the future?
-
 These are the kinds of questions we need to be asking.
 Too often we focus on bits of code and forget the context of the systems it's used in – which is extremely important.
 
@@ -172,10 +158,9 @@ I ran the file hotspot analysis on the following codebases:
 {% image "../img/2024-03-29-navigating-technical-debt/commit-counter-results/other-projects-commit-per-file.png" "Results for ASP.NET Core, Roslyn, Django and Linux showing very similar distributions" ""%}
 </details>
 
-What an interesting result.
 If you are familiar with the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle) – these distributions certainly seems to resemble it.
 It seems regardless of language, author, age and purpose – the same pattern emerges.
-Why do you think this is the case?
+**Why do you think this is the case?**
 
 People do things because they are incentivized to do them.
 Adding to existing places is easier because we don't have to think about context, so it's faster to do.
