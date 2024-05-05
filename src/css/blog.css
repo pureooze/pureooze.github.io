@@ -264,7 +264,7 @@ figure {
 }
 
 .post-thumbnail {
-    min-width: 80vw;
+    width: 80vw;
     height: auto;
     border-radius: 5px;
     margin: auto;
