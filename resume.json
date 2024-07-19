@@ -4,9 +4,9 @@
   },
   "basics": {
     "name": "Uzair Shamim",
-    "summary": "I am a hardworking individual capable of working independently and with teams. I love working with people who like to take creative approaches and iterate on ideas. Knowledge sharing is also important to me and I make sure to present about topics I find interesting at our internal developer conferences! I also have a blog at: https://pureooze.com/blog/",
+    "summary": "I am a hardworking individual capable of working independently and with teams. I love working with people who like to take creative approaches and iterate on ideas. Knowledge sharing is also important to me and I make sure to present about topics I find interesting at developer conferences! I also have a blog at: https://pureooze.com/blog/",
     "email": "uzashamim@gmail.com",
-    "image": "img/me.jpg",
+    "website": "https://pureooze.com",
     "location": {
       "city": "Kitchener",
       "region": "Ontario"
@@ -29,28 +29,13 @@
       "name": "D2L",
       "position": "Senior Software Developer",
       "website": "https://d2l.com",
-      "startDate": "2021-06-01",
+      "startDate": "2019-08-26",
       "highlights": [
-        "Created new user experiences using MSSQL, C#, Javascript",
+        "Created new user experiences and APIs using MSSQL, C#, Javascript and LitElement WebComponents with accessible user experiences",
         "Created a code search tool with OmniSharp for visualizations of usages of functions in C# code as trees",
-        "Used native HTML5 apis and LitElement WebComponents to deliver accessible user experiences in Brightspace",
         "Developed new eventing system to improve scalability of existing MSSQL Servers",
         "Wrote Git and Roslyn utilities to find potential technical debt in a codebase to make it easier to prioritize work",
-        "Delivered yearly presentations at internal developer conference (I love knowledge sharing and presenting all the cool things we work on!)"
-      ]
-    },
-    {
-      "name": "D2L",
-      "position": "Software Developer",
-      "website": "https://d2l.com",
-      "startDate": "2019-08-26",
-      "endDate": "2021-06-01",
-      "highlights": [
-        "Wrote code for filesystem layer to use AWS S3 in C# and .NET Framework",
-        "Writing a testing tool to perform large amounts of operations on the new filesystem and compare to the legacy file system to verify correctness",
-        "Helped create, modify and improve Polymer and LitElement web components",
-        "Worked on APIs built using C# and backed with MSSQL",
-        "Helped create a language management system for admins to customize language terms"
+        "Delivered yearly presentations at internal developer conference on topics like Code Search, Image Compression and Storing Time"
       ]
     },
     {
@@ -62,8 +47,7 @@
       "highlights": [
         "Developed React application and tested with Jest, Enzyme, Cypress, and React Storybook",
         "Developed website with AngularJS, Karma, Protractor/Selenium, Jasmine, Java, and NodeJS",
-        "Created RESTful Java 8 services and APIs using Spring with a tiered architecture (web service, service and domain layers)",
-        "Used Dynatrace to troubleshoot performance issues in web applications"
+        "Created RESTful Java 8 services and APIs using Spring with a tiered architecture"
       ]
     }
   ],
@@ -73,24 +57,17 @@
       "area": "Software Eng. Tech.",
       "studyType": "Bachelor",
       "startDate": "2016-09-01",
-      "endDate": "2019-08-31",
-      "courses": [
-        "In a team of 3, built a podcast feed in Qt that could fetch and play episodes from a podcast on iTunes",
-        "Wrote a program in Qt that uses stenography to embed messages inside of images",
-        "Applied software design patterns to code and analyzed design patterns in a project (JHotDraw)"
-      ]
+      "endDate": "2019-08-31"
     }
   ],
   "skills": [
     {
       "name": "Web Development",
       "keywords": [
-        "HTML5",
-        "CSS",
         "Javascript",
-        "Typescript",
         "WebComponents",
-        "LitElement"
+        "LitElement",
+        "React"
       ]
     },
     {
@@ -100,7 +77,6 @@
         "Razor",
         "Rx.NET",
         "MAUI",
-        "ASP.NET Core",
         ".NET Framework"
       ]
     },
@@ -111,33 +87,21 @@
         "Chai",
         "open-wc",
         "NUnit",
-        "Moq"
+        "Moq",
+        "Jest"
       ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "English",
-      "fluency": "Native speaker"
     }
   ],
   "projects": [
     {
       "name": "SimpleTwitch",
-      "description": "SimpleTwitch is a desktop UI for using Twitch built on modern .NET",
+      "description": "SimpleTwitch is a desktop UI for using Twitch built on modern .NET and Rx.NET",
       "url": "https://github.com/pureooze/SimpleTwitch",
       "startDate": "2024-01-21",
-      "highlights": [
-        "SimpleTwitch is a modern .NET desktop UI that focuses on providing simple user experiences",
-        "SimpleTwitch uses Rx.NET to provide a reactive experience"
-      ],
       "keywords": [
         ".NET",
-        "Rx.NET",
-        "Modern .NET",
         "Blazor",
-        "MAUI",
-        "Razor"
+        "MAUI"
       ],
       "type": "application"
     },
@@ -146,45 +110,22 @@
       "description": "TwitchEverywhere is a modern .NET library that allows connecting to a Twitch chat and subscribing to messages in that chat.",
       "url": "https://github.com/pureooze/TwitchEverywhere",
       "startDate": "2023-09-03",
-      "highlights": [
-        "Created a Modern .NET library that provides a fast and easy API for connecting to Twitch",
-        "TwitchEverywhere.Irc uses Rx.NET to provide a reactive API for handling messages from Twitch"
-      ],
       "keywords": [
         ".NET",
-        "Rx.NET",
-        "Modern .NET",
-        "Twitch IRC API",
-        "Twitch Helix REST API"
+        "Twitch API"
       ],
       "type": "application"
     },
     {
       "name": "Blog",
       "url": "https://pureooze.com/blog",
-      "startDate": "2024-04-10",
-      "highlights": [
-        "Discussing topics in software development that I find interesting."
-      ],
-      "keywords": [
-        "Blog",
-        "Development"
-      ]
+      "startDate": "2024-04-10"
     },
     {
       "name": "Medium Blog",
       "url": "https://medium.com/@pureooze",
       "startDate": "2015-01-30",
-      "endDate": "2018-10-02",
-      "highlights": [
-        "Discuss topics like software development and testing",
-        "Document how to use libraries/programs I find interesting (eg. dom-testing-library)"
-      ],
-      "keywords": [
-        "Blog",
-        "Medium",
-        "Development"
-      ]
+      "endDate": "2018-10-02"
     },
     {
       "entity": "lusakasa",
@@ -193,14 +134,8 @@
       "url": "https://github.com/lusakasa",
       "startDate": "2018-03-30",
       "endDate": "2020-03-30",
-      "highlights": [
-        "Maintainer of Saka, a chrome extension for improving the browsing experience",
-        "Written using Preact, tested with Jest and the dom-testing-library",
-        "Collaborate with contributors and users to fix bugs and add features"
-      ],
       "keywords": [
-        "Saka",
-        "Chrome Extension",
+        "Browser Extension",
         "Javascript",
         "Preact"
       ],
