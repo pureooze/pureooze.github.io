@@ -18,5 +18,5 @@ Linking is not an endorsement of their views or opinions.
 * [Michael Feathers](https://michaelfeathers.substack.com/)
 * [Adam Tornhill](https://www.adamtornhill.com/)
 * [Steve Freeman](https://higherorderlogic.com/)
-* [Kevlin Henney](https://kevlin.substack.com/)
+* [Kevlin Henney](https://kevlinhenney.medium.com/)
 * [Scott Hanselman](https://www.hanselman.com/)
