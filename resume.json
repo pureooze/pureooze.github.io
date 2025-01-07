@@ -32,6 +32,7 @@
       "startDate": "2019-08-26",
       "highlights": [
         "Created new user experiences and APIs using MSSQL, C#, Javascript and LitElement WebComponents with accessible user experiences",
+        "Created internal tool to search, identify and prioritize cleanup of feature toggles using 11ty, JavaScript, Github Actions and WebComponents",
         "Created a code search tool with OmniSharp for visualizations of usages of functions in C# code as trees",
         "Developed new eventing system to improve scalability of existing MSSQL Servers",
         "Wrote Git and Roslyn utilities to find potential technical debt in a codebase to make it easier to prioritize work",
@@ -67,7 +68,8 @@
         "Javascript",
         "WebComponents",
         "LitElement",
-        "React"
+        "React",
+        "11ty"
       ]
     },
     {
