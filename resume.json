@@ -31,12 +31,12 @@
       "website": "https://d2l.com",
       "startDate": "2019-08-26",
       "highlights": [
-        "Created new user experiences and APIs using MSSQL, C#, Javascript and LitElement WebComponents with accessible user experiences",
-        "Created internal tool to search, identify and prioritize cleanup of feature toggles using 11ty, JavaScript, Github Actions and WebComponents",
-        "Created a code search tool with OmniSharp for visualizations of usages of functions in C# code as trees",
+        "Created various user interfaces using MSSQL, C#, Javascript and LitElement WebComponents with accessibility as a core requirement",
+        "Created tool to search, identify and prioritize cleanup of feature toggles using 11ty, JavaScript, Github Actions and WebComponents",
+        "Created a code search tool with OmniSharp and Javascript for visualizations of usages of functions in C# code as trees",
         "Developed new eventing system to improve scalability of existing MSSQL Servers",
         "Wrote Git and Roslyn utilities to find potential technical debt in a codebase to make it easier to prioritize work",
-        "Delivered yearly presentations at internal developer conference on topics like Code Search, Image Compression and Storing Time"
+        "Delivered yearly presentations at internal developer conference on topics like Code Search, Image Compression and Storing Time In Databases"
       ]
     },
     {
@@ -69,7 +69,8 @@
         "WebComponents",
         "LitElement",
         "React",
-        "11ty"
+        "11ty",
+        "HTML"
       ]
     },
     {
@@ -77,7 +78,6 @@
       "keywords": [
         "Blazor",
         "Razor",
-        "Rx.NET",
         "MAUI",
         ".NET Framework"
       ]
@@ -97,13 +97,14 @@
   "projects": [
     {
       "name": "SimpleTwitch",
-      "description": "SimpleTwitch is a desktop UI for using Twitch built on modern .NET and Rx.NET",
+      "description": "SimpleTwitch is a desktop UI for using Twitch built on HTML and modern .NET",
       "url": "https://github.com/pureooze/SimpleTwitch",
       "startDate": "2024-01-21",
       "keywords": [
         ".NET",
         "Blazor",
-        "MAUI"
+        "MAUI",
+        "HTML"
       ],
       "type": "application"
     },
