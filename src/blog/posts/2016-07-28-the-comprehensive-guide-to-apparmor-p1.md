@@ -435,4 +435,4 @@ Consider the following:
 > Could it be done? Can Bob guarantee that other users would never be able to have unauthorized access to the file?
 
 ## Additional Notes
-[^complainmodestatus]complain mode status will still enforce any explicit deny rules in a profile
+[^complainmodestatus]: complain mode status will still enforce any explicit deny rules in a profile
