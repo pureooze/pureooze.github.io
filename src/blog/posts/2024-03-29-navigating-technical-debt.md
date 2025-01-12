@@ -220,30 +220,13 @@ The method signature even gives a hint to this.
 Instead, all the logic is in one method and ends up being changed really often.
 So that's something I can focus on when I refactor this file.
 
-## Lensing With AI
-What if we could use AI to connect the dots between the different lenses we have?
-Like linking complexity ➡ global hotspots ➡ local hotspots.
-Then we could view the system at a distance, ask questions about the different kinds of risks and then zoom in to see the details.
-
-We have this kind of thing in photography already. We can take [extremely high resolution photographs](https://pf.bigpixel.cn/en-US.html)[^bigpixel] and have people zoom in and out as they please.
-Why can't the same be done for code?
-
-{% image "../img/2024-03-29-navigating-technical-debt/shanghai.jpg" "" "" "\"195 Billion Pixels to see Shanghai\" by BigPixel, Source: [https://pf.bigpixel.cn/en-US/pano/772196334345129984.html](https://pf.bigpixel.cn/en-US/pano/772196334345129984.html)[^bigpixel]" %}
-
-Imagine being able to make a visualization of a codebase and then being able to zoom in and out to see different levels of detail.
-This isn't a far-fetched idea and could be implemented using a "zoomable circle packing" chart with [D3.js](https://observablehq.com/@d3/zoomable-circle-packing).
-And then being able to link relationships between files – like temporal coupling[^temporalcoupling] – could help us quickly understand the relationship between domains.
-
 ## No Silver Bullets
-From experience, we have learned that a codebase with 100% coverage does not mean it is good.
-Depending on code coverage as the sign of quality leads to tests that don't actually test anything or tests that were so brittle they broke on every change.
-**There are no silver bullets when it comes to software development.**
+**There are no silver bullets in software development.**
 
 Commit hotspots could be the result of a developer who likes to make a lot of commits.
 Without context, it's hard to know if this is a problem in the specific situation.
 Technical debt is a complex problem that can be hard to define and even harder to solve.
-We can use metrics to identify these risks and communicate them effectively to others.
-By empowering developers we make sure that the work is meaningful and impactful.
+We can use metrics like hotspots to identify, investigate and communicate these risks effectively to others.
 
 I hope this post has given you some ideas on how to navigate technical debt in your organization.
 If you have any questions or comments feel free to reach out to me on [Mastodon](https://toot.community/@pureooze) or [GitHub](https://github.com/pureooze).
