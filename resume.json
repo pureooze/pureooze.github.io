@@ -27,16 +27,16 @@
   "work": [
     {
       "name": "D2L",
-      "position": "Senior Software Developer",
+      "position": "Senior Software Developer II",
       "website": "https://d2l.com",
       "startDate": "2019-08-26",
       "highlights": [
-        "Created various user interfaces using MSSQL, C#, Javascript and LitElement WebComponents with accessibility as a core requirement",
-        "Created tool to search, identify and prioritize cleanup of feature toggles using 11ty, JavaScript, Github Actions and WebComponents",
-        "Created a code search tool with OmniSharp and Javascript for visualizations of usages of functions in C# code as trees",
+        "Took lead development role on a project to deliver a brand new product for the business",
+        "Created several internal tools to improve developer experience and productivity",
+        "Created a code search tool with OmniSharp and Javascript for visualizations of code",
         "Developed new eventing system to improve scalability of existing MSSQL Servers",
-        "Wrote Git and Roslyn utilities to find potential technical debt in a codebase to make it easier to prioritize work",
-        "Delivered yearly presentations at internal developer conference on topics like Code Search, Image Compression and Storing Time In Databases"
+        "Wrote Git and Roslyn utilities to find and prioritize technical debt in a codebase",
+        "Delivered yearly presentations at internal developer conference on topics like Code Search, Image Compression and Databases"
       ]
     },
     {
@@ -55,7 +55,7 @@
   "education": [
     {
       "institution": "McMaster University",
-      "area": "Software Eng. Tech.",
+      "area": "Software Eng.",
       "studyType": "Bachelor",
       "startDate": "2016-09-01",
       "endDate": "2019-08-31"
@@ -96,15 +96,15 @@
   ],
   "projects": [
     {
-      "name": "SimpleTwitch",
-      "description": "SimpleTwitch is a desktop UI for using Twitch built on HTML and modern .NET",
-      "url": "https://github.com/pureooze/SimpleTwitch",
-      "startDate": "2024-01-21",
+      "name": "DebtCollector.NET",
+      "description": "A simple modern .NET tool to analyze and prioritize technical debt hotspots in a codebase",
+      "url": "https://github.com/pureooze/DebtCollector.NET",
+      "startDate": "2024-04-05",
       "keywords": [
         ".NET",
-        "Blazor",
-        "MAUI",
-        "HTML"
+        "C#",
+        "Git",
+        "Roslyn"
       ],
       "type": "application"
     },
@@ -125,15 +125,9 @@
       "startDate": "2024-04-10"
     },
     {
-      "name": "Medium Blog",
-      "url": "https://medium.com/@pureooze",
-      "startDate": "2015-01-30",
-      "endDate": "2018-10-02"
-    },
-    {
       "entity": "lusakasa",
       "name": "Saka",
-      "description": "Project Maintainer of an Elegant tab, bookmark and history search in the browser",
+      "description": "Former maintainer of Saka an elegant tab, bookmark and history search in the browser",
       "url": "https://github.com/lusakasa",
       "startDate": "2018-03-30",
       "endDate": "2020-03-30",
