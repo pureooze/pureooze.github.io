@@ -29,14 +29,36 @@
       "name": "D2L",
       "position": "Senior Software Developer II",
       "website": "https://d2l.com",
-      "startDate": "2019-08-26",
+      "startDate": "2024-09-03",
       "highlights": [
         "Took lead development role on a project to deliver a brand new product for the business",
-        "Created several internal tools to improve developer experience and productivity",
-        "Created a code search tool with OmniSharp and Javascript for visualizations of code",
-        "Developed new eventing system to improve scalability of existing MSSQL Servers",
+        "Created an internal feature flag reporting tool to help teams track flag state, usage and cleanup",
         "Wrote Git and Roslyn utilities to find and prioritize technical debt in a codebase",
-        "Delivered yearly presentations at internal developer conference on topics like Code Search, Image Compression and Databases"
+        "Delivered yearly presentations at internal developer conference"
+      ]
+    },
+    {
+      "name": "D2L",
+      "position": "Senior Software Developer",
+      "website": "https://d2l.com",
+      "startDate": "2021-07-05",
+      "endDate": "2024-09-03",
+      "highlights": [
+        "Developed standardized date based system to control how users receive access to activities in Brightspace",
+        "Developed new eventing system using Temporal Tables to improve efficiency of database servers",
+        "Mentored junior developers on my team and other teams"
+      ]
+    },
+    {
+      "name": "D2L",
+      "position": "Software Developer",
+      "website": "https://d2l.com",
+      "startDate": "2019-08-26",
+      "endDate": "2021-07-05",
+      "highlights": [
+        "Built a pseudorandom testing suite for verifying new filesystem implementation",
+        "Built new UI and backend APIs for activity creation experience",
+        "Created a code search and visualization tool with OmniSharp and Javascript"
       ]
     },
     {
@@ -46,9 +68,7 @@
       "startDate": "2017-05-01",
       "endDate": "2018-08-31",
       "highlights": [
-        "Developed React application and tested with Jest, Enzyme, Cypress, and React Storybook",
-        "Developed website with AngularJS, Karma, Protractor/Selenium, Jasmine, Java, and NodeJS",
-        "Created RESTful Java 8 services and APIs using Spring with a tiered architecture"
+        "Made REST Java APIs, React and AngularJS applications, tested with Jest, Karma and Protractor/Selenium"
       ]
     }
   ],
@@ -76,10 +96,8 @@
     {
       "name": ".NET",
       "keywords": [
-        "Blazor",
-        "Razor",
-        "MAUI",
-        ".NET Framework"
+        ".NET Framework",
+        ".NET"
       ]
     },
     {
@@ -110,7 +128,7 @@
     },
     {
       "name": "TwitchEverywhere",
-      "description": "TwitchEverywhere is a modern .NET library that allows connecting to a Twitch chat and subscribing to messages in that chat.",
+      "description": "A modern .NET library for connecting to a Twitch chat and subscribing to messages",
       "url": "https://github.com/pureooze/TwitchEverywhere",
       "startDate": "2023-09-03",
       "keywords": [
@@ -130,7 +148,7 @@
       "description": "Former maintainer of Saka an elegant tab, bookmark and history search in the browser",
       "url": "https://github.com/lusakasa",
       "startDate": "2018-03-30",
-      "endDate": "2020-03-30",
+      "endDate": "2021-03-18",
       "keywords": [
         "Browser Extension",
         "Javascript",
