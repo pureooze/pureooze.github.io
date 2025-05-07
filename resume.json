@@ -31,10 +31,11 @@
       "website": "https://d2l.com",
       "startDate": "2024-09-03",
       "highlights": [
-        "Took lead development role on a project to deliver a brand new product for the business",
-        "Created an internal feature flag reporting tool to help teams track flag state, usage and cleanup",
+        "Took lead development role on a project to build a new product for instructors",
+        "Created an internal feature flag reporting tool to help teams track state, usage and prioritize cleanup",
         "Wrote Git and Roslyn utilities to find and prioritize technical debt in a codebase",
-        "Delivered yearly presentations at internal developer conference"
+        "Helped organize and delivered yearly presentations at internal developer conference",
+        "Built a browser extension to make it easier to test local and deployed Brightspace instances"
       ]
     },
     {
@@ -44,9 +45,9 @@
       "startDate": "2021-07-05",
       "endDate": "2024-09-03",
       "highlights": [
-        "Developed standardized date based system to control how users receive access to activities in Brightspace",
-        "Developed new eventing system using Temporal Tables to improve efficiency of database servers",
-        "Mentored junior developers on my team and other teams"
+        "Developed standardized date based availability system for activities in Brightspace",
+        "Developed new eventing system using Temporal Tables to improve cost and efficiency of MSSQL servers",
+        "Mentored developers on my team and other teams"
       ]
     },
     {
