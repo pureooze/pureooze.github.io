@@ -1,7 +1,7 @@
 {
   "scripts": {
     "clean": "rimraf _site",
-    "build:resume": "mkdir _site && resume export _site/resume.html --theme pureooze",
+    "build:resume": "mkdir _site && resume export _site/resume.html --theme pureooze && resume export _site/resume.pdf --theme pureooze",
     "build": "npm run build:resume && npx @11ty/eleventy",
     "watch": "npm run clean && npm run build:resume && npx @11ty/eleventy --serve",
     "start": "npm run watch"
