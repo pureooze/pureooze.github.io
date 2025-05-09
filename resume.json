@@ -4,7 +4,6 @@
   },
   "basics": {
     "name": "Uzair Shamim",
-    "summary": "I am a hardworking individual capable of working independently and with teams. I love working with people who like to take creative approaches and iterate on ideas. Knowledge sharing is also important to me and I make sure to present about topics I find interesting at developer conferences! I also have a blog at: https://pureooze.com/blog/",
     "email": "uzashamim@gmail.com",
     "website": "https://pureooze.com",
     "location": {
@@ -31,11 +30,12 @@
       "website": "https://d2l.com",
       "startDate": "2024-09-03",
       "highlights": [
-        "Took lead development role on a project to build a new product for instructors",
-        "Created an internal feature flag reporting tool to help teams track state, usage and prioritize cleanup",
-        "Wrote Git and Roslyn utilities to find and prioritize technical debt in a codebase",
-        "Helped organize and delivered yearly presentations at internal developer conference",
-        "Built a browser extension to make it easier to test local and deployed Brightspace instances"
+        "Deployed a feature flag dashboard to help teams prioritize cleanup that reduced flag inventory by 15% in 4 months",
+        "Wrote Git and Roslyn utilities to find and prioritize technical debt by identifying the top 10% of hotspots in a codebase",
+        "Made a browser extension to make it easier to test and perform repetitive tasks on deployed Brightspace instances",
+        "Organized the engineering departments yearly internal developer conference with 200+ attendees",
+        "Delivered presentation at conference on technical debt and strategies on finding and prioritizing it",
+        "Gave a presentation on feature flags, how they work in Brightspace and effective strategies for cleanup"
       ]
     },
     {
@@ -45,9 +45,15 @@
       "startDate": "2021-07-05",
       "endDate": "2024-09-03",
       "highlights": [
-        "Developed standardized date based availability system for activities in Brightspace",
+        "Took the lead development role on a project to build a new course creation product for instructors",
+        "Rolled out a standardized date based availability system for activities in Brightspace",
         "Developed new eventing system using Temporal Tables to improve cost and efficiency of MSSQL servers",
-        "Mentored developers on my team and other teams"
+        "Wrote queries and dashboards to visualize Github PR review times based on PR size",
+        "Mentored developers on my team and other teams by pair programming, code reviews and knowledge sharing",
+        "Helped junior developers manage their PR sizes to reduce review time on their PRs",
+        "Implemented a feature flag review and cleanup process that lowered the teams feature flag inventory by 25%",
+        "Created an OpenAPI specification generator for the Brightspace that improved time to find APIs by 90%",
+        "Presented to 120+ people on Temporal Tables and how difficult time can be to work with in a database"
       ]
     },
     {
@@ -57,9 +63,10 @@
       "startDate": "2019-08-26",
       "endDate": "2021-07-05",
       "highlights": [
-        "Built a pseudorandom testing suite for verifying new filesystem implementation",
-        "Built new UI and backend APIs for activity creation experience",
-        "Created a code search and visualization tool with OmniSharp and Javascript"
+        "Developed a pseudorandom testing suite for verifying and asserting new virtual filesystem against the existing one",
+        "Built new accessible UI and backend APIs for a consistent activity creation experience",
+        "Created a code search and visualization tool with OmniSharp and Javascript that reduced time to find code by over 50%",
+        "Migrated an internal development blog from Docker, Jekyll and Ruby to using 11ty, Nunjucks and JavaScript"
       ]
     },
     {
@@ -69,7 +76,7 @@
       "startDate": "2017-05-01",
       "endDate": "2018-08-31",
       "highlights": [
-        "Made REST Java APIs, React and AngularJS applications, tested with Jest, Karma and Protractor/Selenium"
+        "Built REST Java APIs, React and AngularJS applications, tested with Jest, Karma and Protractor/Selenium"
       ]
     }
   ],
@@ -87,6 +94,7 @@
       "name": "Web Development",
       "keywords": [
         "Javascript",
+        "Typescript",
         "WebComponents",
         "LitElement",
         "React",
@@ -95,10 +103,13 @@
       ]
     },
     {
-      "name": ".NET",
+      "name": "Languages",
       "keywords": [
-        ".NET Framework",
-        ".NET"
+        "C#",
+        "Javascript",
+        "Typescript",
+        "Java",
+        "Python"
       ]
     },
     {
@@ -141,15 +152,16 @@
     {
       "name": "Blog",
       "url": "https://pureooze.com/blog",
+      "description": "My personal blog built using 11ty and JavaScript, where I write about software development and other topics of interest to me like Linux, security and bigger picture software development topics like technical debt",
       "startDate": "2024-04-10"
     },
     {
       "entity": "lusakasa",
       "name": "Saka",
-      "description": "Former maintainer of Saka an elegant tab, bookmark and history search in the browser",
+      "description": "Maintainer of Saka an elegant tab, bookmark and history search in the browser with 2000+ concurrent users",
       "url": "https://github.com/lusakasa",
       "startDate": "2018-03-30",
-      "endDate": "2021-03-18",
+      "endDate": "2023-03-18",
       "keywords": [
         "Browser Extension",
         "Javascript",
