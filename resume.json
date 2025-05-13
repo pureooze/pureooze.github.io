@@ -30,12 +30,15 @@
       "website": "https://d2l.com",
       "startDate": "2024-09-03",
       "highlights": [
-        "Deployed a feature flag dashboard to help teams prioritize cleanup that reduced flag inventory by 15% in 4 months",
-        "Wrote Git and Roslyn utilities to find and prioritize technical debt by identifying the top 10% of hotspots in a codebase",
-        "Made a browser extension to make it easier to test and perform repetitive tasks on deployed Brightspace instances",
+        "Worked with VP of Architecture and Principal developers to address performance and developer experience shortcomings of existing API technologies in Brightspace",
+        "Created an OpenAPI specification generator for the Brightspace that improved time to find and test APIs by 90%",
+        "To improve management of feature flags, created dashboard for search, filter and organizing flags which reduced flag inventory by 15% in 4 months",
+        "Made a browser extension for performing repetitive tasks like viewing meta information, configs or feature flags on deployed Brightspace instances",
         "Organized the engineering departments yearly internal developer conference with 200+ attendees",
-        "Delivered presentation at conference on technical debt and strategies on finding and prioritizing it",
-        "Gave a presentation on feature flags, how they work in Brightspace and effective strategies for cleanup"
+        "To address technical debt in Brightspace built DebtCollector.NET using C#, Git and Roslyn to find the top 10% of hotspots in a codebase and visualize the data",
+        "Delivered presentation on the importance of managing technical debt with methodologies on how to find and prioritizing it",
+        "Presented about feature flags in Brightspace with strategies for using them to make releases safer",
+        "Used OpenTelemetry to instrument and monitor the performance of a resource intensive notification API"
       ]
     },
     {
@@ -45,15 +48,13 @@
       "startDate": "2021-07-05",
       "endDate": "2024-09-03",
       "highlights": [
-        "Took the lead development role on a project to build a new course creation product for instructors",
-        "Rolled out a standardized date based availability system for activities in Brightspace",
+        "Lead the development of a project to build a new course creation experience for instructors",
+        "Built the first of its kind standardized date based availability system for activities in Brightspace",
         "Developed new eventing system using Temporal Tables to improve cost and efficiency of MSSQL servers",
         "Wrote queries and dashboards to visualize Github PR review times based on PR size",
         "Mentored developers on my team and other teams by pair programming, code reviews and knowledge sharing",
-        "Helped junior developers manage their PR sizes to reduce review time on their PRs",
         "Implemented a feature flag review and cleanup process that lowered the teams feature flag inventory by 25%",
-        "Created an OpenAPI specification generator for the Brightspace that improved time to find APIs by 90%",
-        "Presented to 120+ people on Temporal Tables and how difficult time can be to work with in a database"
+        "Presented to 120+ people on Temporal Tables and the many challenges with storing time values in a database"
       ]
     },
     {
@@ -70,7 +71,7 @@
       ]
     },
     {
-      "name": "Ontario Teachers Pension Plan",
+      "name": "OTPP",
       "position": "Software Developer Intern (16 months)",
       "website": "https://www.otpp.com/",
       "startDate": "2017-05-01",
@@ -83,7 +84,7 @@
   "education": [
     {
       "institution": "McMaster University",
-      "area": "Software Eng.",
+      "area": "Software Eng. Tech.",
       "studyType": "Bachelor",
       "startDate": "2016-09-01",
       "endDate": "2019-08-31"
@@ -91,36 +92,58 @@
   ],
   "skills": [
     {
-      "name": "Web Development",
+      "name": "Languages",
       "keywords": [
         "Javascript",
         "Typescript",
-        "WebComponents",
-        "LitElement",
-        "React",
-        "11ty",
+        "C#",
+        "Java",
+        "Python",
+        "SQL",
+        "CSS",
         "HTML"
       ]
     },
     {
-      "name": "Languages",
+      "name": "Frameworks",
       "keywords": [
-        "C#",
-        "Javascript",
-        "Typescript",
-        "Java",
-        "Python"
+        "React",
+        "11ty",
+        "LitElement",
+        "ASP.NET",
+        ".NET Framework",
+        ".NET",
+        "MSSQL",
+        "PostgreSQL"
       ]
     },
     {
       "name": "Testing",
       "keywords": [
+        "Jest",
         "Mocha",
         "Chai",
         "open-wc",
         "NUnit",
         "Moq",
-        "Jest"
+        "JSON Schema",
+        "Playwright"
+      ]
+    },
+    {
+      "name": "Tools",
+      "keywords": [
+        "OpenAPI",
+        "Swagger",
+        "AWS S3",
+        "GitHub",
+        "Git",
+        "Bash",
+        "Powershell",
+        "Postman",
+        "Jira",
+        "Confluence",
+        "OpenTelemetry"
       ]
     }
   ],
@@ -152,14 +175,14 @@
     {
       "name": "Blog",
       "url": "https://pureooze.com/blog",
-      "description": "My personal blog built using 11ty and JavaScript, where I write about software development and other topics of interest to me like Linux, security and bigger picture software development topics like technical debt",
+      "description": "Personal blog built using 11ty and JavaScript, about topics of interest like writing, Linux, technical debt and testing",
       "startDate": "2024-04-10"
     },
     {
       "entity": "lusakasa",
       "name": "Saka",
-      "description": "Maintainer of Saka an elegant tab, bookmark and history search in the browser with 2000+ concurrent users",
-      "url": "https://github.com/lusakasa",
+      "description": "Maintainer of Saka a tab, bookmark and history search web extension written in Preact/React with 2000+ concurrent users. Original maintainer of the project was looking for someone to take over so I volunteered to maintained it.",
+      "url": "https://github.com/lusakasa/saka",
       "startDate": "2018-03-30",
       "endDate": "2023-03-18",
       "keywords": [
