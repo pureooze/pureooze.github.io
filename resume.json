@@ -30,15 +30,14 @@
       "website": "https://d2l.com",
       "startDate": "2024-09-03",
       "highlights": [
-        "Worked with VP of Architecture and Principal developers to address performance and developer experience shortcomings of existing API technologies in Brightspace",
-        "Created an OpenAPI specification generator for the Brightspace that improved time to find and test APIs by 90%",
-        "To improve management of feature flags, created dashboard for search, filter and organizing flags which reduced flag inventory by 15% in 4 months",
-        "Made a browser extension for performing repetitive tasks like viewing meta information, configs or feature flags on deployed Brightspace instances",
+        "Collaborated with VP of Architecture and Principal developers to address performance and developer experience shortcomings of existing API technologies in Brightspace",
+        "Developed an OpenAPI specification generator for the Brightspace, improving API discoverability and testability, resulting in a 90% reduction in time for these tasks. This improved discoverability and developer experience in a large codebase.",
+        "Designed and implemented a dashboard hosted on AWS for organizing feature flags leading to a 15% improvement in 4 months",
+        "Created a browser extension to automate repetitive tasks like viewing meta information, configs or feature flags on deployed Brightspace instances, improving developer productivity",
+        "Built DebtCollector.NET using C#, Git and Roslyn to identify and visualize technical debt hotspots in a codebase allowing for improved code quality and maintainability. This project involved data collection, analysis and visualization.",
         "Organized the engineering departments yearly internal developer conference with 200+ attendees",
-        "To address technical debt in Brightspace built DebtCollector.NET using C#, Git and Roslyn to find the top 10% of hotspots in a codebase and visualize the data",
-        "Delivered presentation on the importance of managing technical debt with methodologies on how to find and prioritizing it",
-        "Presented about feature flags in Brightspace with strategies for using them to make releases safer",
-        "Used OpenTelemetry to instrument and monitor the performance of a resource intensive notification API"
+        "Presented at department conference to 120+ people about the challenges of storing time in a database, managing technical debt and effective feature flag management strategies, fostering knowledge sharing within the team.",
+        "Utilized OpenTelemetry and Honeycomb to instrument, monitor and improve the performance of APIs and SQL queries"
       ]
     },
     {
@@ -48,13 +47,11 @@
       "startDate": "2021-07-05",
       "endDate": "2024-09-03",
       "highlights": [
-        "Lead the development of a project to build a new course creation experience for instructors",
-        "Built the first of its kind standardized date based availability system for activities in Brightspace",
-        "Developed new eventing system using Temporal Tables to improve cost and efficiency of MSSQL servers",
-        "Wrote queries and dashboards to visualize Github PR review times based on PR size",
-        "Mentored developers on my team and other teams by pair programming, code reviews and knowledge sharing",
-        "Implemented a feature flag review and cleanup process that lowered the teams feature flag inventory by 25%",
-        "Presented to 120+ people on Temporal Tables and the many challenges with storing time values in a database"
+        "Led development of a cross team project to build a new course creation experience utilizing Agile methodologies",
+        "Developed eventing system using Temporal Tables to improve cost and efficiency of MSSQL servers. The work involved SQL and data structures to ensure performance and reliability.",
+        "Developed dashboard of pull request review times based on PR size, leveraging data analysis and visualization techniques",
+        "Mentored other developers by pair programming and knowledge sharing to foster a culture of learning and growth",
+        "Took initiative to implement a feature flag cleanup process that lowered the teams feature flag inventory by 25%"
       ]
     },
     {
@@ -64,10 +61,9 @@
       "startDate": "2019-08-26",
       "endDate": "2021-07-05",
       "highlights": [
-        "Developed a pseudorandom testing suite for verifying and asserting new virtual filesystem against the existing one",
-        "Built new accessible UI and backend APIs for a consistent activity creation experience",
+        "Developed a pseudorandom testing suite for verifying and asserting new virtual filesystem against the existing one. This involved a strong understanding of algorithms and testing methodologies.",
         "Created a code search and visualization tool with OmniSharp and Javascript that reduced time to find code by over 50%",
-        "Migrated an internal development blog from Docker, Jekyll and Ruby to using 11ty, Nunjucks and JavaScript"
+        "Migrated an internal development blog from Docker, Jekyll and Ruby to using AWS, 11ty, Nunjucks and JavaScript"
       ]
     },
     {
@@ -105,7 +101,7 @@
       ]
     },
     {
-      "name": "Frameworks",
+      "name": "Technologies/Frameworks",
       "keywords": [
         "React",
         "11ty",
@@ -114,7 +110,8 @@
         ".NET Framework",
         ".NET",
         "MSSQL",
-        "PostgreSQL"
+        "PostgreSQL",
+        "AWS"
       ]
     },
     {
@@ -131,11 +128,9 @@
       ]
     },
     {
-      "name": "Tools",
+      "name": "Tools & Methodologies",
       "keywords": [
         "OpenAPI",
-        "Swagger",
-        "AWS S3",
         "GitHub",
         "Git",
         "Bash",
@@ -143,7 +138,22 @@
         "Postman",
         "Jira",
         "Confluence",
-        "OpenTelemetry"
+        "OpenTelemetry",
+        "Agile",
+        "ETL",
+        "Data Collection",
+        "Data Visualization"
+      ]
+    },
+    {
+      "name": "Soft Skills",
+      "keywords": [
+          "Mentoring",
+          "Collaboration",
+          "Problem Solving",
+          "Time Management",
+          "Communication",
+          "Prioritization"
       ]
     }
   ],
@@ -181,7 +191,7 @@
     {
       "entity": "lusakasa",
       "name": "Saka",
-      "description": "Maintainer of Saka a tab, bookmark and history search web extension written in Preact/React with 2000+ concurrent users. Original maintainer of the project was looking for someone to take over so I volunteered to maintained it.",
+      "description": "Maintainer of Saka an open source browser search web extension written in Preact/React with 2000+ concurrent users",
       "url": "https://github.com/lusakasa/saka",
       "startDate": "2018-03-30",
       "endDate": "2023-03-18",
