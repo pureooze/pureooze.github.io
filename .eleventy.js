@@ -7,7 +7,6 @@ import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginBundle from "@11ty/eleventy-plugin-bundle";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import pluginTOC from "eleventy-plugin-toc";
-import inclusiveLangPlugin from "@11ty/eleventy-plugin-inclusive-language";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
 import pluginImages from "./eleventy.config.images.js";
@@ -20,7 +19,6 @@ export default async function(eleventyConfig) {
     eleventyConfig.addPlugin(pluginNavigation);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
     eleventyConfig.addPlugin(pluginBundle,);
-    eleventyConfig.addPlugin(inclusiveLangPlugin);
     eleventyConfig.addPlugin(pluginSyntaxHighlight, {
         preAttributes: { tabindex: 0 }
     });
