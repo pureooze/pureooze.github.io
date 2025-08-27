@@ -27,7 +27,11 @@ export default function(eleventyConfig) {
 
         caption = caption || "";
         let classes = cssClass === "" ? "post-image" : cssClass;
+        const metaTag = classes === "post-thumbnail" 
+			? `<meta property="og:image" content="https://pureooze.github.io${metadata.webp[0].url}" />` 
+			: '';
         return `
+            ${metaTag}
             <figure>
                 <picture>
                     <source srcset=${metadata.avif[0].url} type="image/avif">
