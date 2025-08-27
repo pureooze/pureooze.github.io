@@ -5,7 +5,7 @@ layout: layouts/base.liquid
     {% if thumbnail %}
         {% assign thumbnailRelativePath = "../img/" | append: thumbnail %}
         {% image thumbnailRelativePath "" "post-thumbnail" %}
-		<meta property="og:image" content={{thumbnailRelativePath}} />
+        <meta property="og:image" content="{{ metadata.url }}/img/{{ thumbnail }}" />
     {% endif %}
     <div class="page-content">
         <h1 class="post-title">{{ title }}</h1>
