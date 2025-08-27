@@ -6,6 +6,10 @@ numberOfLatestPostsToShow: 3
 <div class="page">
   <div class="page-content">
     <h1 class="blog-title">{{ title }}</h1>
+	<a class="rss-subscribe-link" href="feed.xml" >
+		{% image "img/rss.png" "" "rss-subscribe-icon" %} subscribe via RSS
+	</a>
+
     {% assign postslist = collections.posts %}
     {% include "layouts/postslist.liquid" %}
   </div>
