@@ -5,7 +5,7 @@ metadata:
   title: Pureooze - Ramblings
   subtitle: Rambling about software and making it.
   language: en
-  url: https://pureooze.github.io/blog
+  url: https://pureooze.com
   author:
     name: Uzair Shamim
 ---
@@ -14,9 +14,9 @@ metadata:
 	<title>{{ metadata.title }}</title>
 	<subtitle>{{ metadata.subtitle }}</subtitle>
 	<link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self"/>
-	<link href="{{ metadata.url }}"/>
+	<link href="{{ metadata.url }}/blog"/>
 	<updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-	<id>{{ metadata.url }}</id>
+	<id>{{ metadata.url }}/blog</id>
 	<author>
 		<name>{{ metadata.author.name }}</name>
 		{%- if metadata.author.email -%}
