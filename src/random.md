@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.liquid
+layout: layouts/base.liquid
 title: "Random Stuff"
 ---
 
