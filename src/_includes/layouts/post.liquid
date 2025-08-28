@@ -2,34 +2,56 @@
 layout: layouts/base.liquid
 ---
 <article class="page">
-    {% if thumbnail %}
-        {% assign thumbnailRelativePath = "../img/" | append: thumbnail %}
-        {% image thumbnailRelativePath "" "post-thumbnail" %}
-    {% endif %}
-    <div class="page-content">
-        <h1 class="post-title">{{ title }}</h1>
-        <div class="post-tags">
-            {% for tag in tags %}
-                {% if tag == "posts" %}
-                    {% continue %}
-                {% endif %}
-                <a class="post-tag">{{ tag | downcase }}</a>
-            {% endfor %}
-        </div>
-        {% assign toc = content | toc %}
-        {% if toc.size > 0 %}
-            <div class="toc-container">
-                <h2>Table of Contents</h2>
-                {{ toc }}
-            </div>
-        {% endif %}
-        {{ content }}
-		<script src="https://utteranc.es/client.js"
-			repo="pureooze/comments"
-			issue-term="pathname"
-			theme="boxy-light"
-			crossorigin="anonymous"
-			async>
-		</script>
-    </div>
+	<div class="page-content-wrapper">
+		{% if thumbnail %}
+			{% assign thumbnailRelativePath = "../img/" | append: thumbnail %}
+			{% image thumbnailRelativePath "" "post-thumbnail" %}
+		{% endif %}
+		<div class="page-content">
+			<h1 class="post-title">{{ title }}</h1>
+			{{ content }}
+			<div>
+				<h2>Comments</h2>
+				<script src="https://utteranc.es/client.js"
+					repo="pureooze/comments"
+					issue-term="pathname"
+					theme="boxy-light"
+					crossorigin="anonymous"
+					async>
+				</script>
+			</div>
+			
+			
+		</div>
+	</div>
+	<div class="page-meta-wrapper">
+		<div class="post-meta-me">
+			{% assign avatar = "../img/" | append: "me.jpg" %}
+			{% image avatar "" "post-avatar" %}
+			<div>
+				{{ metadata.welcome }}
+			</div>
+			<a class="rss-subscribe-link" href="feed.xml" >
+				{% image "../img/rss.png" "" "rss-subscribe-icon" %} RSS/Atom
+			</a>
+		</div>
+		{% assign toc = content | toc %}
+		{% if toc.size > 0 %}
+			<div class="toc-container">
+				<h2>Table of Contents</h2>
+				{{ toc }}
+			</div>
+		{% endif %}
+		<div>
+			<h2>Tags</h2>
+			<div class="post-tags">
+				{% for tag in tags %}
+					{% if tag == "posts" %}
+						{% continue %}
+					{% endif %}
+					<a class="post-tag">{{ tag | downcase }}</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 </article>

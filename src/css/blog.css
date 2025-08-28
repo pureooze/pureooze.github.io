@@ -225,14 +225,15 @@ figure {
 }
 
 .page {
-    padding: 1em 1em 1em 1em;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: white;
-    height: calc(100vh - 60px);
+    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+	justify-content: center;
+	column-gap: 1em;
 }
 
 .page-content {
@@ -241,6 +242,45 @@ figure {
     column-gap: 1em;
     margin: 1vh auto;
     max-width: 70em;
+}
+
+.page-content-wrapper {
+	padding: 1em 1em 1em 1em;
+}
+
+.page-meta-wrapper {
+	position: sticky;
+    top: 1px;
+    align-self: flex-start;
+    height: 100%;
+    overflow-y: auto;
+	border-left: 1px solid var(--pureooze-detail);
+	max-width: 15%;
+}
+
+.page-meta-wrapper > * {
+	padding: 1em 0 0 1em;
+}
+
+.page-meta-wrapper > *:not(:first-child) {
+    border-top: 1px solid var(--pureooze-detail);
+    margin-top: 1rem;
+}
+
+.post-meta-me {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1em;
+}
+
+.post-avatar {
+	height: 8em;
+	width: 8em;
+    max-height: 8em;
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    outline: 0.1em solid var(--pureooze-primary-text);
 }
 
 .rss-subscribe-link {
@@ -271,7 +311,6 @@ figure {
 }
 
 .toc-container {
-    background-color: var(--pureooze-accent-light-mode);
     margin: 2em 0;
     padding: 0 1em;
 }
@@ -282,6 +321,7 @@ figure {
 
 .toc > ul * {
     list-style-type: none;
+	text-decoration: none;
 }
 
 .post-title {
@@ -291,7 +331,6 @@ figure {
 }
 
 .post-thumbnail {
-    min-width: 80vw;
     height: auto;
     border-radius: 5px;
     margin: auto;
@@ -300,7 +339,9 @@ figure {
 .post-tags {
     display: flex;
     flex-direction: row;
-    column-gap: 1em;
+    column-gap: 0.5em;
+	row-gap: 0.5em;
+	flex-wrap: wrap;
 }
 
 .post-tag {
@@ -308,7 +349,7 @@ figure {
     color: var(--pureooze-secondary-text);
     padding: 0.3em 0.3em 0.3em 0.3em;
     border-radius: 5px;
-    font-size: medium;
+    font-size: small;
 }
 
 .post-tag:hover {
