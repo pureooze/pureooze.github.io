@@ -241,33 +241,6 @@ figure {
     column-gap: 1em;
     margin: 1vh auto;
     max-width: 70em;
-	align-items: center;
-}
-
-.rss-subscribe-link {
-	background-color: var(--pureooze-primary);
-    color: var(--pureooze-secondary-text);
-    padding: 0.5em;
-    border-radius: 5px;
-    font-size: medium;
-	text-decoration: none;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	column-gap: 0.5em;
-	line-height: 1;
-}
-
-.rss-subscribe-link:hover {
-    cursor: pointer;
-    color: var(--pureooze-secondary-text);
-    outline: 3px solid black;
-}
-
-.rss-subscribe-icon {
-	width: 1em;
-	height: 1em;
-	vertical-align: middle;
 }
 
 .toc-container {
