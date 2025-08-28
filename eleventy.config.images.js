@@ -16,7 +16,7 @@ export default function(eleventyConfig) {
         return eleventyImage(input, {
             widths: ["auto"],
             formats: ["avif", "webp"],
-            sharpAvifOptions: {quality: 60, effort: 4},
+            sharpAvifOptions: {quality: 60, effort: 7},
             sharpWebpOptions: {effort: 5},
             outputDir: path.join(eleventyConfig.dir.output, "/img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
         });
