@@ -241,7 +241,6 @@ figure {
     column-gap: 1em;
     margin: 1vh auto;
     max-width: 70em;
-	align-items: center;
 }
 
 .rss-subscribe-link {
@@ -251,11 +250,12 @@ figure {
     border-radius: 5px;
     font-size: medium;
 	text-decoration: none;
-	display: flex;
+	display: inline-flex;
 	flex-direction: row;
 	align-items: center;
 	column-gap: 0.5em;
 	line-height: 1;
+	margin: 0 auto;
 }
 
 .rss-subscribe-link:hover {
