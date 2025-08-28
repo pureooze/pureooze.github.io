@@ -34,9 +34,17 @@
 </head>
 <body>
 <div class="navbar">
-    <a class="navbar-link" href="/">Home</a>
-    <a class="navbar-link" href="/blog">Blog</a>
-    <a class="navbar-link" href="/random">Random</a>
+	<div class="navbar-left">
+		<a class="navbar-link" href="/">Home</a>
+		<a class="navbar-link" href="/blog">Blog</a>
+		<a class="navbar-link" href="/random">Random</a>
+	</div>
+	<div class="navbar-right">
+		<a class="navbar-icon-link" href="https://github.com/pureooze/pureooze.github.io">
+			{% assign iconPath = "img/" | append: "github-logo.webp" %}
+			{% image iconPath "" "navbar-icon" %}
+		</a>
+	</div>
 </div>
 {{ content }}
 </body>
