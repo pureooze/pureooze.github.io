@@ -4,7 +4,8 @@
     "build:resume": "mkdir _site && resume export _site/resume.html --theme pureooze && resume export _site/resume.pdf --theme jsonresume-theme-pureooze-simple",
     "build": "npm run build:resume && npx @11ty/eleventy",
     "watch": "npm run clean && npm run build:resume && npx @11ty/eleventy --serve",
-    "start": "npm run watch"
+    "start": "npm run watch",
+	"serve": "npx @11ty/eleventy --serve"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0-alpha.5",
