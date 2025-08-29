@@ -248,6 +248,12 @@ figure {
 	padding: 1em 1em 1em 1em;
 }
 
+.post-comment-wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1em;
+}
+
 .page-meta-wrapper {
 	position: sticky;
     top: 1px;
