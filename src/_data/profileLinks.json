@@ -15,11 +15,6 @@
     "icon": "simpletwitch.webp"
   },
   {
-    "href": "https://toot.community/@pureooze",
-    "ariaLabel": "Link to my mastodon account",
-    "icon": "mastodon-logo-black.webp"
-  },
-  {
     "href": "https://github.com/lusakasa",
     "ariaLabel": "Link to a previous project I maintained Saka on github",
     "icon": "lusakasawebp.webp"
