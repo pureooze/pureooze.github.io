@@ -1,7 +1,7 @@
 ---
 title: "Memory Bank: Aria Tags vs Title"
-thumbnail: 2025-10-07-aria-vs-title/thumbnail.jpg #TODO: make it dynamic type
-small-thumbnail: 2025-10-07-aria-vs-title/thumbnail.jpg #TODO: make it dynamic type
+thumbnail: 2025-10-07-aria-vs-title/thumbnail.png #TODO: make it dynamic type
+small-thumbnail: 2025-10-07-aria-vs-title/thumbnail.webp #TODO: make it dynamic type
 tags: 
   - accessibility
   - aria
@@ -12,11 +12,11 @@ This came up in something I was working on recently and I always forget the diff
 
 <!-- excerpt -->
 
-## What Is title?
-The `title` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title) contains text to provide advisory information [^advisory-information] related to its target element. This information is often presented to users through a tooltip. Note that `title` is a [global attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes) so it is avaliable on all HTML elements.
-
-## Accessible Names?
+## Whats In A Name?
 To understand when `aria-label` is appropriate to use, it's important to understand how browsers provide accessible names.
+
+### Is A Title A Name?
+No, the `title` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title) contains text to provide advisory information [^advisory-information] related to its target element. This information is often presented to users through a tooltip. Note that `title` is a [global attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes) so it is avaliable on all HTML elements.
 
 ### Default Accessible Names
 Some elements provide a [default accessible name](https://developer.mozilla.org/en-US/docs/Glossary/Accessible_name) that can be used by screen readers to provide a label for a given element. For example in a button the value between the open and close tags is the default accessible name.
@@ -28,6 +28,7 @@ Some elements provide a [default accessible name](https://developer.mozilla.org/
 Sometimes the default accessible name is inaccurate and a separate label needs to be provided to give users accurate context. In these situations labels can help.
 
 ### Labels
+There are a few ways to provide a label for an HTML element.
 
 #### The Label Element
 The `<label>` element provides a **visible** caption for an element. It is often used in user interfaces like forms to provide context on a field. Label requires using the `for` attribute to reference another elements via their `id` and it only works with [labelable elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#labelable).
@@ -44,12 +45,17 @@ The `aria-labelledby` [attribute](https://developer.mozilla.org/en-US/docs/Web/A
 
 Note that `aria-labelledby` takes priority over ALL other methods of providing accessible names.
 
-### What Is aria-label?
+### Label With Attribute?
 The `aria-label` [attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) contains text to label an element when no other label is present.
+
+```xml
+<button aria-label="Close"> X </button>
+```
 
 There are some elements and roles that `aria-label` [does not work on](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label#associated_roles).
 
-## When Should You Use Them?
+## So What Should You Use?
+tl;dr use aria-label
 
 
 [^advisory-information]: TODO

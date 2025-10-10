@@ -26,10 +26,6 @@ html, body {
     --pureooze-light-mode-detail: white;
 }
 
-h1 {
-    font-size: 60px;
-}
-
 .homepage {
     display: flex;
     flex-flow: row;
