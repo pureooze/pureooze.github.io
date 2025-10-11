@@ -10,7 +10,6 @@ import pluginTOC from "eleventy-plugin-toc";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
 import pluginImages from "./eleventy.config.images.js";
-import { mocha } from "@catppuccin/vscode";
 
 export default async function(eleventyConfig) {
     // Output directory: _site

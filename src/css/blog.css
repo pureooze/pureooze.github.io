@@ -59,6 +59,11 @@ h2 {
 	margin-bottom: 0.5em;
 }
 
+.page-meta-wrapper h2 {
+	font-size: 1.5rem;
+	border-bottom: none;
+}
+
 h3 {
 	font-size: 1.8rem;
 }
@@ -317,7 +322,6 @@ figure {
 }
 
 .page-meta-wrapper > *:not(:first-child) {
-    border-top: 1px solid var(--pureooze-detail);
     margin-top: 1rem;
 }
 
