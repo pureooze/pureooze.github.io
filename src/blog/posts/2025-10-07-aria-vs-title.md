@@ -1,5 +1,5 @@
 ---
-title: "Memory Bank: Aria Tags vs Title"
+title: "Memory Bank: What's In A Name"
 thumbnail: 2025-10-07-aria-vs-title/thumbnail.webp #TODO: make it dynamic type
 small-thumbnail: 2025-10-07-aria-vs-title/thumbnail.webp #TODO: make it dynamic type
 tags: 
@@ -12,7 +12,7 @@ This came up in something I was working on recently and I always forget the diff
 
 <!-- excerpt -->
 
-## Whats In A Name?
+## Default Accessible Names
 
 Some elements provide a [default accessible name](https://developer.mozilla.org/en-US/docs/Glossary/Accessible_name) that can be used by screen readers to provide a label for a given element. For example in a button the value between the open and close tags is the default accessible name.
 
@@ -53,7 +53,7 @@ The `aria-label` [attribute](https://developer.mozilla.org/en-US/docs/Web/Access
 ```
 
 ## So What Should You Use?
-Using `title` for labelling causes issues for [several groups of people](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title#accessibility_concerns) due to inconsistent browser support (via MDN):
+Using `title` for labelling causes issues for [several groups of people](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title#accessibility_concerns) (via MDN):
 - People using touch-only devices
 - People navigating with keyboards
 - People navigating with assistive technology such as screen readers or magnifiers
