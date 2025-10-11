@@ -293,12 +293,12 @@ figure {
     flex-direction: column;
     column-gap: 1em;
     margin: 1vh auto;
-    max-width: 50em;
+    max-width: 70%;
 }
 
 .page-content-wrapper {
 	padding: 1em 1em 1em 1em;
-	width: 95%;
+	width: 75%;
 }
 
 .post-comment-wrapper {
@@ -410,6 +410,7 @@ figure {
     padding: 0.3em 0.3em 0.3em 0.3em;
     border-radius: 5px;
     font-size: small;
+	text-decoration: none;
 }
 
 .post-tag:hover {
