@@ -552,10 +552,6 @@ html, body {
         flex-direction: column;
     }
 
-    .header-name {
-        color: var(--pureooze-primary-text);
-    }
-
     .icon {
         width: 2em;
         padding: 0.5em;
