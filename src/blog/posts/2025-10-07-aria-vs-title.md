@@ -23,12 +23,14 @@ Some elements provide a [default accessible name](https://developer.mozilla.org/
 Sometimes the default accessible name is inaccurate and a separate label needs to be provided to give users accurate context. In these situations labels can help.
 
 ## Labeling Elements
-The `title` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title) contains text to provide advisory information [^advisory-information] related to its target element. This information is often presented to users through a tooltip. Note that `title` is a [global attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes) so it is avaliable on all HTML elements.
+The `title` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title) contains text to provide advisory information related to its target element. This information is often presented to users through a tooltip and read by **some** screen readers. Note that `title` is a [global attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes) so it is avaliable on all HTML elements.
 
-There are a few ways to provide a label for an HTML element:
+There are more modern approaches to providing a label for an HTML element:
 - the `<label>` element
 - `aria-labelledby`
 - `aria-label`
+- `aria-description`
+- `aria-describedby`
 
 The `<label>` element provides a **visible** caption for an element. It is often used in user interfaces like forms to provide context on a field. Label requires using the `for` attribute to reference another elements via their `id` and it only works with [labelable elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#labelable).
 
@@ -52,6 +54,17 @@ The `aria-label` [attribute](https://developer.mozilla.org/en-US/docs/Web/Access
 <button aria-label="Close"> X </button>
 ```
 
+Similarly, the `aria-description` [attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description) is not visible on the screen and should be used when the provided text needs to be longer. There is a corresponding `aria-describedby` [attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) that works similar to `aria-labelledby`.
+
+```html
+<div
+  aria-label="thesis content"
+  aria-description="This thesis is about how labels work in HTML">
+  <h1>Introduction</h1>
+  <span>content</span>
+</div>
+```
+
 ## So What Should You Use?
 Using `title` for labelling causes issues for [several groups of people](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title#accessibility_concerns) (via MDN):
 - People using touch-only devices
@@ -65,7 +78,4 @@ Using `title` for labelling causes issues for [several groups of people](https:/
 > — [The Paciello Group blog](https://www.tpgi.com/using-the-html-title-attribute-updated/)
 
 With that in mind it's safe to say that `title` should not be relied on for labeling elements.
-The best practice is to use visible labels over invisible labels like `aria-label`. Prefer the use of `<label>` and `aria-labelledby`.
-
-
-[^advisory-information]: TODO
+The best practice is to use visible labels over invisible labels like `aria-label` and `aria-description`. Prefer the use of `<label>`, `aria-labelledby` and `aria-describedby` because they provide visible labels. Use `aria-label` or `aria-description` if these other options are not avaliable. Remember not to use both visible and invisible labels on the same element as the `*-labelledby` attributes always take precedence.
