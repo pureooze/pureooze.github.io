@@ -6,10 +6,9 @@ html, body {
 }
 
 :root {
-    font-family: 'Noto Sans',  sans-serif;
-    font-size: medium;
+    font-family: 'Inter', 'Noto Sans',  sans-serif;
 
-    --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+    --font-family-monospace: 'JetBrains Mono', Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
     --syntax-tab-size: 2;
     font-weight: 400;
 

@@ -10,6 +10,7 @@ import pluginTOC from "eleventy-plugin-toc";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
 import pluginImages from "./eleventy.config.images.js";
+import { mocha } from "@catppuccin/vscode";
 
 export default async function(eleventyConfig) {
     // Output directory: _site
@@ -38,14 +39,14 @@ export default async function(eleventyConfig) {
     
     eleventyConfig.on("eleventy.before", async () => {
         const highlighter = await getHighlighter({
-            themes: ["material-theme-palenight"],
-            langs:["shell", "csharp", "python", "javascript", "java", "xml", "json"]
+            themes: ['rose-pine-moon'],
+            langs:["shell", "csharp", "python", "javascript", "java", "xml", "json", "html"]
         });
         eleventyConfig.amendLibrary("md", (mdLib) =>
             mdLib.set({
                 highlight: (code, lang) => highlighter.codeToHtml(code, {
                     lang: lang,
-                    theme: "material-theme-palenight"
+                    theme: 'rose-pine-moon'
                 }),
             })
         );
