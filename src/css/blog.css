@@ -36,11 +36,44 @@ blockquote {
 
 a {
     color: var(--pureooze-primary);
+	font-weight: 500;
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
 }
 
 a:hover {
     color: var(--pureooze-accent);
     text-decoration: underline;
+	text-decoration-thickness: 2px;
+}
+
+h1 {
+	font-size: 2.8rem;
+}
+
+h2 {
+	font-size: 2.3rem;
+	border-bottom: 1px solid rgba(var(--pureooze-primary-for-rgba), 0.2);
+	padding-bottom: 0.25em;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+.page-meta-wrapper h2 {
+	font-size: 1.5rem;
+	border-bottom: none;
+}
+
+h3 {
+	font-size: 1.8rem;
+}
+
+h4 {
+	font-size: 1.4rem;
+}
+
+h2, h3, h4 {
+	font-weight: 600;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,11 +84,28 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
     margin: 0 0;
 }
 
+p {
+	font-size: 1.125rem;
+	line-height: 1.75;
+	/* margin-bottom: 1.5em; */
+}
+
+li {
+	font-size: 1.1rem;
+	line-height: 1;
+	padding-bottom: 0.75rem;
+}
+
 pre,
 code {
     font-family: var(--font-family-monospace);
 }
 pre:not([class*="language-"]) {
+    padding: 1.5em;
+    background: rgba(var(--pureooze-primary-for-rgba), 0.1);
+    border-radius: 0.5em;
+    overflow-x: auto;
+	overflow-y: auto;
     margin: .5em 0;
     line-height: 1.375; /* 22px /16 */
     -moz-tab-size: var(--syntax-tab-size);
@@ -104,12 +154,14 @@ summary::-webkit-details-marker {
     display: none;
 }
 
-p > code {
+p > code, li > code {
     background-color: rgba(var(--pureooze-primary-for-rgba), 0.1);
-    padding: 0.05em 0.2em;
+    padding: 0.1em 0.4em;
     border-radius: 4px;
     font-weight: 600;
     color: var(--pureooze-primary);
+	font-size: 0.875em;
+    border: 1px solid rgba(var(--pureooze-primary-for-rgba), 0.1);
 }
 
 table {
@@ -241,12 +293,12 @@ figure {
     flex-direction: column;
     column-gap: 1em;
     margin: 1vh auto;
-    max-width: 70em;
+    max-width: 70%;
 }
 
 .page-content-wrapper {
 	padding: 1em 1em 1em 1em;
-	width: 95%;
+	width: 75%;
 }
 
 .post-comment-wrapper {
@@ -270,7 +322,6 @@ figure {
 }
 
 .page-meta-wrapper > *:not(:first-child) {
-    border-top: 1px solid var(--pureooze-detail);
     margin-top: 1rem;
 }
 
@@ -342,6 +393,7 @@ figure {
     border-radius: 5px;
     margin: auto;
 	width: 100%;
+	max-width: 1000px;
 }
 
 .post-tags {
@@ -358,6 +410,7 @@ figure {
     padding: 0.3em 0.3em 0.3em 0.3em;
     border-radius: 5px;
     font-size: small;
+	text-decoration: none;
 }
 
 .post-tag:hover {
@@ -430,7 +483,7 @@ figure {
     }
 }
 
-@media (max-width: 1084px) {
+@media (max-width: 1284px) {
     .page-meta-wrapper {
         display: none;
     }
@@ -443,5 +496,6 @@ figure {
 
     .page-content-wrapper {
         padding: 1em 1em 1em 1em;
+		width: 95%;
     }
 }

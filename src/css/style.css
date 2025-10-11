@@ -6,10 +6,9 @@ html, body {
 }
 
 :root {
-    font-family: 'Noto Sans',  sans-serif;
-    font-size: medium;
+    font-family: 'Inter', 'Noto Sans',  sans-serif;
 
-    --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+    --font-family-monospace: 'JetBrains Mono', Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
     --syntax-tab-size: 2;
     font-weight: 400;
 
@@ -26,10 +25,6 @@ html, body {
     --pureooze-light-mode-detail: white;
 }
 
-h1 {
-    font-size: 60px;
-}
-
 .homepage {
     display: flex;
     flex-flow: row;
@@ -38,11 +33,60 @@ h1 {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
+	height: 100%;
+    flex-direction: column;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(146, 50, 216, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(38, 25, 111, 0.05) 0%, transparent 50%);
+    animation: pulseBackground 8s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
 }
 
-.homepage {
-    height: 100%;
+.homepage::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+        radial-gradient(circle at 50% 50%, white 2.5px, transparent 2.5px),
+        radial-gradient(circle at 30% 70%, white 1.5px, transparent 1.5px),
+        radial-gradient(circle at 70% 30%, white 2px, transparent 2px),
+        radial-gradient(circle at 20% 20%, white 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, white 1.8px, transparent 1.8px);
+    background-size: 120px 120px, 90px 90px, 100px 100px, 70px 70px, 110px 110px;
+    animation: sparkle 360s linear infinite;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+@keyframes pulseBackground {
+    0% {
+        background-color: #0a0720;
+    }
+    33% {
+        background-color: #0d0a2f;
+    }
+    66% {
+        background-color: #150a33;
+    }
+    100% {
+        background-color: #0a0720;
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
 }
 
 .background-image {
@@ -64,11 +108,7 @@ h1 {
     border-radius: 50%;
     margin-right: auto;
     margin-left: auto;
-    outline: 0.3em solid var(--pureooze-primary-text);
-}
-
-.header {
-    margin-top: 4em;
+    outline: 0.3em solid var(--pureooze-light-mode-detail);
 }
 
 .header > figure {
@@ -76,14 +116,26 @@ h1 {
 }
 
 .header-name {
-    margin-bottom: 0.1em;
-    color: var(--pureooze-primary-text);
+    margin-bottom: 0;
+    color: var(--pureooze-light-mode-primary);
     margin-top: 5px;
-    padding: 0.2em;
     border-radius: 0.2em;
     align-self: center;
 }
 
+.header-data {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1em;
+	align-items: center;
+	max-width: 600px;
+}
+
+.header-description {
+	font-size: 2rem;
+	text-align: center;
+	color: var(--pureooze-accent-light-mode);
+}
 
 .navbar {
     width: 100%;
@@ -92,7 +144,7 @@ h1 {
     column-gap: 1em;
     align-items: center;
     padding: 0.2em 1em;
-    border-bottom: 1px solid var(--pureooze-accent-light);
+    border-bottom: 1px solid var(--pureooze-accent-light-mode);
     background-color: var(--pureooze-primary);
 	justify-content: space-between;
 }
@@ -134,6 +186,8 @@ h1 {
     flex-direction: column;
     row-gap: 1em;
     align-items: center;
+	padding: 1rem;
+	border-radius: 1rem;
 }
 
 .pages {
@@ -173,8 +227,8 @@ h1 {
 }
 
 .link-button:hover {
-    box-shadow: 0 4px 8px 0 rgba(146, 50, 216, 0.2), 0 3px 6px 0 rgba(var(--pureooze-primary-for-rgba), 0.2);
-    outline: 0.1em solid black;
+    box-shadow: 0 4px 8px 0 var(--pureooze-accent-light-mode), 0 3px 6px 0 var(--pureooze-accent-light-mode);
+    outline: 0.1em solid var(--pureooze-accent-light-mode);
     text-decoration: none;
     color: white;
 }
@@ -293,6 +347,13 @@ h1 {
     width: 500px;
 }
 
+.random-stuff {
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 @media (max-width: 300px) {
     .portrait { display: block; }
     .landscape { display: none; }
@@ -389,13 +450,11 @@ h1 {
         justify-content: center;
     }
 
-    .header {
-        padding-left: 10vw;
-        margin: auto 20em auto auto;
-    }
-
     .stuff {
         margin: auto;
+		width: 100%;
+        padding: 4rem;
+        border-radius: 0;
     }
 
     .header-name {
@@ -412,11 +471,6 @@ h1 {
 @media (min-width: 1281px) and (max-width: 1368px) {
     .homepage {
         justify-content: center;
-    }
-
-    .header {
-        padding-left: 8vw;
-        margin: auto;
     }
 
     .stuff {
@@ -439,11 +493,6 @@ h1 {
         justify-content: center;
     }
 
-    .header {
-        padding-left: 7vw;
-        margin: auto;
-    }
-
     .stuff {
         margin: auto;
     }
@@ -462,11 +511,6 @@ h1 {
 @media (min-width: 1921px) and (max-width: 2560px) {
     .homepage {
         justify-content: center;
-    }
-    
-    .header {
-        padding-left: 8.5vw;
-        margin: auto;
     }
     
     .stuff {
@@ -508,10 +552,6 @@ h1 {
         flex-direction: column;
     }
 
-    .header-name {
-        color: var(--pureooze-primary-text);
-    }
-
     .icon {
         width: 2em;
         padding: 0.5em;
@@ -533,10 +573,6 @@ h1 {
 }
 
 @media (orientation: portrait) and (min-width: 1025px) {
-    .header {
-        padding: 0;
-        margin: 20em 0 0 0;
-    }
     
     .icon {
         width: 50px;
