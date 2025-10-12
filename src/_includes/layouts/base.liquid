@@ -117,5 +117,37 @@
       </div>
     </div>
     {{ content }}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Find all code elements within paragraphs and list items
+        const codeElements = document.querySelectorAll('p>code, li>code');
+
+        codeElements.forEach((code) => {
+          code.addEventListener('click', async function () {
+            // Get the text content
+            const text = this.textContent;
+
+            try {
+              // Try to copy the text
+              await navigator.clipboard.writeText(text);
+
+              // Add a class to show "Copied!"
+              this.classList.add('copied');
+
+              // Reset after 2 seconds
+              setTimeout(() => {
+                this.classList.remove('copied');
+              }, 2000);
+            } catch (err) {
+              console.error('Failed to copy text: ', err);
+              this.classList.add('copy-failed');
+              setTimeout(() => {
+                this.classList.remove('copy-failed');
+              }, 2000);
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
