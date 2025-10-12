@@ -23,7 +23,7 @@ Some elements provide a [default accessible name](https://developer.mozilla.org/
 
 Sometimes the default accessible name is inaccurate and a separate label needs to be provided to give users accurate context. In these situations labels can help. 
 
-For example imagine if the `<button>` in the code above needed to have `X` as its accessible text. This is not very informative to screen reader users and we need a better way to indicate what this button does. There are also many elements that do not have default accessible names, so we need to provide labels for them to give context to users.
+Imagine if the `<button>` in the code above needed to have `X` as its text. This is not very informative to screen reader users and we need a better way to indicate what this button does. There are also many elements that do not have default accessible names, so we may need to provide labels for them as well.
 
 ## Labeling Elements
 The `title` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title) contains text to provide advisory information related to its target element. This information is often presented to users through a tooltip and read by **some** screen readers. Note that `title` is a [global attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes) so it is avaliable on all HTML elements.
@@ -42,7 +42,7 @@ The `<label>` element provides a **visible** caption for an element. It is often
 </div>
 ```
 
-The `aria-labelledby` [attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) is similar to `aria-label` but instead of providing an accessible name it references other elements on a page to provide it. Note that `aria-labelledby` takes priority over ALL other methods of providing accessible names.
+The `aria-labelledby` [attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) references another element on the page to provide an accessible label. Note that `aria-labelledby` takes priority over ALL other methods of providing accessible names.
 
 ```html
 <span id="my-label">A label</span>
