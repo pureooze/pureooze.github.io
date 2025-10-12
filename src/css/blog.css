@@ -456,8 +456,13 @@ figure {
 
     .page-content {
         width: 90vw;
+		max-width: 100%;
     }
     
+	.page-content-wrapper {
+		padding: 0;
+	}
+
     .postlist {
         padding: 0;
     }
@@ -495,7 +500,7 @@ figure {
     }
 
     .page-content-wrapper {
-        padding: 1em 1em 1em 1em;
-		width: 95%;
+        padding: 1em 1em 1em;
+		width: 90%;
     }
 }

@@ -24,11 +24,21 @@
     ]
   },
   "work": [
+	{
+      "name": "Stripe",
+      "position": "Software Engineer",
+      "website": "https://stripe.com/",
+      "startDate": "2025",
+      "highlights": [
+		"Working on cool things to deliver the best possible experience for merchants"
+      ]
+    },
     {
       "name": "D2L",
       "position": "Senior Software Developer II",
       "website": "https://d2l.com",
-      "startDate": "2024-09-03",
+      "startDate": "2024",
+	  "endDate": "2025",
       "highlights": [
         "Collaborated with VP of Architecture and Principal developers to address performance and developer experience shortcomings of existing API technologies in Brightspace",
         "Developed an OpenAPI specification generator for the Brightspace, improving API discoverability and testability, resulting in a 90% reduction in time for these tasks. This improved discoverability and developer experience in a large codebase.",
@@ -44,8 +54,8 @@
       "name": "D2L",
       "position": "Senior Software Developer",
       "website": "https://d2l.com",
-      "startDate": "2021-07-05",
-      "endDate": "2024-09-03",
+      "startDate": "2021",
+      "endDate": "2024",
       "highlights": [
         "Led development of a cross team project to build a new course creation experience utilizing Agile methodologies",
         "Developed eventing system using Temporal Tables to improve cost and efficiency of MSSQL servers. The work involved SQL and data structures to ensure performance and reliability.",
@@ -58,8 +68,8 @@
       "name": "D2L",
       "position": "Software Developer",
       "website": "https://d2l.com",
-      "startDate": "2019-08-26",
-      "endDate": "2021-07-05",
+      "startDate": "2019",
+      "endDate": "2021",
       "highlights": [
         "Developed a pseudorandom testing suite for verifying and asserting new virtual filesystem against the existing one. This involved a strong understanding of algorithms and testing methodologies.",
         "Created a code search and visualization tool with OmniSharp and Javascript that reduced time to find code by over 50%",
@@ -68,10 +78,10 @@
     },
     {
       "name": "OTPP",
-      "position": "Software Developer Intern (16 months)",
+      "position": "Software Developer Intern",
       "website": "https://www.otpp.com/",
-      "startDate": "2017-05-01",
-      "endDate": "2018-08-31",
+      "startDate": "2017",
+      "endDate": "2018",
       "highlights": [
         "Built REST Java APIs, React and AngularJS applications, tested with Jest, Karma and Protractor/Selenium"
       ]
