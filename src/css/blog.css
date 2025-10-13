@@ -145,14 +145,9 @@ pre:not([class*="language-"]) {
 }
 
 details {
-    background-color: var(--pureooze-mode-detail);
     border: 1px solid transparent;
     border-radius: 4px;
     width: auto;
-}
-
-details[open] {
-    background-color: var(--color-white);
 }
 
 details+details {
@@ -163,14 +158,13 @@ summary {
     cursor: pointer;
     font-weight: bold;
     padding: 10px;
-    background-color: var(--color-white);
     border-radius: 4px;
     color: var(--color-text-primary);
     border: 1px solid var(--pureooze-primary);
 }
 
 summary:hover {
-    background-color: var(--color-bg-overlay);
+    background-color: var(--color-link-hover);
     border: 1px solid var(--pureooze-primary);
 }
 
@@ -434,7 +428,8 @@ figure {
 .rss-subscribe-link:hover {
     cursor: pointer;
     color: var(--pureooze-secondary-text);
-    outline: 3px solid black;
+    color: var(--pureooze-primary);
+    outline: 3px solid var(--pureooze-primary);
 }
 
 .rss-subscribe-icon {
