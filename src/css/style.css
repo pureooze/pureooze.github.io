@@ -353,6 +353,7 @@ body {
     text-decoration: none;
     color: var(--pureooze-primary);
     border: 3px solid var(--pureooze-primary);
+    background-color: var(--pureooze-navbar-highlight);
 }
 
 .link-container {
