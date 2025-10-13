@@ -13,6 +13,12 @@ body {
     --syntax-tab-size: 2;
     font-weight: 400;
 
+    /* Animation Colors - Light Theme */
+    --pulse-bg-1: #f8f9fa;
+    --pulse-bg-2: #f1f3f5;
+    --pulse-bg-3: #e9ecef;
+    --radial-background: var(--pureooze-primary);
+
     /* Base Color Palette */
     --color-white: #ffffff;
     --color-black: #000000;
@@ -33,6 +39,12 @@ body {
     --color-text-secondary: var(--color-white);
     --color-accent-primary: var(--color-purple-700);
     --color-accent-secondary: var(--color-purple-700);
+
+    /* Medium purple */
+    --color-link: var(--color-black);
+    /* Bright purple for links */
+    --color-link-hover: #ddd6fe;
+
     --color-brand: var(--color-purple-700);
     --color-detail: var(--color-gray-400);
     --color-detail-inverse: var(--color-white);
@@ -53,6 +65,12 @@ body {
 
 /* Dark theme styles */
 [data-theme="dark"] {
+    /* Animation Colors - Dark Theme */
+    --pulse-bg-1: #0a0720;
+    --pulse-bg-2: #0d0a2f;
+    --pulse-bg-3: #150a33;
+    --radial-background: var(--color-white);
+
     /* Dark theme semantic color overrides */
     --color-bg-primary: #121212;
     /* Dark background */
@@ -64,9 +82,9 @@ body {
     /* Light purple for headings */
     --color-accent-secondary: #b7bdf8;
     /* Medium purple */
-    --color-link: #c4b5fd;
+    --color-link: var(--color-white);
     /* Bright purple for links */
-    --color-link-hover: #ddd6fe;
+    --color-link-hover: var(--pureooze-primary);
     /* Even brighter purple for link hover */
     --color-code-bg: #2a2a5a;
     /* Light enough code background for contrast */
@@ -104,24 +122,19 @@ body {
 
 
 .homepage {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-evenly;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     height: 100%;
-    flex-direction: column;
-    background-image:
-        radial-gradient(circle at 20% 20%, rgba(146, 50, 216, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(38, 25, 111, 0.05) 0%, transparent 50%);
-    animation: pulseBackground 8s ease-in-out infinite;
     position: relative;
     overflow: hidden;
 }
 
-.homepage::before {
+.homepage-background {
+    position: absolute;
+    inset: 0;
+    background-color: var(--pulse-bg-1);
+    animation: pulseBackground 8s ease-in-out infinite;
+}
+
+.homepage-background::after {
     content: '';
     position: absolute;
     width: 200%;
@@ -129,32 +142,41 @@ body {
     top: -50%;
     left: -50%;
     background-image:
-        radial-gradient(circle at 50% 50%, white 2.5px, transparent 2.5px),
-        radial-gradient(circle at 30% 70%, white 1.5px, transparent 1.5px),
-        radial-gradient(circle at 70% 30%, white 2px, transparent 2px),
-        radial-gradient(circle at 20% 20%, white 1px, transparent 1px),
-        radial-gradient(circle at 80% 80%, white 1.8px, transparent 1.8px);
+        radial-gradient(circle at 50% 50%, var(--radial-background) 2.5px, transparent 2.5px),
+        radial-gradient(circle at 30% 70%, var(--radial-background) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 70% 30%, var(--radial-background) 2px, transparent 2px),
+        radial-gradient(circle at 20% 20%, var(--radial-background) 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, var(--radial-background) 1.8px, transparent 1.8px);
     background-size: 120px 120px, 90px 90px, 100px 100px, 70px 70px, 110px 110px;
     animation: sparkle 360s linear infinite;
-    opacity: 0.1;
-    pointer-events: none;
+    opacity: 0.5;
 }
+
+.homepage-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 
 @keyframes pulseBackground {
     0% {
-        background-color: #0a0720;
+        background-color: var(--pulse-bg-1);
     }
 
     33% {
-        background-color: #0d0a2f;
+        background-color: var(--pulse-bg-2);
     }
 
     66% {
-        background-color: #150a33;
+        background-color: var(--pulse-bg-3);
     }
 
     100% {
-        background-color: #0a0720;
+        background-color: var(--pulse-bg-1);
     }
 }
 
@@ -207,7 +229,7 @@ body {
 
 .header-name {
     margin-bottom: 0;
-    color: var(--pureooze-mode-primary);
+    color: var(--pureooze-primary-text);
     margin-top: 5px;
     border-radius: 0.2em;
     align-self: center;
@@ -224,7 +246,7 @@ body {
 .header-description {
     font-size: 2rem;
     text-align: center;
-    color: var(--pureooze-accent-light-mode);
+    color: var(--pureooze-primary-text);
 }
 
 .navbar {
@@ -237,6 +259,11 @@ body {
     border-bottom: 1px solid var(--pureooze-accent-light-mode);
     background-color: var(--pureooze-primary);
     justify-content: space-between;
+}
+
+.navbar-left {
+    display: flex;
+    column-gap: 0.5em;
 }
 
 .navbar-right {

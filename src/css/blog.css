@@ -47,10 +47,10 @@ a {
 }
 
 a:hover {
-    color: var(--color-link-hover);
+    color: var(--color-link);
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    background-color: var(--color-bg-overlay);
+    background-color: var(--color-link-hover);
     border-radius: 3px;
     transition: background-color 0.2s ease;
 }
@@ -105,15 +105,15 @@ h6+p {
 }
 
 p {
-    font-size: 1.125rem;
+    font-size: 1.2rem;
     line-height: 1.75;
     color: var(--pureooze-primary-text)
         /* margin-bottom: 1.5em; */
 }
 
 li {
-    font-size: 1.1rem;
-    line-height: 1;
+    font-size: 1.2rem;
+    ;
     padding-bottom: 0.75rem;
     color: var(--pureooze-primary-text)
 }

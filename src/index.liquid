@@ -3,20 +3,21 @@ layout: layouts/base.liquid
 title: Home
 ---
 <div class="homepage">
-    <div class="header">
-        
-    </div>
+  <div class="homepage-background"></div>
+  <div class="homepage-content">
+    <div class="header"></div>
     <div class="stuff">
-		{% image "img/me.jpg" "" "avatar" %}
-        <div class="header-data">
-            <h1 class="header-name">Uzair Shamim</h1>
-			<div class="header-description">
-				{{ metadata.welcome }}
-			</div>
-            <div class="link-container">
-                <a href="./resume" class="link-button">Resume</a>
-                <a href="./blog" class="link-button">Blog</a>
-            </div>
+      {% image "img/me.jpg" "" "avatar" %}
+      <div class="header-data">
+        <h1 class="header-name">Uzair Shamim</h1>
+        <div class="header-description">
+          {{ metadata.welcome }}
         </div>
+        <div class="link-container">
+          <a href="./resume" class="link-button">Resume</a>
+          <a href="./blog" class="link-button">Blog</a>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
