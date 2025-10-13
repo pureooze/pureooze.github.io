@@ -427,7 +427,7 @@ figure {
 
 .rss-subscribe-link:hover {
     cursor: pointer;
-    color: var(--pureooze-secondary-text);
+    background-color: var(--pureooze-navbar-highlight);
     color: var(--pureooze-primary);
     outline: 3px solid var(--pureooze-primary);
 }
