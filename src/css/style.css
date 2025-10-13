@@ -472,8 +472,10 @@ body {
 .random-stuff {
     display: flex;
     flex-direction: column;
-    margin-left: auto;
+    padding-left: 2rem;
     margin-right: auto;
+    background-color: var(--pureooze-mode-primary);
+    width: 100%;
 }
 
 @media (max-width: 300px) {
