@@ -181,7 +181,7 @@ summary::-webkit-details-marker {
 p>code,
 li>code {
     background-color: var(--color-code-bg);
-    padding: 0.1em 0.4em;
+    padding: 0.01em 0.4em;
     border-radius: 4px;
     font-weight: 600;
     color: var(--color-accent-primary);
@@ -190,6 +190,8 @@ li>code {
     cursor: pointer;
     position: relative;
     transition: all 0.2s ease;
+    white-space: nowrap;
+    display: inline-block;
 }
 
 p>code:hover,
@@ -286,11 +288,20 @@ figure {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 20px;
-    background: white;
+    background: var(--pureooze-mode-primary);
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 30px;
     transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 0 1px var(--color-accent-primary);
+    border-color: var(--pureooze-primary);
+    background-color: var(--color-link-hover);
+    color: var(--pureooze-primary-text);
+    border: 1px solid var(--pureooze-detail);
 }
 
 .postlist-post-link {
@@ -320,7 +331,7 @@ figure {
 
 .postlist-post-title {
     font-size: 1.5rem;
-    color: var(--pureooze-primary);
+    color: var(--color-accent-primary);
     margin-bottom: 5px;
 }
 
@@ -338,13 +349,6 @@ figure {
 .postlist-post-excerpt {
     color: var(--pureooze-primary-text);
     ;
-}
-
-/* Hover effects */
-.blog-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    outline: 1px solid var(--pureooze-primary);
 }
 
 .page {

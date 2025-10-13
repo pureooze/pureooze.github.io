@@ -60,6 +60,9 @@ body {
     --pureooze-detail: var(--color-detail);
     --pureooze-mode-detail: var(--color-detail-inverse);
 
+    --pureooze-navbar-highlight-text: var(--pureooze-primary);
+    --pureooze-navbar-highlight: #ddd6fe;
+
     color-scheme: light dark;
 }
 
@@ -149,7 +152,7 @@ body {
         radial-gradient(circle at 80% 80%, var(--radial-background) 1.8px, transparent 1.8px);
     background-size: 120px 120px, 90px 90px, 100px 100px, 70px 70px, 110px 110px;
     animation: sparkle 360s linear infinite;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .homepage-content {
@@ -293,9 +296,9 @@ body {
 }
 
 .navbar-link:hover {
-    border-bottom: 0.2em solid var(--pureooze-mode-primary);
     text-decoration: none;
-    color: var(--pureooze-secondary-text);
+    color: var(--pureooze-navbar-highlight-text);
+    background-color: var(--pureooze-navbar-highlight);
 }
 
 .stuff {
