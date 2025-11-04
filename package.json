@@ -13,6 +13,9 @@
     "@11ty/eleventy-plugin-bundle": "^1.0.5",
     "@11ty/eleventy-plugin-rss": "^2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "@shikijs/markdown-it": "^1.2.4",
     "eleventy-plugin-toc": "^1.1.5",
     "jsonresume-theme-pureooze": "github:pureooze/jsonresume-theme-pureooze#v1.0.0",
@@ -21,7 +24,12 @@
     "markdown-it-footnote": "^4.0.0",
     "resume-cli": "^3.0.8",
     "rimraf": "^5.0.5",
+    "rollup": "^4.52.5",
     "shiki": "^1.2.4"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@apollo/client": "^4.0.9",
+    "graphql": "^16.12.0"
+  }
 }
