@@ -26,7 +26,7 @@ Sometimes the default accessible name is inaccurate and a separate label needs t
 Imagine if the `<button>` in the code above needed to have `X` as its text. This is not very informative to screen reader users and we need a better way to indicate what this button does. There are also many elements that do not have default accessible names, so we may need to provide labels for them as well.
 
 ## Labeling Elements
-The `title` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title) contains text to provide advisory information related to its target element. This information is often presented to users through a tooltip and read by **some** screen readers. Note that `title` is a [global attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes) so it is avaliable on all HTML elements.
+The `title` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title) contains text to provide advisory information related to its target element. This information is often presented to users through a tooltip and read by **some** screen readers. Note that `title` is a [global attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes) so it is available on all HTML elements.
 
 Unfortunately because `title` was introduced in very early versions of HTML there are several accessibility issues with it which created the need for more modern approaches:
 - the `<label>` element
@@ -49,7 +49,7 @@ The `aria-labelledby` [attribute](https://developer.mozilla.org/en-US/docs/Web/A
 <div aria-labelledby="my-label"></div>
 ```
 
-The `aria-label` [attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) contains text to label an element when no other label is present. Since `aria-label` is **not visible** it is often used to provide text that is only avaliable to screen readers. Note that `aria-label` [does not work with some elements](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label#associated_roles).
+The `aria-label` [attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) contains text to label an element when no other label is present. Since `aria-label` is **not visible** it is often used to provide text that is only available to screen readers. Note that `aria-label` [does not work with some elements](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label#associated_roles).
 
 ```html
 <button aria-label="Close"> X </button>
@@ -68,4 +68,4 @@ Using `title` for labelling causes issues for [several groups of people](https:/
 > — [The Paciello Group blog](https://www.tpgi.com/using-the-html-title-attribute-updated/)
 
 With that in mind it's safe to say that `title` should not be relied on for labeling elements.
-The best practice is to use visible labels over invisible labels like `aria-label`. Prefer the use of `<label>` or `aria-labelledby` because they provide visible labels. Use `aria-label` if these other options are not avaliable. Remember not to use both visible and invisible labels on the same element as the `aria-labelledby` attribute always take precedence.
+The best practice is to use visible labels over invisible labels like `aria-label`. Prefer the use of `<label>` or `aria-labelledby` because they provide visible labels. Use `aria-label` if these other options are not available. Remember not to use both visible and invisible labels on the same element as the `aria-labelledby` attribute always take precedence.
