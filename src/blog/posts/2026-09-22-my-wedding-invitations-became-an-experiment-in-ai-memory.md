@@ -1,7 +1,7 @@
 ---
-title: "A Knowledge Graph for Pi"
-thumbnail: 2026-09-22-a-knowledge-graph-for-pi/thumbnail.svg
-small-thumbnail: 2026-09-22-a-knowledge-graph-for-pi/thumbnail.svg
+title: "My Wedding Invitations Became an Experiment in AI Memory"
+thumbnail: 2026-09-22-my-wedding-invitations-became-an-experiment-in-ai-memory/thumbnail.svg
+small-thumbnail: 2026-09-22-my-wedding-invitations-became-an-experiment-in-ai-memory/thumbnail.svg
 tags:
   - pi
   - coding agents
