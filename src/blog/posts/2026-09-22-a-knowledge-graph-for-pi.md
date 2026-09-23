@@ -8,7 +8,7 @@ tags:
   - knowledge graph
   - ai
 ---
-I ran into a very annoying issue while trying to build a website for my wedding invitations. Every time I sent a prompt the LLM would do one of two things:
+I ran into a very annoying issue while trying to build a website for my wedding invitations. Every time I sent a prompt to my LLM it would do one of two things:
 1. Ask me lots of clarifying questions (annoying)
 2. Spend lots of time and tokens searching the project (annoying and expensive!)
 
