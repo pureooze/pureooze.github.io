@@ -1,7 +1,7 @@
 ---
-title: "A Knowledge Graph for Pi"
-thumbnail: 2026-09-22-a-knowledge-graph-for-pi/thumbnail.svg
-small-thumbnail: 2026-09-22-a-knowledge-graph-for-pi/thumbnail.svg
+title: "My Wedding Invitations Became an Experiment in AI Memory"
+thumbnail: 2026-09-22-my-wedding-invitations-became-an-experiment-in-ai-memory/thumbnail.svg
+small-thumbnail: 2026-09-22-my-wedding-invitations-became-an-experiment-in-ai-memory/thumbnail.svg
 tags:
   - pi
   - coding agents
@@ -14,7 +14,7 @@ I ran into a very annoying issue while trying to build a website for my wedding 
 
 So I would either end up flustered at the amount of questions I was suddenly bombarded with, or run out of tokens before the agent even started the task I wanted to do.
 
-I wanted the LLM to remember anything interesting that I told it or it discovered during exploration. Then when encountering ambiguiting it should **recover those pieces of knowledge on its own**.
+I needed the LLM to remember anything interesting that I told it or it discovered during exploration. Then when encountering ambiguiting it should **recover those pieces of knowledge on its own**.
 
 That is what led me to build a knowledge graph extension for Pi.
 
