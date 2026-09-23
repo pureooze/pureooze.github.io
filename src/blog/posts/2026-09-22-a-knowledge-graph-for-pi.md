@@ -1,16 +1,14 @@
 ---
 title: "A Knowledge Graph for Pi"
-thumbnail: 2026-08-13-picking-up-where-we-left-off-with-pi/thumbnail.svg
-small-thumbnail: 2026-08-13-picking-up-where-we-left-off-with-pi/thumbnail.svg
+thumbnail: 2026-09-22-a-knowledge-graph-for-pi/thumbnail.svg
+small-thumbnail: 2026-09-22-a-knowledge-graph-for-pi/thumbnail.svg
 tags:
   - pi
   - coding agents
   - knowledge graph
   - ai
 ---
-Have you ever asked an LLM agent to work on a project, only to spend the first part of the session figuring out things it already learned the last time?
-
-I ran into this while trying to build a website for my wedding invitations. Every time I sent a prompt the LLM would do one of two things:
+I ran into a very annoying issue while trying to build a website for my wedding invitations. Every time I sent a prompt the LLM would do one of two things:
 1. Ask me lots of clarifying questions (annoying)
 2. Spend lots of time and tokens searching the project (annoying and expensive!)
 
