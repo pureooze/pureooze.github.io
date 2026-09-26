@@ -35,7 +35,7 @@ In my case the challenge for the LLM was that the wedding site's full behavior i
 I wanted the LLM to answer those questions without rebuilding everything from zero.
 
 ## Remembering Facts Instead of Conversations
-I built [`@pureooze/pi-knowledge-graph`](https://github.com/pureooze/pi-config/tree/main/packages/knowledge-graph) to fill this gap. It stores useful facts separately from a single conversation so they can be found again later.
+I built [`@pureooze/pi-knowledge-graph`](https://pi.dev/packages/@pureooze/pi-knowledge-graph) to fill this gap. It stores useful facts separately from a single conversation so they can be found again later.
 
 The knowledge graph contains entities, claims and evidence. An entity might be the wedding project, its RSVP flow or a service it depends on. Claims record facts and relationships between those entities. Evidence points back to the file, command, user statement, URL or Pi session that supported a claim.
 
@@ -69,7 +69,7 @@ The database is shared across Pi sessions so moving a project or opening Pi from
 The benefit of durable memory is also its biggest risk: the LLM can preserve something that is wrong. `knowledge_maintain` makes immediate changes to the shared graph, and rewinding or branching a conversation does not undo them. Corrections keep the earlier history and records can be deleted, but the graph still needs the same skepticism as any other source of information.
 
 ## Trying It
-Install the package with Pi:
+Install [the package](https://pi.dev/packages/@pureooze/pi-knowledge-graph) with Pi:
 
 ```shell
 pi install npm:@pureooze/pi-knowledge-graph
