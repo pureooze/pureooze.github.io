@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import markdownItAnchor  from "markdown-it-anchor";
 import markdownItFootnote from 'markdown-it-footnote';
 import {getHighlighter} from 'shiki';
@@ -67,6 +68,15 @@ export default async function(eleventyConfig) {
     eleventyConfig.addPlugin(pluginTOC, {
         ul: true
     })
+
+    // Rebuild the themed resume when its Markdown source changes during --serve.
+    eleventyConfig.addWatchTarget('resume.md');
+    eleventyConfig.addWatchTarget('scripts/resume-markdown.js');
+    eleventyConfig.on('eleventy.beforeWatch', (changedFiles) => {
+        if (changedFiles.some(file => /(?:^|\/)resume\.md$|scripts\/resume-markdown\.js$/.test(file))) {
+            execFileSync('npm', ['run', 'build:resume'], { stdio: 'inherit' });
+        }
+    });
 
     // Watch content images for the image pipeline.
     eleventyConfig.addWatchTarget("blog/**/*.{svg,webp,png,jpeg}");

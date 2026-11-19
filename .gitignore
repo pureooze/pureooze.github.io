@@ -2,5 +2,6 @@ node_modules/
 jsonresume-theme-stackoverflow/
 *.icloud
 _site/
+.cache/
 .idea/
 resume.html
