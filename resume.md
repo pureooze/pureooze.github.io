@@ -25,18 +25,26 @@
 
 ### Stripe
 
-- **Position:** Software Engineer
+- **Position:** Software Engineer - Console
 - **Website:** https://stripe.com/
-- **Start date:** 2025
+- **Start date:** 2026
 
 #### Highlights
 
 - Developed Stripe Console, an AI agent that helps merchants navigate and manage Stripe.
-- Built the agent evaluation framework used to test performance, tune behavior, and evaluate model changes.
-- Migrated Console and its evaluation suite to flagship LLM models, cutting median agent turn duration by 35% and evaluation suite runtime by 50%.
-- Optimized the Console system context by introducing prompt cache optimizations, progressive loading of skills and tools using OpenAI Decisions API and knowledge graphs
+- Designed and implemented an agent evaluation framework supporting regression testing, behavioral tuning, and model comparisons. Enabled systematic measurement of production agent quality.
+- Migrated Console and its evaluation suite to flagship LLM models, cutting median agent turn duration by 35% and evaluation suite runtime by 50%. Accomplished through improved concurrency, prompt optimizations and context restructuring. Improvements were validated using the agent eval framework.
+- Optimized the Console system context by introducing prompt cache optimizations, progressive loading of skills and tools using OpenAI Decisions API and knowledge graphs. Reduced token consumption by 28% and TTFT by 1 second.
 - Built a tool that significantly simplified LLM development flow by delegating high level tasks to LLMs, using subagents to parallelize work and communicating to users in plain language and visualizations
 
+### Stripe
+
+- **Position:** Software Engineer - Console
+- **Website:** https://stripe.com/
+- **Start date:** 2025
+- **End date:** 2026
+
+#### Highlights
 - Founding engineer on Checkout Studio; built implementation workflows and LLM integrations that enabled merchants to configure, test, and launch Checkout experiences directly from the Dashboard—replacing integration guesswork with hands-on validation.
 
 ### D2L
@@ -70,13 +78,12 @@
 #### Keywords
 
 - LLM Integration
-- AI Agent Development
+- Agent Architecture
 - Agent Evaluation
-- OpenAI
-- Claude
+- Prompt/Context Optimization
 - LangGraph
 - Braintrust
-- Pi
+- OpenAI APIs
 
 ### Languages
 
@@ -105,7 +112,7 @@
 
 ### Knowledge Graph
 - **URL:** https://www.npmjs.com/package/@pureooze/pi-knowledge-graph
-- **Description:** A local, evidence-backed knowledge base for Pi. This extension adds tools to Pi that let LLMs remember useful facts, decisions, relationships, and other information across sessions with a fast, easy to use api that is Open Knowledge Format (OKF) compliant
+- **Description:** Built an open-source, evidence-backed knowledge graph extension for AI agents, enabling persistent cross-session memory and structured retrieval of facts, decisions, and relationships.
 - **Start date:** 2026
 
 ### Blog
