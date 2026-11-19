@@ -1,0 +1,45 @@
+<div class="section-header clearfix">
+    {{#if name}}
+    <h3 class="bold pull-left">
+        {{#if website}}
+          <div class="section-with-website">
+            <div class="section-name-and-skills">
+              {{name}}
+              {{#if keywords.length}}
+                <div class="flex-container">
+                  {{#each keywords}}
+                    <h6 class="skill">{{.}}</h6>
+                  {{/each}}
+                </div>
+              {{/if}}
+            </div>
+
+            {{#if showWebsite }}
+              <a href="{{website}}" target="_blank" class="sublink">{{website}}</a>
+            {{/if}}
+          </div>
+        {{else}}
+            {{name}}
+        {{/if}}
+    </h3>
+    {{/if}}
+    <h5 class="pull-right">
+        {{#if date}}
+            {{formatResumeDate date}}
+        {{else if startDate}}
+            <span class="startDate">{{formatResumeDate startDate}}</span>
+            {{#if endDate}}
+            <span class="endDate"> - {{formatResumeDate endDate}}</span>
+            {{else}}
+            <span class="endDate"> - Present</span>
+            {{/if}}
+        {{else if releaseDate}}
+            {{formatResumeDate releaseDate}}
+        {{/if}}
+    </h5>
+</div>
+{{#if description}}
+  <h4>
+    {{description}}
+  </h4>
+{{/if}}

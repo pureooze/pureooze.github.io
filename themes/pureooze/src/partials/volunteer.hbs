@@ -1,0 +1,26 @@
+{{#if resume.volunteer.length}}
+<div class="container volunteer-container">
+    {{> title value="Volunteer"}}
+
+    {{#each resume.volunteer}}
+    <section class="item">
+        {{> section-header name=this.organization startDate=this.startDate endDate=this.endDate releaseDate=this.releaseDate showWebsite=true}}
+        {{#if position}}
+        <h5>{{position}}</h5>
+        {{/if}}
+
+        {{#if summary}}
+        <p class="summary">{{summary}}</p>
+        {{/if}}
+
+        {{#if highlights.length}}
+        <ul>
+            {{#each highlights}}
+            <li>{{.}}</li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </section>
+    {{/each}}
+</div>
+{{/if}}

@@ -1,0 +1,27 @@
+{{#if resume.projects.length}}
+    <div id='projects' class='section-block'>
+        <div class='section-intro'>
+            <div class='section-name'>
+                <span>PROJECTS</span>
+            </div>
+            <div class='section-intro-line'></div>
+        </div>
+        <div class='section-content'>
+            <ul class='highlights'>
+                {{#each resume.projects}}
+                    <li class="project">
+                        <strong class='title'>{{name}}</strong><span> - {{url}}</span>
+                        <div>{{description}}</div>
+                        {{#if highlights.length}}
+                            {{#each highlights}}
+                            {{!-- formatting is expecting resume.json keywords to not have end punctuation --}}
+                                <span>{{.}}</span> {{#unless @last}} {{/unless}}
+                            {{/each}}
+                        {{/if}}
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class='section-line'></div>
+{{/if}}
