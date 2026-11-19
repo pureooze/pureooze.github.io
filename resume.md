@@ -39,7 +39,7 @@
 
 ### Stripe
 
-- **Position:** Software Engineer - Console
+- **Position:** Software Engineer - Checkout Studio
 - **Website:** https://stripe.com/
 - **Start date:** 2025
 - **End date:** 2026
